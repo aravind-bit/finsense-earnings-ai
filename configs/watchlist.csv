@@ -1,0 +1,21 @@
+ticker,company_name,sector,ir_url,priority
+NVDA,NVIDIA Corporation,Tech,https://investor.nvidia.com,Std
+MSFT,Microsoft Corporation,Tech,https://investor.microsoft.com,Std
+AAPL,Apple Inc.,Tech,https://investor.apple.com,Std
+GOOGL,Alphabet Inc.,Tech,https://abc.xyz/investor,Std
+AMZN,Amazon.com Inc.,Tech,https://ir.aboutamazon.com,Std
+META,Meta Platforms Inc.,Tech,https://investor.fb.com,Std
+AVGO,Broadcom Inc.,Tech,https://investors.broadcom.com,Std
+TSM,Taiwan Semiconductor Manufacturing Co.,Tech,https://www.tsmc.com/english/investorRelations,Std
+ASML,ASML Holding N.V.,Tech,https://www.asml.com/investors,Std
+AMD,Advanced Micro Devices Inc.,Tech,https://ir.amd.com,Std
+INTC,Intel Corporation,Tech,https://investor.intel.com,Std
+ORCL,Oracle Corporation,Tech,https://investor.oracle.com,Std
+CRM,Salesforce Inc.,Tech,https://investor.salesforce.com,Std
+ADBE,Adobe Inc.,Tech,https://www.adobe.com/investor-relations.html,Std
+SAP,SAP SE,Tech,https://www.sap.com/investors.html,Std
+NFLX,Netflix Inc.,Media,https://ir.netflix.net,High
+PARA,Paramount Global,Media,https://ir.paramount.com,High
+CMCSA,Comcast Corporation,Media,https://www.cmcsa.com/investors,High
+SPOT,Spotify Technology S.A.,Media,https://investors.spotify.com,High
+WBD,Warner Bros. Discovery Inc.,Media,https://ir.wbd.com,High
