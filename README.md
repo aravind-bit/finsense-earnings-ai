@@ -1,112 +1,255 @@
-# **FinSense — Earnings Call Analyst**
-### *LLM-powered analytics tool for extracting KPIs, guidance signals, and CFO insights from earnings materials.*
+# FinSense — Earnings Intelligence Assistant  
+*AI-powered prototype that extracts CFO insights, KPIs, and guidance signals from earnings materials.*
 
-FinSense is an internal-style analytics product designed to help investment teams, credit analysts, and PMs consume earnings information **in minutes instead of hours**.
+FinSense is an internal-style analytics product that accelerates how investment teams, credit analysts, and product leaders consume quarterly earnings information.
 
-The system ingests transcripts, press releases, and IR documents from multiple companies, extracts financial signals (revenue YoY, EPS YoY, margin/guidance commentary), generates executive summaries, and exposes a **chat-based interface** for Q&A over each quarter.
+Instead of manually reading 10–50 page transcripts or IR PDFs, FinSense converts raw documents into:
 
-FinSense combines:
-- **ETL-style ingestion**
-- **Document parsing & cleaning**
-- **Rule-based KPI extraction**
-- **Preview text generation**
-- **LLM-based analysis & Q&A**
-- **A Streamlit UI for analysts**
+- Structured KPI extracts  
+- Guidance & margin commentary  
+- CFO preview remarks  
+- AI-generated quarterly summaries  
+- A conversational Q&A interface on top of each quarter
+
+The goal: reduce the “first 80%” of earnings analysis from **hours to minutes**, so humans can focus on judgment, not document-wrangling.
 
 ---
 
-## ## ⭐ Why This Project Exists
+## 📌 Why This Exists
 
-Investment and credit teams routinely sift through:
-- 10–60 page earnings transcripts  
-- CFO prepared remarks  
-- Footnotes and guidance commentary  
-- PDF-only IR materials  
-- Multiple companies per cycle  
+Across buy-side research, private credit, and corporate finance, analysts repeatedly:
+
+- Read long, inconsistent earnings materials  
+- Manually extract revenue/EPS growth each quarter  
+- Search for guidance and margin commentary by hand  
+- Skim CFO/CEO remarks for tone and narrative changes  
+- Copy/paste notes into trackers and emails to PMs  
+- Answer the same questions about “what changed this quarter?”
 
 This leads to:
-- Long read times  
-- Inconsistent note-taking  
-- Missed signals in noisy documents  
-- Slow turnaround for PM updates and reporting  
 
-**FinSense solves this by automating the first 80% of the analysis.**
+- Slow turnaround during earnings weeks  
+- Missed language and guidance signals  
+- No standard, repeatable framework  
+- Analyst fatigue and inconsistent notes  
 
----
-
-# **🎯 Product Goals**
-
-### **1. Reduce time-to-insight**
-Turn raw earnings materials into:
-- CFO summaries  
-- KPI extracts  
-- Trend commentary  
-- LLM-readable insight packs  
-
-### **2. Increase consistency**
-A deterministic, repeatable pipeline ensures:
-- Standard KPI extraction  
-- Normalized metadata  
-- Structured quarterly outputs  
-
-### **3. Enable conversational analytics**
-Analysts can ask questions like:
-- “What changed this quarter?”  
-- “Did margins compress?”  
-- “What tone did management convey?”  
-- “What risks were highlighted?”  
-
-LLM responses are grounded in the extracted data.
+**FinSense automates the foundational layer of earnings intelligence.**
 
 ---
 
-# **📦 Architecture Overview**
+## Product Goals
 
-data/raw <-- Earnings PDFs / TXTs (source documents)
-data/processed <-- Cleaned transcript segments (CSV)
-data/insights <-- Insight packs per quarter (JSON)
-src/finsense <-- Pipeline & chat engine
-├── ingest.py <-- PDF/TXT ingestion & speaker segmentation
-├── config.py <-- Yaml configuration
-├── paths.py <-- Project paths
-├── chat_engine.py <-- OpenAI-powered Q&A
-├── summarizer.py <-- Optional LLM summarization
-app_finsense_chat.py <-- Streamlit app (UI layer)
-notebooks/
-└── 06_kpi_extraction.ipynb <-- KPI extraction and insight pack build
+1. **Accelerate decision-making**  
+   Turn raw earnings documents into structured, queryable insight packs.
 
+2. **Deliver consistency**  
+   Use a repeatable pipeline for CFO signals, guidance mentions, and KPI extraction.
+
+3. **Enable conversational analytics**  
+   Allow PMs and analysts to ask natural questions like:
+   - “What changed this quarter vs last?”
+   - “Did margins expand or compress?”
+   - “How did AI / content investment evolve?”
+   and receive grounded, document-aware answers.
 
 ---
 
-# **🔄 Data Pipeline**
+##  Core Features
 
-### **1. Ingestion**
-`src/finsense/ingest.py`:
-- Loads PDFs/TXTs  
-- Cleans irregular formatting  
-- Attempts speaker segmentation  
-- Falls back to FULL_TEXT for messy PDFs  
-- Writes processed transcripts to CSV  
+### 1. Automated Document Ingestion
 
-### **2. KPI & insight extraction**
-Notebook `06_kpi_extraction.ipynb`:
-- Detects CFO-like segments  
-- Extracts:
-  - Revenue growth YoY  
-  - EPS growth YoY  
-  - Margin commentary  
-  - Guidance/outlook snippets  
-- Generates a **preview_text** for UI display  
-- Builds **insight packs** (one JSON per quarter)
+- Supports `.pdf` and `.txt` earnings materials  
+- Uses a YAML-driven parsing config (`configs/finsense.yaml`)  
+- Attempts to segment by speaker when transcripts are structured  
+- Falls back to full-text mode for simple IR PDFs / press releases  
 
-Each pack includes:
-```json
-{
-  "company_hint": "NVIDIA",
-  "fiscal_year": 2024,
-  "fiscal_quarter": "Q2",
-  "kpis": {...},
-  "sentiment": {...},
-  "preview_text": "Revenue grew 13% YoY driven by...",
-  "meta": {...}
-}
+2. KPI & Signal Extraction (Notebook Workflow)
+
+Notebook: notebooks/06_kpi_extraction.ipynb
+
+From the processed transcript data, the notebook:
+
+Filters down to CFO-style segments / prepared remarks where possible
+
+Extracts basic but high-signal KPIs with simple, transparent logic:
+
+Revenue YoY %
+
+EPS YoY % (where present)
+
+Margin commentary (expansion/compression language)
+
+Guidance/outlook commentary
+
+Adds a short CFO preview excerpt when available
+
+Packages everything into compact insight packs written as JSON:
+
+data/insights/
+  ├── NVDA_2024Q2_segX.json
+  ├── AMD_2024Q2_segY.json
+  └── ...
+
+
+Each insight pack contains:
+
+company_hint, fiscal_year, fiscal_quarter
+
+speaker, section
+
+kpis (revenue, EPS, commentary fields)
+
+meta (doc path, ingest date, segment index)
+
+optional cfo_preview_text
+
+The extraction is intentionally simple and interpretable: more like a V1 analytics backbone than a black-box model.
+
+3. AI-Generated Quarter Snapshot
+
+Module: src/finsense/summarizer.py
+
+Given an insight pack, FinSense can generate a short AI summary of the quarter, such as:
+
+What changed vs prior expectations (if present in the text)
+
+High-level direction of growth / profitability
+
+Notable narrative themes (AI, content spend, restructuring, etc.)
+
+These summaries are stored back onto the insight packs as a field like:
+
+"ai_quarter_summary": "Short bullet-style or paragraph summary..."
+
+
+This is designed to mimic the type of quick brief a PM might want before a meeting.
+
+4. LLM-Powered Q&A (Chat Engine)
+
+Module: src/finsense/chat_engine.py
+
+The chat engine:
+
+Loads an insight pack
+
+Builds a focused prompt using:
+
+CFO preview text
+
+Extracted KPIs
+
+Commentary fields
+
+Meta (company, period, segment)
+
+Calls an OpenAI model and returns grounded, text-only answers
+
+Analysts can ask:
+
+“How did revenue and EPS trend this quarter?”
+
+“Any hints of margin pressure?”
+
+“What are the main risks management is flagging?”
+
+This is wired directly into the Streamlit front-end.
+
+5. Streamlit Front-End — FinSense Chat
+
+File: app_finsense_chat.py
+
+The app behaves like a light internal product:
+
+Sidebar:
+
+Select company / period (driven by available insight packs)
+
+Top Metrics / Context:
+
+Company (from filename + mappings)
+
+Ticker (when derivable from filenames like AMD_2024Q2_...)
+
+Period (Year + Quarter)
+
+Sector (from a simple watchlist mapping where available)
+
+CFO Panel:
+
+CFO preview text (if present)
+
+Extracted KPIs (Revenue YoY %, EPS YoY %)
+
+Guidance/margin commentary fields
+
+Quarter Snapshot (AI Summary):
+
+Collapsible section; stays closed by default
+
+Shows the AI-generated summary if available
+
+Displays a small note if no summary has been generated yet
+
+Chat with FinSense:
+
+Chat-style interface (user questions + AI answers)
+
+Chat history is session-based per insight pack
+
+Designed to mimic how a PM would interrogate a quarter
+
+This is deliberately minimal but professional — something that would not look out of place as an internal tool inside a credit or equity analytics team.
+
+## 🛠 Tech Stack
+Language & Core
+
+Python 3.13
+
+pandas, numpy
+
+Document Handling
+
+pdfminer.six for PDF text extraction
+
+Basic regex & string ops for segment detection and KPI parsing
+
+Configuration
+
+PyYAML for finsense.yaml parsing rules
+
+Simple environment-based project paths (paths.py)
+
+AI / NLP
+
+OpenAI Chat Completions API
+
+Deterministic schema for passing KPIs + context into prompts
+
+App Layer
+
+streamlit for the front-end
+
+Deployed on Streamlit Community Cloud
+
+## 🗂 Project Structure
+finsense-earnings-ai/
+├── app_finsense_chat.py          # Streamlit front-end (FinSense chat)
+├── configs/
+│   ├── finsense.yaml             # Parsing & output config
+│   └── watchlist.csv             # Ticker → name → sector mapping
+├── data/
+│   ├── raw/                      # Input earnings materials (PDF, TXT)
+│   ├── processed/
+│   │   └── transcripts.csv       # Output of ingestion pipeline
+│   └── insights/                 # Insight packs (JSON)
+├── notebooks/
+│   └── 06_kpi_extraction.ipynb   # KPI extraction & pack generation
+└── src/
+    └── finsense/
+        ├── __init__.py
+        ├── config.py             # YAML config loader
+        ├── ingest.py             # Ingestion / parsing logic
+        ├── paths.py              # Project path helpers
+        ├── chat_engine.py        # LLM Q&A
+        └── summarizer.py         # Quarter snapshot summaries
+
