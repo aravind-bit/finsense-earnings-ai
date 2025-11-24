@@ -1,0 +1,24 @@
+{
+  "company_hint": "NFLX 2024Q2 SAMPLE REMARKS",
+  "fiscal_year": 2024,
+  "fiscal_quarter": "Q2",
+  "speaker": "FULL_TEXT",
+  "section": "prepared_remarks",
+  "kpis": {
+    "revenue_growth_yoy_pct": 12.0,
+    "eps_growth_yoy_pct": null,
+    "guidance_comment": "focused on disciplined returns on new titles. We are raising full-year revenue guidance to low-teens growth and expect operating margin to land at the high end of our prior range.",
+    "margin_comment": "% year-over-year, driven by steady subscriber growth and higher ARPU. Operating margin expanded 150 basis points as content amortization normalized. Content spend grew modestly, but we remain focused on disciplined returns on new titles. We are raising full-year revenue guidance to low-teens growth"
+  },
+  "sentiment": {
+    "polarity": 0.0,
+    "subjectivity": 0.0
+  },
+  "meta": {
+    "doc_path": "data/raw/NFLX_2024Q2_SAMPLE_REMARKS.txt",
+    "segment_index": 0,
+    "ingest_date": "2025-11-24",
+    "source": "manual_drop"
+  },
+  "preview_text": "Prepared Remarks \u2013 CFO Revenue grew 12% year-over-year, driven by steady subscriber growth and higher ARPU. Operating margin expanded 150 basis points as content amortization normalized. Content spend grew modestly, but we remain focused on disciplined returns on new titles. We are raising full-year\u2026"
+}
