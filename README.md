@@ -63,7 +63,7 @@ This leads to:
 - Attempts to segment by speaker when transcripts are structured  
 - Falls back to full-text mode for simple IR PDFs / press releases  
 
-2. KPI & Signal Extraction (Notebook Workflow)
+### 2. KPI & Signal Extraction (Notebook Workflow)
 
 Notebook: notebooks/06_kpi_extraction.ipynb
 
@@ -105,7 +105,7 @@ optional cfo_preview_text
 
 The extraction is intentionally simple and interpretable: more like a V1 analytics backbone than a black-box model.
 
-3. AI-Generated Quarter Snapshot
+### 3. AI-Generated Quarter Snapshot
 
 Module: src/finsense/summarizer.py
 
@@ -124,7 +124,7 @@ These summaries are stored back onto the insight packs as a field like:
 
 This is designed to mimic the type of quick brief a PM might want before a meeting.
 
-4. LLM-Powered Q&A (Chat Engine)
+### 4. LLM-Powered Q&A (Chat Engine)
 
 Module: src/finsense/chat_engine.py
 
@@ -144,7 +144,7 @@ Meta (company, period, segment)
 
 Calls an OpenAI model and returns grounded, text-only answers
 
-Analysts can ask:
+#### Analysts can ask:
 
 “How did revenue and EPS trend this quarter?”
 
@@ -154,15 +154,13 @@ Analysts can ask:
 
 This is wired directly into the Streamlit front-end.
 
-5. Streamlit Front-End — FinSense Chat
+### 5. Streamlit Front-End — FinSense Chat
 
 File: app_finsense_chat.py
 
 The app behaves like a light internal product:
 
-Sidebar:
-
-Select company / period (driven by available insight packs)
+#### Sidebar:
 
 Top Metrics / Context:
 
@@ -174,7 +172,7 @@ Period (Year + Quarter)
 
 Sector (from a simple watchlist mapping where available)
 
-CFO Panel:
+#### CFO Panel:
 
 CFO preview text (if present)
 
@@ -253,3 +251,60 @@ finsense-earnings-ai/
         ├── chat_engine.py        # LLM Q&A
         └── summarizer.py         # Quarter snapshot summaries
 
+## Career & Product Relevance
+
+This project is intentionally designed to look and feel like an internal analytics product, not just a notebook:
+
+Full pipeline: ingestion → processing → insights → UI → AI
+
+Config-driven parsing (YAML) for maintainability
+
+JSON insight packs for downstream reuse (BI, notebooks, APIs)
+
+Q&A layer that aligns with how PMs / credit analysts actually think
+
+It demonstrates experience at the intersection of:
+
+Product management for analytics platforms
+
+BI / data engineering workflows
+
+AI-assisted analysis in financial contexts
+
+Translating ambiguous business questions into concrete data products
+
+That aligns strongly with roles like:
+
+Manager, Product Management – Analytics (e.g., private credit / global credit teams)
+
+Analytics Product Lead / Analytics Engineer in asset management or fintech
+
+Data & BI PMs who own reporting ecosystems, not just single dashboards
+
+## Possible Extensions
+
+Some natural next steps:
+
+Multi-quarter trend comparison per ticker
+
+Peer benchmarking (e.g., AMD vs NVDA vs ADBE)
+
+Sentiment scoring using finance-tuned models (FinBERT, etc.)
+
+Automated scraping of the latest IR materials per ticker
+
+Support for audio transcripts (earnings calls → Whisper → FinSense pipeline)
+
+Export to Power BI / Tableau-ready tables for portfolio dashboards
+
+### Contact
+
+Author: Aravind Anisetti
+
+📧 Email: anisetti.ar@gmail.com
+
+🌐 Portfolio: aravind-bit.github.io/portfolio-aravind
+
+💼 LinkedIn: linkedin.com/in/aravindsai-anisetti
+
+FinSense is a learning and demonstration project — feedback, ideas, and collaboration are welcome.
