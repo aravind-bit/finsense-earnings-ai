@@ -1,0 +1,17 @@
+{
+  "ticker": "ADBE",
+  "fiscal_year": "2025.0",
+  "fiscal_quarter": "Q4",
+  "summary": "Headline:\nAdobe projects solid fiscal year 2025 full-year revenue of $23.65-$23.70B, driven by continued growth in Digital Media and Digital Experience segments, with non-GAAP operating margins around 46%. EPS guidance is strong, with non-GAAP EPS expected between $20.80 and $20.85.\n\nGrowth & revenue drivers:\n- Total revenue guidance for FY2025: $23.65B to $23.70B.\n- Digital Media segment revenue: $17.56B to $17.59B.\n- Digital Media ending ARR growth: 11.3% YoY.\n- Digital Experience segment revenue: $5.84B to $5.86B.\n- Digital Experience subscription revenue: $5.39B to $5.41B.\n- Growth supported by AI innovation and market opportunities, though specific Q4 revenue figures were not disclosed in the excerpt.\n\nMargins / profitability:\n- Non-GAAP operating margin expected around 45.5% for Q4 and ~46% for full fiscal year 2025.\n- Non-GAAP tax rate assumed at ~18.5%.\n- Diluted share count estimated at ~418 million for Q4 and ~427 million for full year.\n- EPS guidance: GAAP $4.27-$4.32 for Q4; full year GAAP $16.53-$16.58.\n- Non-GAAP EPS: Q4 $5.35-$5.40; full year $20.80-$20.85.\n\nGuidance & outlook:\n- Guidance assumes current macroeconomic conditions.\n- No detailed Q4 revenue or segment breakdown provided beyond targets.\n- Company emphasizes ongoing strategic investments in AI and innovation.\n- No explicit commentary on near-term risks or changes to prior outlook.\n\nRisks / watchpoints:\n- Risks include macroeconomic fluctuations, AI development challenges, competitive pressures, regulatory and legal risks, currency fluctuations, and operational risks.\n- Forward-looking statements subject to uncertainties; actual results may differ materially.\n- Watch for updates in Adobe\u2019s upcoming 10-Q filing for Q4 results and any revisions to guidance.\n- Continued monitoring of AI integration success and macroeconomic impacts advised.",
+  "meta": {
+    "ticker": "ADBE",
+    "company_hint": "ADBE 2025Q4 Q3 FY2025 earnings press release",
+    "fiscal_year": "2025.0",
+    "fiscal_quarter": "Q4",
+    "speaker": "CFO (preferred, with fallbacks)",
+    "segment_count": 2,
+    "source_docs": [
+      "data/raw/ADBE_2025Q4_Q3_FY2025_earnings_press_release.pdf"
+    ]
+  }
+}

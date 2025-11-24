@@ -1,0 +1,17 @@
+{
+  "ticker": "NVDA",
+  "fiscal_year": "2024.0",
+  "fiscal_quarter": "Q2",
+  "summary": "Headline: NVIDIA reported a 10% year-over-year revenue growth in Q2 FY2024, indicating steady top-line expansion.\n\nGrowth & revenue drivers:\n- Revenue increased by 10% compared to the same quarter last year.\n- No further details provided on segment or product contributions.\n\nMargins / profitability:\n- No information disclosed on margins or profitability metrics.\n\nGuidance & outlook:\n- No guidance or outlook commentary was provided in the remarks.\n\nRisks / watchpoints:\n- No risks or watchpoints were mentioned in the CFO remarks.",
+  "meta": {
+    "ticker": "NVDA",
+    "company_hint": "NVDA 2024Q2 Remarks",
+    "fiscal_year": "2024.0",
+    "fiscal_quarter": "Q2",
+    "speaker": "CFO (preferred, with fallbacks)",
+    "segment_count": 1,
+    "source_docs": [
+      "data/raw/NVDA_2024Q2_Remarks.txt"
+    ]
+  }
+}

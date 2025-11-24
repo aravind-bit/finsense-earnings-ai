@@ -1,0 +1,17 @@
+{
+  "ticker": "NFLX",
+  "fiscal_year": "2025.0",
+  "fiscal_quarter": "Q4",
+  "summary": "Headline:\nNetflix's Q4 2025 content accounting overview highlights continued disciplined application of ASC 920 and ASC 926 standards, with no material changes in accounting policies or impact from recent updates. The company maintains a clear distinction between licensed and owned content accounting, supporting its strategic content investments.\n\nGrowth & revenue drivers:\n- Netflix licenses a mix of originals (e.g., Wednesday, Emily in Paris) and 2nd run titles (e.g., Shameless, The Blacklist).\n- Since 2016, Netflix applies ASC 926 for self-produced content (e.g., Stranger Things, Squid Game), which it owns and can monetize via licensing and merchandising.\n- Self-produced content offers cost advantages by eliminating studio middlemen and provides greater rights flexibility globally.\n- Over 90% of content costs are amortized within four years, reflecting accelerated consumption and revenue recognition aligned with viewer patterns.\n\nMargins / profitability:\n- Content costs are capitalized as assets and amortized over the shorter of availability window, useful life, or 10 years.\n- Amortization expense is recorded in cost of revenues, impacting gross margins.\n- First-run topical programming (sports, live events) is expensed immediately, affecting short-term profitability.\n- No material impact from ASU 2019-2 adoption, indicating stable accounting treatment and margin recognition.\n\nGuidance & outlook:\n- No explicit financial guidance or outlook provided in this content accounting overview.\n- The company continues to invest in owned content to drive long-term value through IP ownership and monetization flexibility.\n\nRisks / watchpoints:\n- Content amortization depends on estimated viewing patterns, which are reviewed quarterly and could affect expense timing.\n- Licensed content liabilities and unpaid costs appear on the balance sheet, requiring careful cash flow management.\n- Changes in content consumption trends or licensing costs could impact amortization schedules and profitability.\n- No new accounting policy changes expected, but ongoing monitoring of ASC standards compliance remains important.",
+  "meta": {
+    "ticker": "NFLX",
+    "company_hint": "NFLX 2025Q4 Content Accounting Overview",
+    "fiscal_year": "2025.0",
+    "fiscal_quarter": "Q4",
+    "speaker": "CFO (preferred, with fallbacks)",
+    "segment_count": 1,
+    "source_docs": [
+      "data/raw/NFLX_2025Q4_Content_Accounting_Overview.pdf"
+    ]
+  }
+}

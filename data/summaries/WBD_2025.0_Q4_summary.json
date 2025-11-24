@@ -1,0 +1,17 @@
+{
+  "ticker": "WBD",
+  "fiscal_year": "2025.0",
+  "fiscal_quarter": "Q4",
+  "summary": "Headline:\nWarner Bros. Discovery's 2025 Q4 Sustainability Report highlights strong commitments to human rights, workplace safety, and employee well-being, reflecting ongoing investments in ethical practices and workforce support rather than financial metrics.\n\nGrowth & revenue drivers:\n- No financial growth or revenue information provided in the sustainability-focused remarks.\n- Emphasis on collaborative industry training programs for union production employees to enhance safety and operational standards.\n\nMargins / profitability:\n- No commentary on margins or profitability in the sustainability report.\n\nGuidance & outlook:\n- No financial guidance or outlook disclosed.\n- Continued focus on maintaining safe, respectful, and inclusive work environments as a strategic priority.\n\nRisks / watchpoints:\n- Potential risks related to workplace safety and human rights compliance are mitigated through robust policies, training, and reporting mechanisms.\n- Ongoing monitoring of injury trends and harassment claims with management oversight to address issues proactively.\n- Mental health support programs and ethical reporting channels aim to reduce workforce-related risks.\n\nSummary:\nThis quarter\u2019s report centers on Warner Bros. Discovery\u2019s sustainability and ethical commitments, detailing comprehensive safety protocols, anti-harassment policies, and mental health resources. While no financial data or guidance is included, these initiatives support long-term operational resilience and corporate responsibility.",
+  "meta": {
+    "ticker": "WBD",
+    "company_hint": "WBD 2025Q4 2023 Sustainability Report",
+    "fiscal_year": "2025.0",
+    "fiscal_quarter": "Q4",
+    "speaker": "CFO (preferred, with fallbacks)",
+    "segment_count": 4,
+    "source_docs": [
+      "data/raw/WBD_2025Q4_2023_Sustainability_Report.pdf"
+    ]
+  }
+}
