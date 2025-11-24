@@ -1,0 +1,21 @@
+{
+  "ticker": "AMD",
+  "company": "Advanced Micro Devices",
+  "sector": "Tech",
+  "fiscal_year": "2025",
+  "fiscal_quarter": "Q4",
+  "speaker": "JOHN",
+  "doc_path": "data/raw/AMD_2025Q4_Transcript.pdf",
+  "segment_index": 1,
+  "kpis": {
+    "revenue_growth_yoy_pct": null,
+    "eps_growth_yoy_pct": null,
+    "guidance_comment": null,
+    "margin_comment": null
+  },
+  "sentiment": {
+    "polarity": 0.2,
+    "subjectivity": 0.475
+  },
+  "text_preview": "Greetings and welcome to the AMD third quarter 2025 conference call. At this time, all participants are in a listen\n\nonly mode. A question and answer session will follow the formal presentation. If anyone should require operator\n\nassistance, please press star 0 on your telephone keypad. As a reminder, this conference call is being recorded.\n\nIt is now my pleasure to introduce to you Matt Ramsay, VP, Financial Strategy and Investor Relations. Thank you,\n\nMatt. You may begin."
+}

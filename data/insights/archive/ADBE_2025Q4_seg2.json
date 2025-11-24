@@ -1,0 +1,21 @@
+{
+  "ticker": "ADBE",
+  "company": "Adobe",
+  "sector": "Tech",
+  "fiscal_year": "2025",
+  "fiscal_quarter": "Q4",
+  "speaker": "GAAP",
+  "doc_path": "data/raw/ADBE_2025Q4_Q3_FY2025_earnings_press_release.pdf",
+  "segment_index": 2,
+  "kpis": {
+    "revenue_growth_yoy_pct": null,
+    "eps_growth_yoy_pct": null,
+    "guidance_comment": null,
+    "margin_comment": "margin commentary present"
+  },
+  "sentiment": {
+    "polarity": 0.04876984126984127,
+    "subjectivity": 0.2917394179894178
+  },
+  "text_preview": "$16.53 to $16.58\n\nNon-GAAP: $20.80 to $20.85\n\n2 Targets assume non-GAAP operating margin of ~46 percent, non-GAAP tax rate of ~18.5 percent and diluted share count of\n\n~427 million for fiscal year 2025.\n\nAdobe to Host Conference Call\n\nAdobe will webcast its third quarter fiscal year 2025 earnings conference call today at 2:00 p.m. Pacific Time from its investor relations website:\nhttp://www.adobe.com/ADBE. Earnings documents, including Adobe management\u2019s prepared conference call remarks with slides and an\ninvestor datasheet are posted to Adobe\u2019s Investor Relations Website in advance of the conference call for reference.\n\nForward-Looking Statements, Non-GAAP and Other Disclosures\n\nIn addition to historical information, this press release contains \u201cforward-looking statements\u201d within the meaning of applicable securities laws,\nincluding statements related to our business, strategy, artificial intelligence (\u201cAI\u201d) and innovation momentum; our market and AI opportunity\nand future growth; market and AI trends; current macroeconomic conditions; fluctuations in foreign currency exchange rates; strategic\ninvestments; customer success and groups; and our financial targets and assumptions related thereto, including revenue, operating margin,\noperating efficiencies, annualized recurring revenue, tax rate, earnings per share and share count. Each of the forward-looking statements we\nmake in this press release involves risks, uncertainties and assumptions based on information available to us as of the date of this press\nrelease. Such risks and uncertainties, many of which relate to matters beyond our control, could cause actual results to differ materially from\nthese forward-looking statements. Factors that might cause or contribute to such differences include, but are not limited to: failure to innovate\neffectively and meet customer needs; issues relating to development and use of AI; failure to compete effectively; damage to our reputation or\nbrands; failure to realize the antici"
+}

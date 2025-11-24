@@ -1,0 +1,21 @@
+{
+  "ticker": "AMD",
+  "company": "Advanced Micro Devices",
+  "sector": "Tech",
+  "fiscal_year": "2025",
+  "fiscal_quarter": "Q4",
+  "speaker": "JOHN",
+  "doc_path": "data/raw/AMD_2025Q4_Transcript.pdf",
+  "segment_index": 34,
+  "kpis": {
+    "revenue_growth_yoy_pct": null,
+    "eps_growth_yoy_pct": null,
+    "guidance_comment": null,
+    "margin_comment": null
+  },
+  "sentiment": {
+    "polarity": 0.03333333333333333,
+    "subjectivity": 0.39999999999999997
+  },
+  "text_preview": "Thank you. And the next question comes from the line of Aaron Rakers with Wells Fargo. Please proceed with\n\nyour question.\n\nAARON\n\nYeah. Thanks for taking the questions. I'm curious on the server strength that you're seeing, if there's a way to"
+}

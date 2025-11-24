@@ -1,0 +1,21 @@
+{
+  "ticker": "AMD",
+  "company": "Advanced Micro Devices",
+  "sector": "Tech",
+  "fiscal_year": "2025",
+  "fiscal_quarter": "Q4",
+  "speaker": "LISA  SU",
+  "doc_path": "data/raw/AMD_2025Q4_Transcript.pdf",
+  "segment_index": 25,
+  "kpis": {
+    "revenue_growth_yoy_pct": null,
+    "eps_growth_yoy_pct": null,
+    "guidance_comment": null,
+    "margin_comment": null
+  },
+  "sentiment": {
+    "polarity": 0.07708333333333334,
+    "subjectivity": 0.4604166666666667
+  },
+  "text_preview": "So I think-- yeah, Stacy, I think our commentary was data center grew nicely year over year in both of the areas,\n\nboth for servers as well as data center AI.\n\nSTACY\n\nYeah. But could you-- I mean, just directionally, did one-- which one grew more than the other? I'm not even"
+}

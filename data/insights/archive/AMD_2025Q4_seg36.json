@@ -1,0 +1,21 @@
+{
+  "ticker": "AMD",
+  "company": "Advanced Micro Devices",
+  "sector": "Tech",
+  "fiscal_year": "2025",
+  "fiscal_quarter": "Q4",
+  "speaker": "LISA  SU",
+  "doc_path": "data/raw/AMD_2025Q4_Transcript.pdf",
+  "segment_index": 36,
+  "kpis": {
+    "revenue_growth_yoy_pct": null,
+    "eps_growth_yoy_pct": null,
+    "guidance_comment": null,
+    "margin_comment": null
+  },
+  "sentiment": {
+    "polarity": 0.24947916666666667,
+    "subjectivity": 0.5888888888888889
+  },
+  "text_preview": "Yeah. So Aaron, on the server CPU side, Turin certainly is more content. So we see ASPs grow as Turin ramps. But\n\nI also mentioned in the prepared remarks that we're actually seeing a good mix of Genoa still there. So Turin is\n\nramping up very quickly, but we are also seeing Genoa demand continue well as-- the hyperscalers are not able\n\nto move everything to the latest generation immediately.\n\nSo from our standpoint, I think it's broad-based CPU demand across a number of different workloads. This is-- a\n\nlittle bit of this is, let's call it, server refresh. But it seems like, from our customer conversations, the workloads\n\nare broadly due to the fact that AI workloads are spawning more traditional compute, so more build out is\n\nnecessary.\n\nI think going forward, one of the things that we see is there is more of a desire for the latest generation. And so,\n\nas much as we're happy with how Turin is ramping, we're seeing actually a strong pull on Venice and a lot of\n\nearly engagement in Venice, which kind of says a lot about the importance of general purpose compute at this\n\npoint in time.\n\nAARON\n\nYeah, thanks. As a quick follow-up, I'm curious and not to steal, maybe you know the discussion from next week."
+}

@@ -1,0 +1,21 @@
+{
+  "ticker": "AMD",
+  "company": "Advanced Micro Devices",
+  "sector": "Tech",
+  "fiscal_year": "2025",
+  "fiscal_quarter": "Q4",
+  "speaker": "CJ MUSE",
+  "doc_path": "data/raw/AMD_2025Q4_Transcript.pdf",
+  "segment_index": 21,
+  "kpis": {
+    "revenue_growth_yoy_pct": null,
+    "eps_growth_yoy_pct": null,
+    "guidance_comment": null,
+    "margin_comment": null
+  },
+  "sentiment": {
+    "polarity": 0.23043650793650794,
+    "subjectivity": 0.5350396825396825
+  },
+  "text_preview": "Very helpful. And I guess maybe, Lisa, to probe your growth expectations through '26 and beyond. And you\n\ntalked about tens of billions of dollars in '27. Can you speak at a high level of how you're thinking about OpenAI\n\nand other large customers? And, how we should be thinking about the breadth of your customer kind of\n\npenetration throughout calendar '26-'27? Any help on that would be super. Thank you."
+}

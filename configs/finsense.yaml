@@ -5,4 +5,4 @@ parse:
   detect_qa_markers: true
   speaker_line_regex: '^(Operator|Q&A|Question-and-Answer Session|[A-Z][A-Z .,&()/-]{2,}):\s*'
 output:
-  parquet_path: "data/processed/transcripts.parquet"
+  parquet_path: "data/processed/transcripts.csv"

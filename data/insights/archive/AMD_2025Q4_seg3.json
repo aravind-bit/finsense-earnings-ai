@@ -1,0 +1,21 @@
+{
+  "ticker": "AMD",
+  "company": "Advanced Micro Devices",
+  "sector": "Tech",
+  "fiscal_year": "2025",
+  "fiscal_quarter": "Q4",
+  "speaker": "LISA  SU",
+  "doc_path": "data/raw/AMD_2025Q4_Transcript.pdf",
+  "segment_index": 3,
+  "kpis": {
+    "revenue_growth_yoy_pct": 36,
+    "eps_growth_yoy_pct": null,
+    "guidance_comment": null,
+    "margin_comment": null
+  },
+  "sentiment": {
+    "polarity": 0.17153048822834926,
+    "subjectivity": 0.38734252378637424
+  },
+  "text_preview": "Thank you, Matt, and good afternoon to all those listening today. We delivered an outstanding quarter with\n\nrecord revenue and profitability reflecting broad-based demand across our data center AI, server and PC\n\nbusinesses.\n\nRevenue grew 36% year over year to $9.2 billion, net income rose 31%, and free cash flow more than tripled, led\n\nby record EPYC, Ryzen and Instinct processor sales. Our record third quarter performance marks a clear step up\n\nin our growth trajectory, as the combination of our expanding compute franchise and rapidly scaling data center\n\nAI business drives significant revenue and earnings growth.\n\nTurning to our segments. Data center segment revenue increased 22% year over year to a record $4.3 billion,\n\nled by the ramp of our Instinct MI350 series GPUs and server share gains. Server CPU revenue reached an all-\n\ntime high, as adoption of fifth Gen EPYC turn processors accelerated rapidly, accounting for nearly half of overall\n\nEPYC revenue in the quarter. Sales of our prior generation EPYC processors were also very robust in the quarter,\n\nreflecting their strong competitive positioning across a wide range of workloads.\n\n\fIn cloud, we had record sales as hyperscalers expanded EPYC CPU deployments to power both their own first\n\nparty services and public cloud offerings. Hyperscalers launched more than 160 EPYC powered instances in the\n\nquarter, including new turn offerings from Google, Microsoft Azure, Alibaba and others that deliver unmatched\n\nperformance and price performance across a wide range of workloads. There are now more than 1,350 public\n\nEPYC cloud instances available globally, a nearly 50% increase from a year ago.\n\nAdoption of EPYC in cloud by large businesses more than tripled year over year, as our on-prem share gains are\n\ndriving increased demand from enterprise customers for AMD cloud instances to support hybrid compute. We\n\nexpect cloud demand to remain very strong as hyperscalers are significantly increasing their general purpose"
+}

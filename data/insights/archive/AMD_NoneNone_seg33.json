@@ -1,0 +1,21 @@
+{
+  "ticker": "AMD",
+  "company": "Advanced Micro Devices",
+  "sector": "Tech",
+  "fiscal_year": null,
+  "fiscal_quarter": null,
+  "speaker": "ARCURI",
+  "doc_path": "data/raw/AMD_Transcript.pdf",
+  "segment_index": 33,
+  "kpis": {
+    "revenue_growth_yoy_pct": null,
+    "eps_growth_yoy_pct": null,
+    "guidance_comment": null,
+    "margin_comment": null
+  },
+  "sentiment": {
+    "polarity": 0.1610208071498394,
+    "subjectivity": 0.41775357259228224
+  },
+  "text_preview": "maybe some anecdotes of how this has influenced your position in the market with other customers? Are you\n\nengaged with customers that you wouldn't have been engaged with if you hadn't done this deal?\n\nThat's the first part of the question. And then the second part relates to a prior question, which is that it looks like\n\nthey could be something like half of your data center GPU revenue in the 2027, 2028 frame. So how much risk in\n\nyour mind is there around that single customer for you?\n\n\fLISA  SU:\n\nSure, Tim. So let me say a couple of things. First of all, the OpenAI deal has been in the works for quite some\n\ntime. We're happy to be able to talk about it broadly, and also talk about the scale of the deployment and the\n\nscale of the engagement being multi-year, multi gigawatt. I think all those things were very positive.\n\nWe've had a number of other engagements as well. I think over the last-- if you were asked to ask specifically\n\nover the last month, I would say that it's been a number of factors. I think the OpenAI deal was one of them. I\n\nthink having-- being able to show the Helios rack in full force at open compute was also a very important\n\nmilestone, because people could see the engineering and the capabilities of the Helios rack. And if you're asking\n\nwhether we've seen a increase of interest or an acceleration of interest, I think the answer is yes.\n\nI think customers are broadly engaged and perhaps broadly engaged at a higher scale, which is a good thing.\n\nAnd then from the standpoint of customer concentration, I think a very key foundation for us in this business is to\n\nhave a broad set of customers. We've always been engaged with a number of customers. I think we're\n\ndimensioning the supply chain in such a way that we would have ample supply to have multiple customers at\n\nsimilar scale as we go into the '27-'28 time frame. And that's certainly the goal."
+}

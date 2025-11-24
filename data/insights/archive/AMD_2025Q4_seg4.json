@@ -1,0 +1,21 @@
+{
+  "ticker": "AMD",
+  "company": "Advanced Micro Devices",
+  "sector": "Tech",
+  "fiscal_year": "2025",
+  "fiscal_quarter": "Q4",
+  "speaker": "JEAN  HU",
+  "doc_path": "data/raw/AMD_2025Q4_Transcript.pdf",
+  "segment_index": 4,
+  "kpis": {
+    "revenue_growth_yoy_pct": 20,
+    "eps_growth_yoy_pct": null,
+    "guidance_comment": "guidance mentioned",
+    "margin_comment": "margin commentary present"
+  },
+  "sentiment": {
+    "polarity": 0.08264384920634921,
+    "subjectivity": 0.37863591269841285
+  },
+  "text_preview": "Thank you, Lisa. And good afternoon, everyone. I'll start with a review of our financial results, and then provide\n\nour outlook for the fourth quarter of fiscal 2025. We're pleased with our strong third quarter financial results. We\n\ndelivered record revenue of $9.2 billion, up 36% year over year, exceeding the high-end of our guidance,\n\nreflecting strong momentum across our business.\n\nOur third quarter results do not include any revenue from shipments of the MI308 GPU products to China.\n\nRevenue increased 20% sequentially, driven by strong growth in the data center and client and gaming segment\n\nand modest growth in the embedded segment. Gross margin was 54% up 40 basis points year over year,\n\nprimarily driven by product mix.\n\nOperating expenses were approximately $2.8 billion, an increase of 42% year over year as we continue to invest\n\naggressively in R&D to capitalize on significant AI opportunities and go to market activities for revenue growth.\n\nOperating income was $2.2 billion, representing a 24% operating margin, taxes, interest expense, and other\n\ntotaled $273 million. For the third quarter of 2025, diluted earnings per share were $1.20 compared to $0.92 a\n\nyear ago, an increase of 30% year over year.\n\nNow, turning to our reportable segments, starting with the data center. Data center segment revenue was a\n\nrecord of $4.3 billion, up 22% year over year, primarily driven by the strong demand for fifth generation EPYC\n\nprocessors and Instinct MI350 series GPUs. On a sequential basis, data center revenue increased 34% primarily\n\ndriven by strong ramp of our AMD Instinct MI350 series GPUs.\n\n\fThe data center segment operating income was $1.1 billion, or 25% of revenue, compared to $1 billion a year\n\nago, or 29% of revenue, driven by higher revenue, partially offset by higher R&D investment, to capitalize on\n\nsignificant AI opportunities. Client and gaming segment revenue was a record of $4 billion, up 73% year over\n\nyear and 12% sequentially, driven by strong de"
+}

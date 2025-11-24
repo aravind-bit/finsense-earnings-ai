@@ -1,0 +1,21 @@
+{
+  "ticker": "WBD",
+  "company": "Warner Bros. Discovery",
+  "sector": "Media",
+  "fiscal_year": "2025",
+  "fiscal_quarter": "Q4",
+  "speaker": "CSR PILLAR",
+  "doc_path": "data/raw/WBD_2025Q4_2023_Sustainability_Report.pdf",
+  "segment_index": 3,
+  "kpis": {
+    "revenue_growth_yoy_pct": null,
+    "eps_growth_yoy_pct": null,
+    "guidance_comment": "guidance mentioned",
+    "margin_comment": null
+  },
+  "sentiment": {
+    "polarity": 0.07898211984631745,
+    "subjectivity": 0.3691108468577604
+  },
+  "text_preview": "HELPING VULNERABLE COMMUNITIES\n\nWBD is committed to building a brighter future for vulnerable communities with the greatest needs. Areas of focus and examples of\n\nimpact include:\n\nHunger: Through our partner Share Our Strength\u2019s No Kid\nHungry campaign, we helped provide meals to children living\n\nCNN Impact Your World: \u201cImpact Your World\u201d is a CNN\nmultiplatform initiative that provides the audience opportunities to\n\nwith hunger through brand campaigns with WBD content,\n\naid communities around the world. In times of tragedy and\n\nincluding Shazam! Fury of the Gods, The Match, Rock the Block,\n\ntrauma, people want to help, and CNN\u2019s \u201cImpact Your World\u201d is a\n\nBrother vs. Brother, and The Jennifer Hudson Show. Over the\n\ntrusted outlet providing ways to take positive action through\n\ncourse of our five-year support of No Kid Hungry, more than\n\ndonations or volunteering with vetted charities. The initiative also\n\ntwo billion nutritious meals have been delivered to children in\n\nfeatures ordinary people and celebrities who are rolling up their\n\ncommunities across the U.S.\n\nsleeves and making a difference for causes close to their hearts.\n\nMental Health: We launched a centralized mental health hub,\n\nWhere to Turn\n\n, to support relevant WBD network and platform\n\nEmergency Response Campaigns: We supported communities\nin need following natural disasters in Turkey, Syria, and Hawaii\n\ncontent while providing viewers with resources to use if they are\n\nby providing funding to and amplifying donation campaigns for\n\nexperiencing mental health difficulties, self-harm, domestic\n\nour nonprofit partners, including Save the Children and\n\nviolence, substance abuse, or bullying.\n\nInternational Rescue Committee.\n\nTHE A TALKS\n\n31\n\n2023 Sustainability Report\fCSR PILLAR: CREATING CAREER PATHWAYS\n\nAt WBD, we provide essential-skills training, education, and job opportunities to build career\n\npathways into the entertainment industry for people of all backgrounds.\n\nWBD Access to Action: This program\np"
+}

@@ -169,7 +169,7 @@ def main():
             )
 
     # ----- CFO text preview -----
-    with st.expander("📄 Show CFO prepared remarks (preview)", expanded=False):
+    with st.expander("Show CFO prepared remarks (preview)", expanded=False):
         raw_text = meta.get("raw_text") or selected_pack.get("text")
         if raw_text:
             st.text_area("Preview", raw_text[:4000], height=220)
@@ -182,7 +182,7 @@ def main():
     st.markdown("---")
 
     # ----- Q&A section -----
-    st.markdown("### 💬 Ask FinSense about this quarter")
+    st.markdown("### Ask FinSense about this quarter")
     with st.expander("Example questions", expanded=False):
         st.markdown(
             """

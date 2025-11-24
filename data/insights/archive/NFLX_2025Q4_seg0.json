@@ -1,0 +1,21 @@
+{
+  "ticker": "NFLX",
+  "company": "Netflix",
+  "sector": "Media",
+  "fiscal_year": "2025",
+  "fiscal_quarter": "Q4",
+  "speaker": "FULL_TEXT",
+  "doc_path": "data/raw/NFLX_2025Q4_Content_Accounting_Overview.pdf",
+  "segment_index": 0,
+  "kpis": {
+    "revenue_growth_yoy_pct": null,
+    "eps_growth_yoy_pct": null,
+    "guidance_comment": "guidance mentioned",
+    "margin_comment": null
+  },
+  "sentiment": {
+    "polarity": 0.06806118326118328,
+    "subjectivity": 0.3820331890331889
+  },
+  "text_preview": "Overview of\nContent Accounting\n\nInvestor Relations\nMay 2025\n\n1\n\n\fDisclosure\n\nThis presentation is intended to provide additional information to investors on certain\naccounting matters. This information should be considered in addition to, not as a\nsubstitute for or superior to the disclosure contained in our \ufb01lings with the Securities\nand Exchange Commission. You should read this discussion in conjunction with the\ncondensed consolidated \ufb01nancial statements and the notes thereto included  in our\nQuarterly Reports on Form 10-Q and our Annual Reports on Form 10-K.\n\n2\n\n\fContents.\n\n\u25cf Overview\n\u25cf ASC 920: Entertainment - Broadcasters and\n\nASC 926: Entertainment - Films\n\n\u25cf Financial Statements\n\u25cf Impact on Cash Flow\n\u25cf Frequently Asked Questions\n\n3\n\n\fOverview.\n\n4\n\n\fContent accounting standards.\n\nWe use two accounting standards for our content costs. Since we launched streaming in 2007, we\nhave used the guidance of ASC 920: Entertainment - Broadcasters because we started the\nstreaming service with content that we license (rather than own).\n\n\u25cf We license both Net\ufb02ix originals (such as Wednesday and Emily in Paris) as well as 2nd run\n\ntitles, such as Shameless and The Blacklist\n\nIn 2016, we also began applying the guidance of ASC 926: Entertainment - Films for the original\ncontent that we produce and where we own the intellectual property.\n\n\u25cf We believe the bene\ufb01ts of self-producing content include lower costs (no studio\n\nmiddle-man), ownership of the intellectual property, which allows us to potentially monetize\nin di\ufb00erent ways (e.g., licensing & merchandising) and greater rights \ufb02exibility (global rights,\nexclusivity)\n\nIn 2019, we adopted the update (ASU 2019-2) to accounting standards ASC 920 and 926. There\nwas no material impact as our accounting policies were already consistent with the new rules.\n\n5\n\n\fExamples.\n\nNet\ufb02ix Originals (Branded)\n\n2nd Run movies &\nTV shows\n\nType of content\n\nOwned\n\nLicensed\n\nLicensed\n\nExamples\n\nStranger Things, Squid\nGame, Bridgerton, Fool\nMe Once"
+}

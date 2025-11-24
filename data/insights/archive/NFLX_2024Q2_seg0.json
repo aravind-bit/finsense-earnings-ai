@@ -1,0 +1,21 @@
+{
+  "ticker": "NFLX",
+  "company": "Netflix",
+  "sector": "Media",
+  "fiscal_year": "2024",
+  "fiscal_quarter": "Q2",
+  "speaker": "FULL_TEXT",
+  "doc_path": "data/raw/NFLX_2024Q2_SAMPLE_REMARKS.txt",
+  "segment_index": 0,
+  "kpis": {
+    "revenue_growth_yoy_pct": 12,
+    "eps_growth_yoy_pct": null,
+    "guidance_comment": "guidance mentioned",
+    "margin_comment": "margin commentary present"
+  },
+  "sentiment": {
+    "polarity": 0.1355050505050505,
+    "subjectivity": 0.4824242424242424
+  },
+  "text_preview": "Prepared Remarks \u2013 CFO\n\nRevenue grew 12% year-over-year, driven by steady subscriber growth and higher ARPU.\nOperating margin expanded 150 basis points as content amortization normalized.\nContent spend grew modestly, but we remain focused on disciplined returns on new titles.\nWe are raising full-year revenue guidance to low-teens growth and expect operating margin\nto land at the high end of our prior range."
+}

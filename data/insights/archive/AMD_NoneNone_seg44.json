@@ -1,0 +1,21 @@
+{
+  "ticker": "AMD",
+  "company": "Advanced Micro Devices",
+  "sector": "Tech",
+  "fiscal_year": null,
+  "fiscal_quarter": null,
+  "speaker": "JOE  MOORE",
+  "doc_path": "data/raw/AMD_Transcript.pdf",
+  "segment_index": 44,
+  "kpis": {
+    "revenue_growth_yoy_pct": null,
+    "eps_growth_yoy_pct": null,
+    "guidance_comment": null,
+    "margin_comment": null
+  },
+  "sentiment": {
+    "polarity": 0.3416666666666666,
+    "subjectivity": 0.4921296296296296
+  },
+  "text_preview": "Great. Thank you. You mentioned MI308. I guess, what's your posture there, to the extent that if there is some\n\nrelief that you're able to ship, do you have readiness to do that? Can you give us a sense for how much of a\n\nswing factor that could be?\n\n\fLISA  SU:\n\nSure, Joe. So, look, it's still a pretty dynamic situation with MI308. So that's the reason that we did not include any\n\nMI308 revenue in the Q4 guide. We have received some licenses for MI308. So we're appreciative of the\n\nadministration supporting some licenses for MI308. We're still working with our customers on the demand\n\nenvironment and what the overall opportunity is. And so, we'll be able to update that more in the next couple of\n\nmonths."
+}

@@ -1,0 +1,2 @@
+doc_path,company_hint,fiscal_year,fiscal_quarter,ingest_date,segment_index,speaker,section,text,source,revenue_growth_yoy_pct,eps_growth_yoy_pct,guidance_comment,margin_comment
+data/raw/SAMPLE_2024Q2.txt,SAMPLE 2024Q2,2024,Q2,2025-11-23,1,CFO,prepared_remarks,Revenue grew 10% year-over-year.,manual_drop,10,,,

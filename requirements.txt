@@ -10,13 +10,13 @@ pdfminer.six==20240706
 beautifulsoup4==4.12.3
 
 # nlp (used later)
-transformers==4.44.2
-torch==2.2.2
-tokenizers==0.19.1
+# transformers==4.44.2
+# torch==2.2.2
+# tokenizers==0.19.1
 
 # viz (for quick previews)
 matplotlib==3.9.2
 plotly==5.24.1
 
 # parquet engine
-pyarrow==16.1.0
+# pyarrow==16.1.0

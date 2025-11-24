@@ -1,0 +1,21 @@
+{
+  "ticker": "AMD",
+  "company": "Advanced Micro Devices",
+  "sector": "Tech",
+  "fiscal_year": "2025",
+  "fiscal_quarter": "Q4",
+  "speaker": "LISA  SU",
+  "doc_path": "data/raw/AMD_2025Q4_Transcript.pdf",
+  "segment_index": 11,
+  "kpis": {
+    "revenue_growth_yoy_pct": null,
+    "eps_growth_yoy_pct": null,
+    "guidance_comment": null,
+    "margin_comment": null
+  },
+  "sentiment": {
+    "polarity": 0.21495140913508262,
+    "subjectivity": 0.4418294460641399
+  },
+  "text_preview": "Yeah, sure. Tom, thanks for the question. There's a lot of excitement around MI450 in Helios. I think the OCP\n\nreception was phenomenal. We had numerous customers and frankly, bringing their engineering teams to\n\nunderstand more about the system, more about how it's built.\n\nThere's always been some discussion about just how complex these Rack Scale systems are, and they certainly\n\nare. And we are very proud of the Helios design. I think it has all of the features, functions, reliability,\n\nperformance, power performance, that you would expect. I think the interest in MI450 and Helios has just\n\nexpanded over the last number of weeks, certainly with some of the announcements that we've made with\n\nOpenAI and OCI, as well as the OCP show with Meta.\n\nI think, overall, from our perspective, I think things are going, really well in both the development as well as the\n\ncustomer engagement there. So in terms of Rack Scale Solutions, we would expect that the early customers for\n\nMI450 will really be around the rack scale solutions. We will have other form factors as well for the MI450 series,\n\nbut there's a lot of interest in the full Rack Scale Solution.\n\nTHOMAS\n\nSuper helpful. And then as my follow up, it's a broader question as well and similar to what Vivek asked. But if\n\nO'MALLEY:\n\nyou look at the power requirements that are out there for some of the early announcements into next year,\n\nthey're pretty substantial. And then you also have component issues that you're seeing across interconnected\n\nmemory.\n\nJust from your perspective as an industry leader, where do you think that the constraint will be? Will it come first\n\nwith components not being available, or do you think that both data center footprint in terms of infrastructure\n\nand/or power, is the gating factor to some of these deployments into next year, just as we really see some larger\n\nnumbers start to get deployed? Thank you.\n\n\fLISA  SU:\n\nYeah, sure, Tom. I think what you're pointing out is what we, as an industry"
+}

@@ -135,7 +135,7 @@ def run(input_dir: str | None, output_path: str | None):
         return
 
     df = pd.DataFrame(all_records)
-    df.to_parquet(out_path, index=False)
+    df.to_csv(out_path, index=False)
     logging.info("Wrote %d rows to %s", len(df), out_path)
 
 if __name__ == "__main__":

@@ -1,0 +1,21 @@
+{
+  "ticker": "AMD",
+  "company": "Advanced Micro Devices",
+  "sector": "Tech",
+  "fiscal_year": null,
+  "fiscal_quarter": null,
+  "speaker": "LISA  SU",
+  "doc_path": "data/raw/AMD_Transcript.pdf",
+  "segment_index": 54,
+  "kpis": {
+    "revenue_growth_yoy_pct": null,
+    "eps_growth_yoy_pct": null,
+    "guidance_comment": null,
+    "margin_comment": null
+  },
+  "sentiment": {
+    "polarity": 0.3052631578947369,
+    "subjectivity": 0.6191520467836258
+  },
+  "text_preview": "Sure, Ross. So I would say it was a unique agreement from the standpoint that, unique time in AI, what we\n\nwanted, what we prioritized was really deep partnership and multiyear, multi-generation significant scale. And I\n\nthink we got that. We got a structure that has extremely aligned incentives. Everybody wins. We win, OpenAI\n\nwins, and our shareholder win, sort of benefits from this. And all of that accrues to the overall roadmap.\n\nI think as we look forward-- I think we have a lot of very interesting partnerships that are developing, whether\n\nthey're with the largest AI users, or you think about sovereign AI opportunities. And we look at each one of these\n\nas a unique opportunity where we're bringing the whole of AMD, both technically as well as all the rest of our\n\ncapabilities, to the parties. So I would say OpenAI was pretty unique, but I would imagine that there are lots of\n\nother opportunities, for us to bring our capabilities into the ecosystem and participate in a significant way."
+}

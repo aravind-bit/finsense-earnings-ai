@@ -1,0 +1,21 @@
+{
+  "ticker": "AMD",
+  "company": "Advanced Micro Devices",
+  "sector": "Tech",
+  "fiscal_year": null,
+  "fiscal_quarter": null,
+  "speaker": "LISA  SU",
+  "doc_path": "data/raw/AMD_Transcript.pdf",
+  "segment_index": 22,
+  "kpis": {
+    "revenue_growth_yoy_pct": null,
+    "eps_growth_yoy_pct": null,
+    "guidance_comment": null,
+    "margin_comment": null
+  },
+  "sentiment": {
+    "polarity": 0.2609577922077922,
+    "subjectivity": 0.5457611832611833
+  },
+  "text_preview": "Sure, CJ. And we'll certainly address this topic in more detail at our analyst day next week. But let me give you\n\nsome maybe higher level points. Look, I think we're really excited about our roadmap. I think we have seen great\n\ntraction amongst the largest customers.\n\nThe OpenAI relationship is extremely important to us, and it's great to be able to talk at the multi-gigawatt scale\n\nbecause I think that really is what we believe we can deliver to the marketplace. But there are numerous other\n\ncustomers that we're in deep engagements with. We talked about OCI. We also announced a couple of systems\n\nwith the Department of Energy that are significant systems. And, we have many other engagements.\n\n\fSo the way you should think about it is, there are multiple customers that we would expect to have, let's call it,\n\nvery significant scale in the MI450 generation. And that's the breadth of the customer engagements that we've\n\nbuilt. And it's also how we're dimensioning the supply chain to ensure that we can supply certainly our OpenAI\n\npartnership, as well as the numerous other partnerships that are well underway."
+}

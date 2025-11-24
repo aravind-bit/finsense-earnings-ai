@@ -1,0 +1,21 @@
+{
+  "ticker": "WBD",
+  "company": "Warner Bros. Discovery",
+  "sector": "Media",
+  "fiscal_year": null,
+  "fiscal_quarter": null,
+  "speaker": "PREFACE",
+  "doc_path": "data/raw/WBD_2023 Sustainability Report.pdf",
+  "segment_index": 0,
+  "kpis": {
+    "revenue_growth_yoy_pct": null,
+    "eps_growth_yoy_pct": null,
+    "guidance_comment": null,
+    "margin_comment": null
+  },
+  "sentiment": {
+    "polarity": 0.1667494037729025,
+    "subjectivity": 0.3771648825499998
+  },
+  "text_preview": "Contents\n\n3 A Message From Our CEO\n\n10 Our People\n\nTalent Recruitment\n\n44 Governance\n\nCorporate Governance\n\n4 About Warner Bros.\n\nDiscovery\n\nWarner Bros. Discovery\n\nat a Glance\n\nOur Guiding Principles\n\n6 Our Approach to\n\nSustainability\n\nIdentifying Environmental,\n\nSocial, and Governance (ESG)\n\nPriorities\n\nAbout This Report\n\nESG Governance\n\nAwards and Recognitions\n\n2023 Sustainability\n\nReport Highlights\n\nCompensation and Benefits\n\nEthics and Integrity\n\nAnti-Bribery and\n\nAnti-Corruption\n\nEthics Hotline\n\nSupplier Diversity\n\nData Privacy and Cybersecurity\n\nPolitical Spending and\n\nEngagement in Public\n\nPolicy Matters\n\nResponsible Content\n\n58 Appendix\n\nSustainability Accounting\n\nStandards Board (SASB) Index\n\nTask Force on Climate-Related\n\nFinancial Disclosures Index\n\nGreenhouse Gas Emissions\n\nCalculation Methodology\n\nEmployee Development\n\nEngagement and Retention\n\nLabor Relations\n\nProtecting Human Rights\n\nWorkforce Health, Safety,\n\nand Wellness\n\nPromoting a Respectful\n\nWorkplace\n\nDiversity, Equity, & Inclusion\n\n28 Our Community\n\nUsing Our Platform to Further\n\nPhilanthropic Impact\n\nCorporate Social Responsibility\n\n(CSR) Pillars\n\n35 Our Planet\n\nEnvironmental Management\n\nClimate Action\n\nSustainable Workplaces\n\nSustainable Productions\n\n2\n0\n2\n3\nS\nu\ns\nt\na\nn\na\nb\n\ni\n\ni\nl\ni\nt\ny\nR\ne\np\no\nr\nt\n\n2\n\nHACKS\n\n\fA Message From Our CEO\n\nDear Stakeholders,\n\nAt Warner Bros. Discovery (WBD), we are committed to\n\nAt WBD, we prioritize efforts to minimize environmental\n\ntelling stories that reflect the full range of human\n\nimpacts across our workplace and productions, including\n\nexperiences while shaping our culture in a meaningful way.\n\nlowering our greenhouse gas (GHG) emissions and\n\nWe are pleased to deliver our Company\u2019s inaugural\n\nincreasing energy efficiency. In pursuit of these goals, we\n\nSustainability Report, which details how we honor this\n\nestablished the greenhouse gas emissions inventory for\n\ncommitment responsibly.\n\nScope 1 and 2 and five material Scope 3 categories, which\n\nThrough o"
+}

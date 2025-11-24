@@ -1,0 +1,21 @@
+{
+  "ticker": "AMD",
+  "company": "Advanced Micro Devices",
+  "sector": "Tech",
+  "fiscal_year": null,
+  "fiscal_quarter": null,
+  "speaker": "JOHN",
+  "doc_path": "data/raw/AMD_Transcript.pdf",
+  "segment_index": 55,
+  "kpis": {
+    "revenue_growth_yoy_pct": null,
+    "eps_growth_yoy_pct": null,
+    "guidance_comment": null,
+    "margin_comment": null
+  },
+  "sentiment": {
+    "polarity": 0.0,
+    "subjectivity": 0.0
+  },
+  "text_preview": "And ladies and gentlemen, that does conclude the question and answer session. And that also concludes today's\n\nteleconference. We thank you for your participation. You may disconnect your lines at this time."
+}
