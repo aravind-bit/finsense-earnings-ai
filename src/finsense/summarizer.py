@@ -1,28 +1,33 @@
+# src/finsense/summarizer.py
+
 import os
 import json
 import time
 from pathlib import Path
-from typing import Dict, Any, Iterable
+from typing import Any, Dict, Iterable, Tuple
 
 import pandas as pd
 from openai import OpenAI
-from openai import RateLimitError, APIError, APIStatusError
 
-# ---------- PATHS ----------
+# -------- Paths --------
+
 ROOT = Path(__file__).resolve().parents[2]
 DATA_DIR = ROOT / "data"
 PROCESSED_DIR = DATA_DIR / "processed"
 SUMMARIES_DIR = DATA_DIR / "summaries"
-SUMMARIES_DIR.mkdir(parents=True, exist_ok=True)
+
+# Use the lighter 4o-mini model
+MODEL_NAME = "gpt-4o-mini"
 
 
-# ---------- OPENAI CLIENT ----------
+# -------- OpenAI client --------
+
 def _load_client() -> OpenAI:
     api_key = os.getenv("OPENAI_API_KEY")
     if not api_key:
         raise RuntimeError(
-            "OPENAI_API_KEY environment variable is not set.\n"
-            "Run: export OPENAI_API_KEY='your_key_here'"
+            "OPENAI_API_KEY environment variable is not set. "
+            "Export it in your shell before running the summarizer."
         )
     return OpenAI(api_key=api_key)
 
@@ -30,162 +35,209 @@ def _load_client() -> OpenAI:
 client = _load_client()
 
 
-# ---------- UTILS ----------
+# -------- Helpers --------
+
 def infer_ticker(doc_path: Any, company_hint: Any) -> str:
     """
-    Derive a ticker from doc_path (preferred) or fallback to company_hint.
-    Keeps summarizer functional even if transcripts.csv lacks a ticker column.
+    Derive a ticker symbol from the file name first, then fall back to company_hint.
+    This keeps us robust even if 'ticker' is missing in transcripts.csv.
     """
     ticker = ""
 
-    # Try from filename: ADBE_2024Q2_Remarks.txt
-    if isinstance(doc_path, str):
-        name = Path(doc_path).name.split(".")[0]
-        if "_" in name:
-            cand = name.split("_")[0].upper()
-            if cand.isalpha() and 2 <= len(cand) <= 6:
-                ticker = cand
+    # Try to pull from file name, e.g. 'AMD_2025Q4_Transcript.pdf'
+    if isinstance(doc_path, str) and doc_path:
+        name = Path(doc_path).name
+        base = name.split(".")[0]
+        if "_" in base:
+            candidate = base.split("_")[0].upper()
+            if candidate.isalpha() and 2 <= len(candidate) <= 6:
+                ticker = candidate
 
     # Fallback: first token of company_hint
-    if not ticker and isinstance(company_hint, str):
-        cand = company_hint.split()[0].upper()
-        if cand.isalpha() and 2 <= len(cand) <= 8:
-            ticker = cand
+    if not ticker and isinstance(company_hint, str) and company_hint:
+        candidate = company_hint.split()[0].upper()
+        if 2 <= len(candidate) <= 8:
+            ticker = candidate
 
     return ticker or "UNKNOWN"
 
 
-def build_prompt(ticker: str, year: int, quarter: str, text: str) -> str:
+def build_quarter_prompt(
+    ticker: str, fiscal_year: int, fiscal_quarter: str, text_block: str
+) -> str:
     """
-    Prompt for mini-LLM summary.
+    Build the user prompt we send to the LLM for each (ticker, year, quarter).
     """
     return f"""
 You are an equities / credit analyst.
 
-Summarise this quarter in 3–6 sentences for a portfolio manager.
+Summarise the earnings story for this quarter as if explaining to a portfolio manager.
 Company: {ticker}
-Period: {year} {quarter}
+Period: {fiscal_year} {fiscal_quarter}
 
-Source text (prepared remarks + relevant segments):
+The following text combines selected prepared remarks and context from the quarter:
 ---
-{text[:15000]}
+{text_block[:15000]}
 ---
 
-Focus on:
-- revenue / margin / EPS trends
-- guidance direction
-- risks or watchpoints
-- tone shifts or major themes
+Write a concise summary (3–6 sentences) focused on:
+- Top-line and bottom-line trends (growth, margins, EPS if mentioned)
+- Any explicit guidance changes or tone shift
+- Risks / watchpoints the PM should keep in mind.
 
-Avoid hype. Be factual and neutral.
-"""
+Avoid hype. Be factual and neutral in tone.
+""".strip()
 
 
-def _safe_chat_completion(prompt: str, max_retries: int = 3, base_delay: float = 10.0) -> str:
+def call_model_with_retries(prompt: str, max_retries: int = 3) -> str:
     """
-    Call OpenAI with simple exponential backoff on rate limits / transient API errors.
+    Call the chat model with simple retry logic for rate-limit errors.
+    Returns the summary text.
     """
-    attempt = 0
-    while True:
+    for attempt in range(1, max_retries + 1):
         try:
             resp = client.chat.completions.create(
-                model="gpt-4o-mini",
+                model=MODEL_NAME,
                 messages=[
                     {
                         "role": "system",
                         "content": (
                             "You are a concise but thorough buy-side analyst. "
-                            "Your summaries must be factual and investment-grade."
+                            "Summaries must be neutral, factual, and directly useful "
+                            "for an investment committee or credit committee."
                         ),
                     },
                     {"role": "user", "content": prompt},
                 ],
                 temperature=0.2,
             )
-            return resp.choices[0].message.content.strip()
-        except (RateLimitError, APIError, APIStatusError) as e:
-            attempt += 1
-            if attempt > max_retries:
-                raise RuntimeError(f"Giving up after {max_retries} retries: {e}") from e
-            delay = base_delay * (2 ** (attempt - 1))
-            print(f"  -> Rate / API limit hit (attempt {attempt}/{max_retries}). Sleeping {delay:.0f}s...")
-            time.sleep(delay)
+            return (resp.choices[0].message.content or "").strip()
+
+        except Exception as e:  # pragma: no cover - simple defensive logic
+            msg = str(e)
+            if "rate limit" in msg.lower() or "429" in msg:
+                if attempt < max_retries:
+                    sleep_s = 10 * attempt
+                    print(
+                        f"  -> Rate / API limit hit (attempt {attempt}/{max_retries}). "
+                        f"Sleeping {sleep_s}s..."
+                    )
+                    time.sleep(sleep_s)
+                    continue
+            # Any other error or final failure
+            raise
+
+    # Should never reach here
+    raise RuntimeError("Unexpected error in call_model_with_retries")
 
 
-def summarise_quarter(ticker: str, year: int, quarter: str, text_block: str) -> str:
+def summarise_quarter(
+    ticker: str, fiscal_year: int, fiscal_quarter: str, text_block: str
+) -> str:
     """
-    Summarise one quarter for one ticker.
+    High-level wrapper: build prompt, call model, return summary.
     """
-    prompt = build_prompt(ticker, year, quarter, text_block)
-    return _safe_chat_completion(prompt)
+    prompt = build_quarter_prompt(ticker, fiscal_year, fiscal_quarter, text_block)
+    return call_model_with_retries(prompt)
 
 
-def _iter_groups(df: pd.DataFrame) -> Iterable:
+def iter_groups(df: pd.DataFrame) -> Iterable[Tuple[str, int, str, pd.DataFrame]]:
     """
-    Convenience generator to iterate through grouped quarters.
+    Yield (ticker, year, quarter, group_df) tuples, with types normalised.
     """
-    return df.groupby(["ticker", "fiscal_year", "fiscal_quarter"], dropna=False)
+    groups = df.groupby(["ticker", "fiscal_year", "fiscal_quarter"], dropna=False)
+    for (ticker, year, quarter), g in groups:
+        if not isinstance(ticker, str):
+            ticker = str(ticker)
+        if pd.isna(year):
+            continue
+        year_int = int(year)
+        quarter_str = str(quarter)
+        yield ticker, year_int, quarter_str, g
 
 
-# ---------- MAIN PIPELINE ----------
-def main():
+def safe(val):
+    """
+    Convert numpy/pandas types into plain Python types so json.dumps never explodes.
+    """
+    import numpy as np
+
+    if isinstance(val, (np.integer,)):
+        return int(val)
+    if isinstance(val, (np.floating,)):
+        return float(val)
+    if isinstance(val, (np.ndarray,)):
+        return val.tolist()
+    return val
+
+
+# -------- Main pipeline --------
+
+def main() -> None:
+    # 1) Load transcripts
     csv_path = PROCESSED_DIR / "transcripts.csv"
     print(f"Loading transcripts from: {csv_path}")
     df = pd.read_csv(csv_path)
 
-    # Ensure ticker exists
+    # 2) Ensure 'ticker' exists
     if "ticker" not in df.columns:
         df["ticker"] = df.apply(
             lambda r: infer_ticker(r.get("doc_path"), r.get("company_hint")),
             axis=1,
         )
 
-    # numeric fiscal year / quarter cleanup
+    # 3) Clean fiscal year / quarter and keep only prepared remarks
     df["fiscal_year"] = pd.to_numeric(df.get("fiscal_year"), errors="coerce")
     df = df.dropna(subset=["fiscal_year", "fiscal_quarter"])
     df["fiscal_year"] = df["fiscal_year"].astype(int)
 
-    # Keep only earnings prepared-remarks rows
-    df = df[df.get("section") == "prepared_remarks"]
+    if "section" in df.columns:
+        df = df[df["section"] == "prepared_remarks"]
 
     if df.empty:
-        print("No prepared_remarks with fiscal year/quarter. Nothing to summarise.")
+        print(
+            "No usable prepared_remarks rows with fiscal_year and fiscal_quarter. "
+            "Nothing to summarise."
+        )
         return
 
-    groups = _iter_groups(df)
+    SUMMARIES_DIR.mkdir(parents=True, exist_ok=True)
 
-    for (ticker, year, quarter), g in groups:
+    # 4) Loop over (ticker, year, quarter)
+    for ticker, year, quarter, g in iter_groups(df):
         if ticker == "UNKNOWN":
-            print(f"Skipping UNKNOWN ticker group {year} {quarter}")
+            # Skip junk/unmapped docs
             continue
 
-        out_path = SUMMARIES_DIR / f"{ticker}_{year}_{quarter}_summary.json"
-        if out_path.exists():
-            print(f"Skipping {ticker} {year} {quarter} (already summarised).")
-            continue
-
-        texts = [t for t in g["text"].astype(str).tolist() if t.strip()]
+        texts = [
+            str(t) for t in g.get("text", []) if isinstance(t, str) and t.strip()
+        ]
         if not texts:
-            print(f"Skipping {ticker} {year} {quarter} — no text.")
+            print(f"Skipping {ticker} {year} {quarter} – no text.")
             continue
 
         text_block = "\n\n---\n\n".join(texts)
         print(f"Summarising {ticker} {year} {quarter} ...")
 
         try:
-            summary = summarise_quarter(ticker, year, str(quarter), text_block)
+            summary_text = summarise_quarter(ticker, year, quarter, text_block)
         except Exception as e:
             print(f"  -> ERROR summarising {ticker} {year} {quarter}: {e}")
             continue
 
+        # Ensure everything in payload is JSON-serialisable (plain Python types)
         payload: Dict[str, Any] = {
-            "ticker": ticker,
-            "fiscal_year": year,
-            "fiscal_quarter": str(quarter),
-            "summary": summary,
+            "ticker": safe(ticker),
+            "fiscal_year": safe(year),
+            "fiscal_quarter": safe(quarter),
+            "summary": safe(summary_text),
         }
 
-        out_path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+        out_path = SUMMARIES_DIR / f"{ticker}_{year}_{quarter}_summary.json"
+        out_path.parent.mkdir(parents=True, exist_ok=True)
+        with out_path.open("w", encoding="utf-8") as f:
+            json.dump(payload, f, indent=2)
+
         print(f"  -> wrote {out_path}")
 
 
