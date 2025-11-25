@@ -453,41 +453,56 @@ def main():
 
     # ---------- Chat with FinSense ----------
 
-    st.subheader("Ask FinSense about this quarter")
-
     st.markdown(
-        "Use natural language questions like:\n"
-        "- *“What actually changed this quarter?”*\n"
-        "- *“Any signs of margin pressure or guidance cuts?”*\n"
-        "- *“How does management talk about AI / content / capex?”*"
+        """
+        <div style="
+            padding: 0.8rem 1rem; 
+            border-radius: 8px; 
+            background: #0f172a; 
+            border: 1px solid #1e293b;
+            box-shadow: 0 0 12px rgba(0, 255, 180, 0.15);
+        ">
+          <h4 style="margin: 0; color:#00e5ff; font-weight: 500;">
+            “What is the question, Neo?”
+          </h4>
+        </div>
+        """,
+        unsafe_allow_html=True,
     )
 
     session_key = f"chat_history_{selected_pack['_file_name']}"
     if session_key not in st.session_state:
         st.session_state[session_key] = []
-
-    # Render past chat
+    
+    # Render past messages
     for msg in st.session_state[session_key]:
         with st.chat_message(msg["role"]):
             st.markdown(msg["content"])
-
-    user_question = st.chat_input("Ask about this earnings set...")
-
-    if user_question:
-        # User message
+    
+    # Use a form + text_input instead of st.chat_input to avoid auto-scroll
+    with st.form("finsense_qa_form", clear_on_submit=True):
+        user_question = st.text_input(
+            "Ask about this quarter (growth, margins, guidance, risks)…",
+            key=f"qa_input_{selected_pack['_file_name']}",
+        )
+        submitted = st.form_submit_button("Ask FinsSense")
+    
+    if submitted and user_question.strip():
+        # Add user message
         st.session_state[session_key].append({"role": "user", "content": user_question})
         with st.chat_message("user"):
             st.markdown(user_question)
-
-        # FinSense answer
+    
         try:
             answer = ask_finsense(user_question, selected_pack)
         except Exception as e:
-            answer = f"Error while calling FinSense: `{e}`"
-
+            answer = f"Error while calling FinSense: {e}"
+    
+        # Add assistant message
         st.session_state[session_key].append({"role": "assistant", "content": answer})
         with st.chat_message("assistant"):
             st.markdown(answer)
+
 
 
 if __name__ == "__main__":
