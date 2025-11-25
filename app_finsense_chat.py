@@ -293,7 +293,7 @@ def load_insight_packs() -> List[Dict[str, Any]]:
 def main():
     st.set_page_config(
         page_title="FinSense — Earnings Intelligence Assistant",
-        page_icon="📊",
+        #page_icon="",
         layout="wide",
     )
     # 🔹 New: global CSS polish
