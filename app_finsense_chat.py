@@ -299,16 +299,9 @@ def main():
     # 🔹 New: global CSS polish
     inject_custom_css()
 
-    st.title("FinSense — Earnings Call Analyst")
-    st.caption(
-        "Prototype internal tool for PMs and credit analysts. "
-        "Pipeline: earnings PDFs → transcript ingestion → CFO KPI + sentiment extraction → "
-        "Q&A focused on this quarter."
-    )
 
     # 🔹 New: coverage / logo strip under the title
-    render_logo_strip()
-
+    
     # Top hero area
     st.markdown(
         """
@@ -324,10 +317,9 @@ def main():
         """,
         unsafe_allow_html=True,
     )
+    render_logo_strip()
 
-    st.caption(
-        "Prototype internal tool: ingestion → KPI extraction → AI snapshot → conversational Q&A."
-    )
+    
 
     packs = load_insight_packs()
     if not packs:
