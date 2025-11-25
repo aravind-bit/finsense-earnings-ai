@@ -1,51 +1,28 @@
-"""
-FinSense summarizer
-
-CLI helper to generate structured quarterly summaries using the OpenAI API.
-
-- Reads data/processed/transcripts.csv
-- For each (ticker, fiscal_year, fiscal_quarter) combo, pulls CFO prepared remarks
-  (or falls back to FULL_TEXT if needed)
-- Calls the LLM to generate a concise, analyst-style summary
-- Writes JSON files under data/summaries, e.g. NVDA_2024_Q2_summary.json
-
-Usage (from repo root, with .venv active):
-
-    export OPENAI_API_KEY="sk-..."   # or set this in your shell profile
-
-    # Summarize everything in the file
-    python -m src.finsense.summarizer
-
-    # Summarize a single quarter
-    python -m src.finsense.summarizer NVDA 2024 Q2
-"""
-
-from __future__ import annotations
-
-import json
 import os
-import sys
+import json
+import time
 from pathlib import Path
-from typing import Dict, List, Optional, Tuple
+from typing import Dict, Any, Iterable
 
 import pandas as pd
 from openai import OpenAI
+from openai import RateLimitError, APIError, APIStatusError
 
-# ---- Paths ----
-
+# ---------- PATHS ----------
 ROOT = Path(__file__).resolve().parents[2]
-TRANSCRIPTS_CSV = ROOT / "data" / "processed" / "transcripts.csv"
-OUT_DIR = ROOT / "data" / "summaries"
+DATA_DIR = ROOT / "data"
+PROCESSED_DIR = DATA_DIR / "processed"
+SUMMARIES_DIR = DATA_DIR / "summaries"
+SUMMARIES_DIR.mkdir(parents=True, exist_ok=True)
 
 
-# ---- OpenAI client loader ----
-
+# ---------- OPENAI CLIENT ----------
 def _load_client() -> OpenAI:
     api_key = os.getenv("OPENAI_API_KEY")
     if not api_key:
         raise RuntimeError(
-            "OPENAI_API_KEY environment variable is not set. "
-            "Set it before running the summarizer."
+            "OPENAI_API_KEY environment variable is not set.\n"
+            "Run: export OPENAI_API_KEY='your_key_here'"
         )
     return OpenAI(api_key=api_key)
 
@@ -53,255 +30,163 @@ def _load_client() -> OpenAI:
 client = _load_client()
 
 
-# ---- Core LLM call ----
-
-SYSTEM_PROMPT = """
-You are FinSense, a buy-side style earnings-call analyst.
-
-You receive:
-- basic metadata about an earnings set (ticker, company, quarter),
-- the CFO's prepared remarks text (or full text if needed).
-
-You must return a concise but useful summary for a portfolio manager.
-
-Formatting rules:
-- Use short paragraphs and bullet points.
-- Lead with 'Headline' (1–2 sentences on the quarter).
-- Then have sections:
-  - Growth & revenue drivers
-  - Margins / profitability
-  - Guidance & outlook
-  - Risks / watchpoints
-- Be specific and quantitative when numbers are present.
-- If information is missing (e.g., no guidance), say so explicitly.
-""".strip()
-
-
-def _call_summary_llm(payload: Dict) -> str:
+# ---------- UTILS ----------
+def infer_ticker(doc_path: Any, company_hint: Any) -> str:
     """
-    Call the OpenAI chat completion API to generate a summary.
-    `payload` is a small dict with metadata + text.
+    Derive a ticker from doc_path (preferred) or fallback to company_hint.
+    Keeps summarizer functional even if transcripts.csv lacks a ticker column.
     """
-    messages = [
-        {"role": "system", "content": SYSTEM_PROMPT},
-        {
-            "role": "user",
-            "content": (
-                "Here is the earnings context and CFO remarks. "
-                "Summarize this quarter following the format rules.\n\n"
-                f"METADATA:\n{json.dumps(payload['meta'], indent=2)}\n\n"
-                f"CFO / FULL TEXT (truncated):\n{payload['text']}"
-            ),
-        },
-    ]
+    ticker = ""
 
-    response = client.chat.completions.create(
-        model="gpt-4.1-mini",
-        messages=messages,
-        temperature=0.2,
-    )
+    # Try from filename: ADBE_2024Q2_Remarks.txt
+    if isinstance(doc_path, str):
+        name = Path(doc_path).name.split(".")[0]
+        if "_" in name:
+            cand = name.split("_")[0].upper()
+            if cand.isalpha() and 2 <= len(cand) <= 6:
+                ticker = cand
 
-    return response.choices[0].message.content.strip()
+    # Fallback: first token of company_hint
+    if not ticker and isinstance(company_hint, str):
+        cand = company_hint.split()[0].upper()
+        if cand.isalpha() and 2 <= len(cand) <= 8:
+            ticker = cand
+
+    return ticker or "UNKNOWN"
 
 
-# ---- Data helpers ----
-
-def _load_transcripts() -> pd.DataFrame:
-    if not TRANSCRIPTS_CSV.exists():
-        raise FileNotFoundError(f"Transcripts file not found: {TRANSCRIPTS_CSV}")
-
-    df = pd.read_csv(TRANSCRIPTS_CSV)
-    # Normalise column names a bit
-    for col in ["fiscal_year", "fiscal_quarter"]:
-        if col in df.columns:
-            # Allow for NaNs and non-int years
-            df[col] = df[col].astype("string")
-
-    return df
-
-
-def _select_cfo_text(
-    df: pd.DataFrame, ticker: str, year: str, quarter: str
-) -> Tuple[str, Dict]:
+def build_prompt(ticker: str, year: int, quarter: str, text: str) -> str:
     """
-    Given the full transcripts DataFrame and a (ticker, year, quarter),
-    pick the best CFO text segment and return (text, meta).
-
-    Preference order:
-    1. CFO + prepared_remarks
-    2. FULL_TEXT + prepared_remarks
-    3. Any prepared_remarks
-    4. As a last resort, the first segment for that ticker/quarter
+    Prompt for mini-LLM summary.
     """
-    mask_base = (
-        (df["fiscal_year"].astype("string") == year)
-        & (df["fiscal_quarter"].astype("string") == quarter)
-    )
+    return f"""
+You are an equities / credit analyst.
 
-    # Try multiple possible company/ticker columns
-    ticker_cols = [c for c in df.columns if c in ("ticker", "company_hint")]
-    if ticker_cols:
-        col = ticker_cols[0]
-        mask_base = mask_base & (df[col].str.upper().str.contains(ticker.upper(), na=False))
+Summarise this quarter in 3–6 sentences for a portfolio manager.
+Company: {ticker}
+Period: {year} {quarter}
 
-    candidates = df[mask_base].copy()
-    if candidates.empty:
-        raise ValueError(f"No rows found for {ticker} {year} {quarter}")
+Source text (prepared remarks + relevant segments):
+---
+{text[:15000]}
+---
 
-    def _pick(mask_extra):
-        sub = candidates[mask_extra]
-        if not sub.empty:
-            return sub
+Focus on:
+- revenue / margin / EPS trends
+- guidance direction
+- risks or watchpoints
+- tone shifts or major themes
 
-    # 1) CFO prepared remarks
-    cfo_prepared = _pick(
-        (candidates["speaker"].str.upper() == "CFO")
-        & (candidates["section"] == "prepared_remarks")
-    )
-    if cfo_prepared is not None:
-        chosen = cfo_prepared
-    else:
-        # 2) FULL_TEXT prepared remarks
-        full_prepared = _pick(candidates["section"] == "prepared_remarks")
-        if full_prepared is not None:
-            chosen = full_prepared
-        else:
-            # 3) any prepared remarks
-            any_prepared = _pick(candidates["section"] == "prepared_remarks")
-            if any_prepared is not None:
-                chosen = any_prepared
-            else:
-                # 4) fallback: first few rows
-                chosen = candidates.sort_values("segment_index").head(3)
-
-    # Concatenate text segments in order
-    chosen = chosen.sort_values("segment_index")
-    full_text = "\n\n".join(chosen["text"].astype(str).tolist())
-
-    # Truncate to keep token usage manageable
-    MAX_CHARS = 5000
-    if len(full_text) > MAX_CHARS:
-        full_text = full_text[:MAX_CHARS] + "\n\n[Truncated for length…]"
-
-    # Build meta for the LLM and for the JSON output
-    meta = {
-        "ticker": ticker,
-        "company_hint": chosen["company_hint"].iloc[0]
-        if "company_hint" in chosen.columns
-        else ticker,
-        "fiscal_year": year,
-        "fiscal_quarter": quarter,
-        "speaker": "CFO (preferred, with fallbacks)",
-        "segment_count": int(chosen.shape[0]),
-        "source_docs": sorted(chosen["doc_path"].astype(str).unique().tolist())
-        if "doc_path" in chosen.columns
-        else [],
-    }
-
-    return full_text, meta
+Avoid hype. Be factual and neutral.
+"""
 
 
-# ---- Public API ----
-
-def summarize_quarter(ticker: str, year: str, quarter: str) -> Dict:
+def _safe_chat_completion(prompt: str, max_retries: int = 3, base_delay: float = 10.0) -> str:
     """
-    Summarize a single (ticker, year, quarter) into a JSON-ready dict.
+    Call OpenAI with simple exponential backoff on rate limits / transient API errors.
     """
-    df = _load_transcripts()
-    text, meta = _select_cfo_text(df, ticker, year, quarter)
-
-    payload = {"meta": meta, "text": text}
-    summary_text = _call_summary_llm(payload)
-
-    result = {
-        "ticker": ticker,
-        "fiscal_year": year,
-        "fiscal_quarter": quarter,
-        "summary": summary_text,
-        "meta": meta,
-    }
-    return result
-
-
-def summarize_all_unique() -> List[Dict]:
-    """
-    Iterate over all distinct (ticker, year, quarter) combos in transcripts
-    and summarize each.
-
-    Returns the list of result dicts.
-    """
-    df = _load_transcripts()
-
-    # Guess ticker column
-    ticker_col = "ticker" if "ticker" in df.columns else "company_hint"
-
-    combos = (
-        df[[ticker_col, "fiscal_year", "fiscal_quarter"]]
-        .dropna()
-        .drop_duplicates()
-    )
-
-    results: List[Dict] = []
-    for _, row in combos.iterrows():
-        ticker = str(row[ticker_col]).split()[0].upper()  # e.g. "ADBE 2024Q2 SAMPLE" -> "ADBE"
-        year = str(row["fiscal_year"])
-        quarter = str(row["fiscal_quarter"])
-
-        print(f"Summarizing {ticker} {year} {quarter} ...", flush=True)
+    attempt = 0
+    while True:
         try:
-            res = summarize_quarter(ticker, year, quarter)
-        except Exception as exc:
-            print(f"  [WARN] Skipping {ticker} {year} {quarter}: {exc}")
-            continue
-
-        _write_summary_file(res)
-        results.append(res)
-
-    return results
-
-
-# ---- I/O helpers ----
-
-def _write_summary_file(summary: Dict) -> Path:
-    OUT_DIR.mkdir(parents=True, exist_ok=True)
-    ticker = summary["ticker"]
-    year = summary["fiscal_year"]
-    quarter = summary["fiscal_quarter"]
-
-    out_path = OUT_DIR / f"{ticker}_{year}_{quarter}_summary.json"
-    with out_path.open("w", encoding="utf-8") as f:
-        json.dump(summary, f, indent=2)
-
-    print(f"  -> wrote {out_path.relative_to(ROOT)}")
-    return out_path
+            resp = client.chat.completions.create(
+                model="gpt-4.1-mini",
+                messages=[
+                    {
+                        "role": "system",
+                        "content": (
+                            "You are a concise but thorough buy-side analyst. "
+                            "Your summaries must be factual and investment-grade."
+                        ),
+                    },
+                    {"role": "user", "content": prompt},
+                ],
+                temperature=0.2,
+            )
+            return resp.choices[0].message.content.strip()
+        except (RateLimitError, APIError, APIStatusError) as e:
+            attempt += 1
+            if attempt > max_retries:
+                raise RuntimeError(f"Giving up after {max_retries} retries: {e}") from e
+            delay = base_delay * (2 ** (attempt - 1))
+            print(f"  -> Rate / API limit hit (attempt {attempt}/{max_retries}). Sleeping {delay:.0f}s...")
+            time.sleep(delay)
 
 
-# ---- CLI entrypoint ----
+def summarise_quarter(ticker: str, year: int, quarter: str, text_block: str) -> str:
+    """
+    Summarise one quarter for one ticker.
+    """
+    prompt = build_prompt(ticker, year, quarter, text_block)
+    return _safe_chat_completion(prompt)
 
-def main(argv: Optional[List[str]] = None) -> None:
-    argv = argv or sys.argv[1:]
 
-    if len(argv) == 0:
-        # Summarize all combos
-        print(f"Loading transcripts from: {TRANSCRIPTS_CSV}")
-        summarize_all_unique()
+def _iter_groups(df: pd.DataFrame) -> Iterable:
+    """
+    Convenience generator to iterate through grouped quarters.
+    """
+    return df.groupby(["ticker", "fiscal_year", "fiscal_quarter"], dropna=False)
+
+
+# ---------- MAIN PIPELINE ----------
+def main():
+    csv_path = PROCESSED_DIR / "transcripts.csv"
+    print(f"Loading transcripts from: {csv_path}")
+    df = pd.read_csv(csv_path)
+
+    # Ensure ticker exists
+    if "ticker" not in df.columns:
+        df["ticker"] = df.apply(
+            lambda r: infer_ticker(r.get("doc_path"), r.get("company_hint")),
+            axis=1,
+        )
+
+    # numeric fiscal year / quarter cleanup
+    df["fiscal_year"] = pd.to_numeric(df.get("fiscal_year"), errors="coerce")
+    df = df.dropna(subset=["fiscal_year", "fiscal_quarter"])
+    df["fiscal_year"] = df["fiscal_year"].astype(int)
+
+    # Keep only earnings prepared-remarks rows
+    df = df[df.get("section") == "prepared_remarks"]
+
+    if df.empty:
+        print("No prepared_remarks with fiscal year/quarter. Nothing to summarise.")
         return
 
-    if len(argv) != 3:
-        print(
-            "Usage:\n"
-            "  python -m src.finsense.summarizer              # summarize all\n"
-            "  python -m src.finsense.summarizer TICKER YEAR QUARTER\n"
-            "Example:\n"
-            "  python -m src.finsense.summarizer ADBE 2024 Q2",
-            file=sys.stderr,
-        )
-        sys.exit(1)
+    groups = _iter_groups(df)
 
-    ticker, year, quarter = argv
-    print(f"Summarizing single quarter: {ticker} {year} {quarter}")
-    summary = summarize_quarter(ticker, year, quarter)
-    _write_summary_file(summary)
+    for (ticker, year, quarter), g in groups:
+        if ticker == "UNKNOWN":
+            print(f"Skipping UNKNOWN ticker group {year} {quarter}")
+            continue
+
+        out_path = SUMMARIES_DIR / f"{ticker}_{year}_{quarter}_summary.json"
+        if out_path.exists():
+            print(f"Skipping {ticker} {year} {quarter} (already summarised).")
+            continue
+
+        texts = [t for t in g["text"].astype(str).tolist() if t.strip()]
+        if not texts:
+            print(f"Skipping {ticker} {year} {quarter} — no text.")
+            continue
+
+        text_block = "\n\n---\n\n".join(texts)
+        print(f"Summarising {ticker} {year} {quarter} ...")
+
+        try:
+            summary = summarise_quarter(ticker, year, str(quarter), text_block)
+        except Exception as e:
+            print(f"  -> ERROR summarising {ticker} {year} {quarter}: {e}")
+            continue
+
+        payload: Dict[str, Any] = {
+            "ticker": ticker,
+            "fiscal_year": year,
+            "fiscal_quarter": str(quarter),
+            "summary": summary,
+        }
+
+        out_path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+        print(f"  -> wrote {out_path}")
 
 
 if __name__ == "__main__":
