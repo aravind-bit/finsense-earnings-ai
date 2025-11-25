@@ -1,8 +1,47 @@
+# --- Python / venv ---
 .venv/
+venv/
+env/
 __pycache__/
-.ipynb_checkpoints/
 *.pyc
-.env
-data/processed/*.parquet
-.env
+*.pyo
+*.pyd
+*.pkl
+
+# Jupyter
+.ipynb_checkpoints/
+
+# macOS
 .DS_Store
+
+# VSCode / IDE
+.vscode/
+.idea/
+
+# Streamlit local state
+.streamlit/secrets.toml
+.streamlit/*.yaml
+
+# Local logs / temp
+logs/
+*.log
+
+# Project-specific: don't track generated artifacts
+data/raw/*
+data/processed/*
+data/insights/*
+data/summaries/*
+
+# But keep structure / sample files if you add any
+!data/.gitkeep
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/insights/.gitkeep
+!data/summaries/.gitkeep
+
+# Archive / scratch
+data/insights/archive/
+finsense-earnings-ai/
+
+# Scratch helper scripts
+src/finsense/clean_insights 2.py
