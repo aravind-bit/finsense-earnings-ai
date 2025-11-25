@@ -1,0 +1,23 @@
+{
+  "doc_path": "data/raw/ADBE_2024Q2_SAMPLE_REMARKS.txt",
+  "company_hint": "ADBE 2024Q2 SAMPLE REMARKS",
+  "fiscal_year": 2024.0,
+  "fiscal_quarter": "Q2",
+  "speaker": "FULL_TEXT",
+  "section": "prepared_remarks",
+  "segment_index": 0,
+  "kpis": {
+    "revenue_growth_yoy_pct": 9.0,
+    "eps_growth_yoy_pct": null,
+    "guidance_comment": "guidance commentary detected",
+    "margin_comment": "margin commentary detected"
+  },
+  "meta": {
+    "ingest_date": "2025-11-25",
+    "has_cfo_prepared": false,
+    "doc_type": "non_earnings"
+  },
+  "ticker": "ADBE",
+  "ai_quarter_summary": "In Q2 2024, Adobe (ADBE) reported a 9% year-over-year increase in total revenue, driven primarily by strong subscription growth in both Creative Cloud and Document Cloud, with Digital Media ARR growing at double-digit rates. The gross margin improved by 80 basis points, attributed to pricing optimization and enhanced cloud efficiency. The company reaffirmed its full-year guidance, now anticipating a slight improvement in operating margins compared to previous expectations. Key watchpoints include potential market saturation in digital media subscriptions and competitive pressures that could impact future growth rates.",
+  "ai_quarter_highlights": []
+}

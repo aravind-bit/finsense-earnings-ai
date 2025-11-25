@@ -1,0 +1,23 @@
+{
+  "doc_path": "data/raw/AMD_2024Q2_SAMPLE_REMARKS.txt",
+  "company_hint": "AMD 2024Q2 SAMPLE REMARKS",
+  "fiscal_year": 2024.0,
+  "fiscal_quarter": "Q2",
+  "speaker": "FULL_TEXT",
+  "section": "prepared_remarks",
+  "segment_index": 0,
+  "kpis": {
+    "revenue_growth_yoy_pct": 8.0,
+    "eps_growth_yoy_pct": null,
+    "guidance_comment": "guidance commentary detected",
+    "margin_comment": "margin commentary detected"
+  },
+  "meta": {
+    "ingest_date": "2025-11-25",
+    "has_cfo_prepared": false,
+    "doc_type": "non_earnings"
+  },
+  "ticker": "AMD",
+  "ai_quarter_summary": "In Q2 2024, AMD reported an 8% year-over-year revenue increase, primarily driven by strong demand in the data center and client processor segments. Gross margins improved by 120 basis points, attributed to a favorable product mix, while operating expenses decreased by 4% due to ongoing headcount and marketing streamlining efforts. The company has raised its full-year revenue guidance to mid-teens growth and anticipates further margin expansion in the second half of the year. Key risks to monitor include potential fluctuations in demand within the semiconductor market and competitive pressures that could impact pricing and market share.",
+  "ai_quarter_highlights": []
+}

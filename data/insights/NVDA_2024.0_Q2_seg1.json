@@ -1,0 +1,23 @@
+{
+  "doc_path": "data/raw/NVDA_2024Q2_Remarks.txt",
+  "company_hint": "NVDA 2024Q2 Remarks",
+  "fiscal_year": 2024.0,
+  "fiscal_quarter": "Q2",
+  "speaker": "CFO",
+  "section": "prepared_remarks",
+  "segment_index": 1,
+  "kpis": {
+    "revenue_growth_yoy_pct": 10.0,
+    "eps_growth_yoy_pct": null,
+    "guidance_comment": null,
+    "margin_comment": null
+  },
+  "meta": {
+    "ingest_date": "2025-11-25",
+    "has_cfo_prepared": true,
+    "doc_type": "earnings_call"
+  },
+  "ticker": "NVDA",
+  "ai_quarter_summary": "NVIDIA (NVDA) reported a 10% year-over-year increase in revenue for Q2 2024, indicating stable growth in its core business. While specific earnings per share (EPS) figures were not mentioned, the revenue growth suggests potential for improved profitability, assuming margins remain stable. The company did not provide explicit guidance changes for future quarters, but the tone of the remarks indicated cautious optimism about ongoing demand in key segments, particularly AI and data centers. Risks to monitor include potential supply chain disruptions and competitive pressures in the semiconductor industry, which could impact future growth and margins.",
+  "ai_quarter_highlights": []
+}

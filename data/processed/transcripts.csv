@@ -1,18 +1,18 @@
 doc_path,company_hint,fiscal_year,fiscal_quarter,ingest_date,segment_index,speaker,section,text,source
-data/raw/NFLX_2024Q2_SAMPLE_REMARKS.txt,NFLX 2024Q2 SAMPLE REMARKS,2024.0,Q2,2025-11-24,0,FULL_TEXT,prepared_remarks,"Prepared Remarks – CFO
+data/raw/NFLX_2024Q2_SAMPLE_REMARKS.txt,NFLX 2024Q2 SAMPLE REMARKS,2024.0,Q2,2025-11-25,0,FULL_TEXT,prepared_remarks,"Prepared Remarks – CFO
 
 Revenue grew 12% year-over-year, driven by steady subscriber growth and higher ARPU.
 Operating margin expanded 150 basis points as content amortization normalized.
 Content spend grew modestly, but we remain focused on disciplined returns on new titles.
 We are raising full-year revenue guidance to low-teens growth and expect operating margin
 to land at the high end of our prior range.",manual_drop
-data/raw/AMD_2024Q2_SAMPLE_REMARKS.txt,AMD 2024Q2 SAMPLE REMARKS,2024.0,Q2,2025-11-24,0,FULL_TEXT,prepared_remarks,"Prepared Remarks – CFO
+data/raw/AMD_2024Q2_SAMPLE_REMARKS.txt,AMD 2024Q2 SAMPLE REMARKS,2024.0,Q2,2025-11-25,0,FULL_TEXT,prepared_remarks,"Prepared Remarks – CFO
 
 Revenue increased 8% year-over-year driven by data center and client processor demand.
 Gross margins expanded 120 basis points due to a favorable product mix.
 Operating expenses decreased 4% as we continued to streamline headcount and marketing.
 We are raising full-year revenue guidance to mid-teens growth and expect further margin expansion in the second half.",manual_drop
-data/raw/ADBE_2024Q2_SAMPLE_REMARKS.txt,ADBE 2024Q2 SAMPLE REMARKS,2024.0,Q2,2025-11-24,0,FULL_TEXT,prepared_remarks,"Prepared Remarks – CFO
+data/raw/ADBE_2024Q2_SAMPLE_REMARKS.txt,ADBE 2024Q2 SAMPLE REMARKS,2024.0,Q2,2025-11-25,0,FULL_TEXT,prepared_remarks,"Prepared Remarks – CFO
 
 Total revenue increased 9% year-over-year, with Digital Media ARR up double digits.
 Subscription revenue continues to be the primary growth driver across Creative Cloud
@@ -20,10 +20,10 @@ and Document Cloud.
 Gross margin improved 80 basis points, reflecting pricing optimization and cloud efficiency.
 We are reaffirming full-year guidance and now expect operating margin to improve slightly
 versus our prior outlook.",manual_drop
-data/raw/NVDA_2024Q2_Remarks.txt,NVDA 2024Q2 Remarks,2024.0,Q2,2025-11-24,0,OPERATOR,prepared_remarks,Welcome to Q2 2024 results.,manual_drop
-data/raw/NVDA_2024Q2_Remarks.txt,NVDA 2024Q2 Remarks,2024.0,Q2,2025-11-24,1,CFO,prepared_remarks,Revenue grew 10% year-over-year.,manual_drop
-data/raw/NVDA_2024Q2_Remarks.txt,NVDA 2024Q2 Remarks,2024.0,Q2,2025-11-24,2,Q&A,qa,Analyst: What about margins?,manual_drop
-data/raw/ADBE_2025Q4_Q3_FY2025_earnings_press_release.pdf,ADBE 2025Q4 Q3 FY2025 earnings press release,2025.0,Q4,2025-11-24,0,PREFACE,preface,"Investor Relations Contact
+data/raw/NVDA_2024Q2_Remarks.txt,NVDA 2024Q2 Remarks,2024.0,Q2,2025-11-25,0,OPERATOR,prepared_remarks,Welcome to Q2 2024 results.,manual_drop
+data/raw/NVDA_2024Q2_Remarks.txt,NVDA 2024Q2 Remarks,2024.0,Q2,2025-11-25,1,CFO,prepared_remarks,Revenue grew 10% year-over-year.,manual_drop
+data/raw/NVDA_2024Q2_Remarks.txt,NVDA 2024Q2 Remarks,2024.0,Q2,2025-11-25,2,Q&A,qa,Analyst: What about margins?,manual_drop
+data/raw/ADBE_2025Q4_Q3_FY2025_earnings_press_release.pdf,ADBE 2025Q4 Q3 FY2025 earnings press release,2025.0,Q4,2025-11-25,0,PREFACE,preface,"Investor Relations Contact
 
 Doug Clark
 Adobe
@@ -113,7 +113,7 @@ $1.495 billion to $1.515 billion
 $1.395 billion to $1.410 billion
 
 Earnings per share",manual_drop
-data/raw/ADBE_2025Q4_Q3_FY2025_earnings_press_release.pdf,ADBE 2025Q4 Q3 FY2025 earnings press release,2025.0,Q4,2025-11-24,1,GAAP,prepared_remarks,"$4.27 to $4.32
+data/raw/ADBE_2025Q4_Q3_FY2025_earnings_press_release.pdf,ADBE 2025Q4 Q3 FY2025 earnings press release,2025.0,Q4,2025-11-25,1,GAAP,prepared_remarks,"$4.27 to $4.32
 
 Non-GAAP: $5.35 to $5.40
 
@@ -144,7 +144,7 @@ $5.84 billion to $5.86 billion
 $5.39 billion to $5.41 billion
 
 Earnings per share",manual_drop
-data/raw/ADBE_2025Q4_Q3_FY2025_earnings_press_release.pdf,ADBE 2025Q4 Q3 FY2025 earnings press release,2025.0,Q4,2025-11-24,2,GAAP,prepared_remarks,"$16.53 to $16.58
+data/raw/ADBE_2025Q4_Q3_FY2025_earnings_press_release.pdf,ADBE 2025Q4 Q3 FY2025 earnings press release,2025.0,Q4,2025-11-25,2,GAAP,prepared_remarks,"$16.53 to $16.58
 
 Non-GAAP: $20.80 to $20.85
 
@@ -1305,7 +1305,7 @@ encouraged to review the related GAAP financial measures and the reconciliation 
 comparable GAAP financial measure as detailed above.
 
 9",manual_drop
-data/raw/ADBE_Q3 FY2025 earnings press release.pdf,ADBE Q3 FY2025 earnings press release,,,2025-11-24,0,PREFACE,preface,"Investor Relations Contact
+data/raw/ADBE_Q3 FY2025 earnings press release.pdf,ADBE Q3 FY2025 earnings press release,,,2025-11-25,0,PREFACE,preface,"Investor Relations Contact
 
 Doug Clark
 Adobe
@@ -1395,7 +1395,7 @@ $1.495 billion to $1.515 billion
 $1.395 billion to $1.410 billion
 
 Earnings per share",manual_drop
-data/raw/ADBE_Q3 FY2025 earnings press release.pdf,ADBE Q3 FY2025 earnings press release,,,2025-11-24,1,GAAP,prepared_remarks,"$4.27 to $4.32
+data/raw/ADBE_Q3 FY2025 earnings press release.pdf,ADBE Q3 FY2025 earnings press release,,,2025-11-25,1,GAAP,prepared_remarks,"$4.27 to $4.32
 
 Non-GAAP: $5.35 to $5.40
 
@@ -1426,7 +1426,7 @@ $5.84 billion to $5.86 billion
 $5.39 billion to $5.41 billion
 
 Earnings per share",manual_drop
-data/raw/ADBE_Q3 FY2025 earnings press release.pdf,ADBE Q3 FY2025 earnings press release,,,2025-11-24,2,GAAP,prepared_remarks,"$16.53 to $16.58
+data/raw/ADBE_Q3 FY2025 earnings press release.pdf,ADBE Q3 FY2025 earnings press release,,,2025-11-25,2,GAAP,prepared_remarks,"$16.53 to $16.58
 
 Non-GAAP: $20.80 to $20.85
 
@@ -2587,7 +2587,7 @@ encouraged to review the related GAAP financial measures and the reconciliation 
 comparable GAAP financial measure as detailed above.
 
 9",manual_drop
-data/raw/NFLX_2025Q4_Content_Accounting_Overview.pdf,NFLX 2025Q4 Content Accounting Overview,2025.0,Q4,2025-11-24,0,FULL_TEXT,prepared_remarks,"Overview of
+data/raw/NFLX_2025Q4_Content_Accounting_Overview.pdf,NFLX 2025Q4 Content Accounting Overview,2025.0,Q4,2025-11-25,0,FULL_TEXT,prepared_remarks,"Overview of
 Content Accounting
 
 Investor Relations
@@ -3019,8 +3019,8 @@ involved in making our content available to members
 Thank you.
 
 28",manual_drop
-data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-24,0,PREFACE,preface,AMD Fiscal Third Quarter 2025 Financial Results,manual_drop
-data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-24,1,JOHN,prepared_remarks,"Greetings and welcome to the AMD third quarter 2025 conference call. At this time, all participants are in a listen
+data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-25,0,PREFACE,preface,AMD Fiscal Third Quarter 2025 Financial Results,manual_drop
+data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-25,1,JOHN,prepared_remarks,"Greetings and welcome to the AMD third quarter 2025 conference call. At this time, all participants are in a listen
 
 only mode. A question and answer session will follow the formal presentation. If anyone should require operator
 
@@ -3029,7 +3029,7 @@ assistance, please press star 0 on your telephone keypad. As a reminder, this co
 It is now my pleasure to introduce to you Matt Ramsay, VP, Financial Strategy and Investor Relations. Thank you,
 
 Matt. You may begin.",manual_drop
-data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-24,2,MATT  RAMSAY,prepared_remarks,"Thank you and welcome to AMD's third quarter 2025 financial results conference call. By now, you should have
+data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-25,2,MATT  RAMSAY,prepared_remarks,"Thank you and welcome to AMD's third quarter 2025 financial results conference call. By now, you should have
 
 had the opportunity to review a copy of our earnings press release and the accompanying slides. If you have not
 
@@ -3060,7 +3060,7 @@ deliver material-- to differ materially from our current expectations. Please re
 our press release for more information on these factors that could cause actual results to differ materially. And
 
 with that, I will hand the call over to Lisa.",manual_drop
-data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-24,3,LISA  SU,prepared_remarks,"Thank you, Matt, and good afternoon to all those listening today. We delivered an outstanding quarter with
+data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-25,3,LISA  SU,prepared_remarks,"Thank you, Matt, and good afternoon to all those listening today. We delivered an outstanding quarter with
 
 record revenue and profitability reflecting broad-based demand across our data center AI, server and PC
 
@@ -3341,7 +3341,7 @@ unprecedented growth opportunities for AMD. I look forward to sharing more on ou
 long range financial targets at our financial analyst meeting next week. Now, I'll turn the call over to Jean to
 
 provide additional color on our third quarter results. Jean?",manual_drop
-data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-24,4,JEAN  HU,prepared_remarks,"Thank you, Lisa. And good afternoon, everyone. I'll start with a review of our financial results, and then provide
+data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-25,4,JEAN  HU,prepared_remarks,"Thank you, Lisa. And good afternoon, everyone. I'll start with a review of our financial results, and then provide
 
 our outlook for the fourth quarter of fiscal 2025. We're pleased with our strong third quarter financial results. We
 
@@ -3458,8 +3458,8 @@ investments we are making positioned us well to capitalize on the expanding AI o
 markets, driving sustainable long-term revenue growth and earnings expansion for compelling shareholder value
 
 creation. With that, I'll turn it back to Matt for the Q&A session.",manual_drop
-data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-24,5,MATT  RAMSAY,prepared_remarks,"Thank you very much, Jean. John, we can go ahead and pull the audience for questions now. Thank you.",manual_drop
-data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-24,6,JOHN,prepared_remarks,"Thank you. We will now be conducting a question and answer session. If you would like to ask a question, please
+data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-25,5,MATT  RAMSAY,prepared_remarks,"Thank you very much, Jean. John, we can go ahead and pull the audience for questions now. Thank you.",manual_drop
+data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-25,6,JOHN,prepared_remarks,"Thank you. We will now be conducting a question and answer session. If you would like to ask a question, please
 
 press star 1 on your telephone keypad. A confirmation tone will indicate that your line is in the queue. You may
 
@@ -3472,7 +3472,7 @@ keys. We ask that you please limit yourself to one question and one follow-up. T
 poll for questions. And the first question comes from the line of Vivek Arya with Bank of America Securities.
 
 Please proceed with your question.",manual_drop
-data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-24,7,VIVEK  ARYA,prepared_remarks,"Thank you for the question. I had a near term and a medium term question. For the near term, please I was
+data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-25,7,VIVEK  ARYA,prepared_remarks,"Thank you for the question. I had a near term and a medium term question. For the near term, please I was
 
 hoping if you could give us some sense of the CPU GPU mix in Q3 and Q4. And just tactically, how are you
 
@@ -3481,7 +3481,7 @@ managing this transition from your MI355 towards MI400 in second half of next ye
 the first half of next year from these Q4 levels, or should we expect some pause or digestion before customers
 
 get on board the MI400 series?",manual_drop
-data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-24,8,LISA  SU,prepared_remarks,"Sure, Vivek. Thanks for the question. So a couple of comments. We had a very strong Q3 for the data center
+data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-25,8,LISA  SU,prepared_remarks,"Sure, Vivek. Thanks for the question. So a couple of comments. We had a very strong Q3 for the data center
 
 business. I think we saw a strong outperformance in both the server as well as the data center AI business. And
 
@@ -3504,7 +3504,7 @@ very good demand environment into 2026. So we would expect that MI355 continue t
 26. And then as we mentioned, MI450 series comes online in the second half of 2026, and we would expect a
 
 sharper ramp as we go into the second half of 2026 of our data center AI business.",manual_drop
-data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-24,9,VIVEK  ARYA,prepared_remarks,"All right. And for my follow-up, there is some industry debate at least about OpenAI's ability to simultaneously
+data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-25,9,VIVEK  ARYA,prepared_remarks,"All right. And for my follow-up, there is some industry debate at least about OpenAI's ability to simultaneously
 
 engage with all three merchant and the ASIC suppliers, just given the constraints around power and CapEx and
 
@@ -3535,7 +3535,7 @@ with OpenAI as well as the CSP partners to ensure that we're all prepared with H
 technology as we stated. So I think overall, we're working very closely together. I think we have good visibility
 
 into the MI450 ramp. And things are progressing very well.",manual_drop
-data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-24,10,JOHN,prepared_remarks,"And the next question comes from the line of Thomas O'Malley with Barclays. Please proceed with your question.
+data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-25,10,JOHN,prepared_remarks,"And the next question comes from the line of Thomas O'Malley with Barclays. Please proceed with your question.
 
 THOMAS
 
@@ -3550,7 +3550,7 @@ year, what your view is on discrete sales versus system sales? When do you see t
 happening? And just what initial responses have been from customers after getting a better look at it at the
 
 show?",manual_drop
-data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-24,11,LISA  SU,prepared_remarks,"Yeah, sure. Tom, thanks for the question. There's a lot of excitement around MI450 in Helios. I think the OCP
+data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-25,11,LISA  SU,prepared_remarks,"Yeah, sure. Tom, thanks for the question. There's a lot of excitement around MI450 in Helios. I think the OCP
 
 reception was phenomenal. We had numerous customers and frankly, bringing their engineering teams to
 
@@ -3621,14 +3621,14 @@ tightness out there. And so we also see things open up as we're working-- gettin
 supply, all of those things. So the net-net is, I think, we are well-positioned to grow significantly as we transition
 
 into the second half of '26 into '27 with the MI450 and Helios.",manual_drop
-data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-24,12,JOHN,prepared_remarks,"And the next question comes from the line of Joshua Buchalter with TD Cowen. Please proceed with your
+data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-25,12,JOHN,prepared_remarks,"And the next question comes from the line of Joshua Buchalter with TD Cowen. Please proceed with your
 
 question.
 
 JOSHUA
 
 Hey, guys. Thank you for taking my question. I actually wanted to start on the CPU side. So you and your largest",manual_drop
-data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-24,13,BUCHALTER,prepared_remarks,"competitor in that space have talked about near-term strengths supporting AI workloads on general purpose
+data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-25,13,BUCHALTER,prepared_remarks,"competitor in that space have talked about near-term strengths supporting AI workloads on general purpose
 
 servers from Agentic.
 
@@ -3639,7 +3639,7 @@ seeing any of those in your supply chain? And are we in a period where we should
 on the data center side as being a seasonal, or should we expect normal seasonality in the first half of next year?
 
 Thank you.",manual_drop
-data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-24,14,LISA  SU,prepared_remarks,"Sure, Josh. So a couple of comments on the CPU server side. I think we've been watching this trend for the last
+data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-25,14,LISA  SU,prepared_remarks,"Sure, Josh. So a couple of comments on the CPU server side. I think we've been watching this trend for the last
 
 couple of quarters. And we started seeing, let's call it, some positive signs in CPU demand actually a couple of
 
@@ -3666,21 +3666,21 @@ positive demand environment for CPUs as we see this demand. I do feel like it's 
 thing. I think it is a multi-quarter phenomenon, as we're seeing just much more demand as these AI workloads
 
 really turn into-- you have to do real work.",manual_drop
-data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-24,15,JEAN  HU,prepared_remarks,"So, Josh, on the supply side, we have supplies to support our growth. And especially in 2026, we're prepared for
+data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-25,15,JEAN  HU,prepared_remarks,"So, Josh, on the supply side, we have supplies to support our growth. And especially in 2026, we're prepared for
 
 the ramp.
 
 JOSHUA
 
 Got it. Thank you both. And for my follow-up, at least in your prepared remarks, you highlighted progress you",manual_drop
-data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-24,16,BUCHALTER,prepared_remarks,"guys have made on ROCm 7. I know this has been an area of focus. And can you maybe spend a minute or two
+data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-25,16,BUCHALTER,prepared_remarks,"guys have made on ROCm 7. I know this has been an area of focus. And can you maybe spend a minute or two
 
 talking about where you feel you're at competitively with ROCm? How wide is the breadth of support you're able
 
 to offer to the developer community? And what areas do you still have work to do to close any potential
 
 competitive gap? Thank you.",manual_drop
-data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-24,17,LISA  SU,prepared_remarks,"Yeah, Josh. Thanks for the question. Look, we've made great progress with ROCm. ROCm 7 is a significant step
+data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-25,17,LISA  SU,prepared_remarks,"Yeah, Josh. Thanks for the question. Look, we've made great progress with ROCm. ROCm 7 is a significant step
 
 forward in terms of performance and all the frameworks that we support. It's been a really, really important for
 
@@ -3699,13 +3699,13 @@ coming together with reinforcement learning. But overall, I think very strong pr
 way, we're going to continue to invest in this area, because it's so important to really make our customer
 
 development experience as smooth as we can.",manual_drop
-data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-24,18,JOHN,prepared_remarks,And the next question comes from the line of CJ Muse with Cantor Fitzgerald. Please proceed with your question.,manual_drop
-data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-24,19,CJ MUSE,prepared_remarks,"Yeah, good afternoon. Thank you for taking the question. I guess first question, as you think about the 355 to 400
+data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-25,18,JOHN,prepared_remarks,And the next question comes from the line of CJ Muse with Cantor Fitzgerald. Please proceed with your question.,manual_drop
+data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-25,19,CJ MUSE,prepared_remarks,"Yeah, good afternoon. Thank you for taking the question. I guess first question, as you think about the 355 to 400
 
 transition and moving to full rack scale, is there a framework that we should be thinking about for gross margins
 
 throughout calendar '26?",manual_drop
-data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-24,20,JEAN  HU,prepared_remarks,"Yes, CJ. Thanks for the question. I think, in general, as we said in the past, for our data center GPU business, the
+data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-25,20,JEAN  HU,prepared_remarks,"Yes, CJ. Thanks for the question. I think, in general, as we said in the past, for our data center GPU business, the
 
 gross margin continued to improve when we ramped a new generation of products. Typically at the beginning of
 
@@ -3714,14 +3714,14 @@ the ramp, you go through a transition period, then you will normalize the gross 
 but our priority in data center GPU business is to really expand the top line revenue growth and the gross margin
 
 dollars. And of course, at the same time, it will continue to drive gross margin percentage up too.",manual_drop
-data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-24,21,CJ MUSE,prepared_remarks,"Very helpful. And I guess maybe, Lisa, to probe your growth expectations through '26 and beyond. And you
+data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-25,21,CJ MUSE,prepared_remarks,"Very helpful. And I guess maybe, Lisa, to probe your growth expectations through '26 and beyond. And you
 
 talked about tens of billions of dollars in '27. Can you speak at a high level of how you're thinking about OpenAI
 
 and other large customers? And, how we should be thinking about the breadth of your customer kind of
 
 penetration throughout calendar '26-'27? Any help on that would be super. Thank you.",manual_drop
-data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-24,22,LISA  SU,prepared_remarks,"Sure, CJ. And we'll certainly address this topic in more detail at our analyst day next week. But let me give you
+data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-25,22,LISA  SU,prepared_remarks,"Sure, CJ. And we'll certainly address this topic in more detail at our analyst day next week. But let me give you
 
 some maybe higher level points. Look, I think we're really excited about our roadmap. I think we have seen great
 
@@ -3742,35 +3742,35 @@ very significant scale in the MI450 generation. And that's the breadth of the cu
 built. And it's also how we're dimensioning the supply chain to ensure that we can supply certainly our OpenAI
 
 partnership, as well as the numerous other partnerships that are well underway.",manual_drop
-data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-24,23,JOHN,prepared_remarks,"And the next question comes from the line of Stacy Rasgon with Bernstein Research. Please proceed with your
+data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-25,23,JOHN,prepared_remarks,"And the next question comes from the line of Stacy Rasgon with Bernstein Research. Please proceed with your
 
 question.
 
 STACY
 
 Hi, guys. Thanks for taking my questions. My first one. For data center in the quarter, what grew more year over",manual_drop
-data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-24,24,RASGON,prepared_remarks,"year on $1 on a percentage basis, the servers or the GPUs?",manual_drop
-data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-24,25,LISA  SU,prepared_remarks,"So I think-- yeah, Stacy, I think our commentary was data center grew nicely year over year in both of the areas,
+data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-25,24,RASGON,prepared_remarks,"year on $1 on a percentage basis, the servers or the GPUs?",manual_drop
+data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-25,25,LISA  SU,prepared_remarks,"So I think-- yeah, Stacy, I think our commentary was data center grew nicely year over year in both of the areas,
 
 both for servers as well as data center AI.
 
 STACY
 
 Yeah. But could you-- I mean, just directionally, did one-- which one grew more than the other? I'm not even",manual_drop
-data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-24,26,RASGON,prepared_remarks,asking for numbers just directionally.,manual_drop
-data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-24,27,JEAN  HU,prepared_remarks,"Directionally, they are similar, but server is a little bit better.
+data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-25,26,RASGON,prepared_remarks,asking for numbers just directionally.,manual_drop
+data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-25,27,JEAN  HU,prepared_remarks,"Directionally, they are similar, but server is a little bit better.
 
 STACY
 
 Server is a little bit better. OK. And then on the guidance, you said that servers-- I mean data center overall up",manual_drop
-data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-24,28,RASGON,prepared_remarks,"double digits. You said server is up long double digits. What does that mean? Is that more than 20% or how do I
+data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-25,28,RASGON,prepared_remarks,"double digits. You said server is up long double digits. What does that mean? Is that more than 20% or how do I
 
 think about what you mean by strong double digits? Because again, I'm trying to-- I mean, for the GPUs for the
 
 year, do you think you-- I mean, you we're saying roughly like $6.5 million or something last quarter for the year.
 
 Do you think it's still in that range? It kind of feels like you're still there.",manual_drop
-data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-24,29,JEAN  HU,prepared_remarks,"Stacy, here is what we guided. We guided sequentially, data center will be up double digits. And we said the
+data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-25,29,JEAN  HU,prepared_remarks,"Stacy, here is what we guided. We guided sequentially, data center will be up double digits. And we said the
 
 server will go up strongly. And at the same time, we also said that MI350 also going to ramp. So we did not-- I
 
@@ -3779,22 +3779,22 @@ don't think what you just mentioned was what we guided.
 STACY
 
 OK. So I mean, if you say servers are up strongly, does that mean they're up more than the Instinct? Because",manual_drop
-data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-24,30,RASGON,prepared_remarks,you didn't really make that commentary on Instinct.,manual_drop
-data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-24,31,LISA  SU,prepared_remarks,"No. Look, Stacy, let me say it. So data center sequentially double digit percentage. Both server and data center
+data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-25,30,RASGON,prepared_remarks,you didn't really make that commentary on Instinct.,manual_drop
+data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-25,31,LISA  SU,prepared_remarks,"No. Look, Stacy, let me say it. So data center sequentially double digit percentage. Both server and data center
 
 AI are going to be up as well. And from the standpoint of where they are, I think we're pleased with how both of
 
 them are performing. The strong double digit percentage comment perhaps was applying to the year over year
 
 commentary.",manual_drop
-data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-24,32,JOHN,prepared_remarks,"Thank you. And the next question comes from the line of Timothy Arcuri with UBS. Please proceed with your
+data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-25,32,JOHN,prepared_remarks,"Thank you. And the next question comes from the line of Timothy Arcuri with UBS. Please proceed with your
 
 question.
 
 TIMOTHY
 
 Thanks a lot. Lisa, I know it's only been a month since you announced this deal with OpenAI, but can you give us",manual_drop
-data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-24,33,ARCURI,prepared_remarks,"maybe some anecdotes of how this has influenced your position in the market with other customers? Are you
+data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-25,33,ARCURI,prepared_remarks,"maybe some anecdotes of how this has influenced your position in the market with other customers? Are you
 
 engaged with customers that you wouldn't have been engaged with if you hadn't done this deal?
 
@@ -3831,17 +3831,17 @@ have a broad set of customers. We've always been engaged with a number of custom
 dimensioning the supply chain in such a way that we would have ample supply to have multiple customers at
 
 similar scale as we go into the '27-'28 time frame. And that's certainly the goal.",manual_drop
-data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-24,34,JOHN,prepared_remarks,"Thank you. And the next question comes from the line of Aaron Rakers with Wells Fargo. Please proceed with
+data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-25,34,JOHN,prepared_remarks,"Thank you. And the next question comes from the line of Aaron Rakers with Wells Fargo. Please proceed with
 
 your question.
 
 AARON
 
 Yeah. Thanks for taking the questions. I'm curious on the server strength that you're seeing, if there's a way to",manual_drop
-data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-24,35,RAKERSI,prepared_remarks,"unpack how we think about unit growth versus ASP expansion as we move through the Turin product cycle. And
+data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-25,35,RAKERSI,prepared_remarks,"unpack how we think about unit growth versus ASP expansion as we move through the Turin product cycle. And
 
 how do you guys just think about that going forward?",manual_drop
-data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-24,36,LISA  SU,prepared_remarks,"Yeah. So Aaron, on the server CPU side, Turin certainly is more content. So we see ASPs grow as Turin ramps. But
+data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-25,36,LISA  SU,prepared_remarks,"Yeah. So Aaron, on the server CPU side, Turin certainly is more content. So we see ASPs grow as Turin ramps. But
 
 I also mentioned in the prepared remarks that we're actually seeing a good mix of Genoa still there. So Turin is
 
@@ -3868,7 +3868,7 @@ point in time.
 AARON
 
 Yeah, thanks. As a quick follow-up, I'm curious and not to steal, maybe you know the discussion from next week.",manual_drop
-data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-24,37,RAKERSI,prepared_remarks,"But, Lisa, you've been very consistent. $500 billion of total AI silicon TAM opportunity, and obviously, progressing
+data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-25,37,RAKERSI,prepared_remarks,"But, Lisa, you've been very consistent. $500 billion of total AI silicon TAM opportunity, and obviously, progressing
 
 above that. I'm curious as we think about these large megawatt kind of deployments, how you think about the
 
@@ -3885,17 +3885,17 @@ see, we see the AI compute TAM just going up. So we'll have some updated numbers
 whereas $500 billion sounded like a lot when we first talked about it, we think there is a larger opportunity for us
 
 over the next few years. And that's pretty exciting.",manual_drop
-data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-24,38,JOHN,prepared_remarks,"Thank you. The next question comes from Antoine Chkaiban with New Street Research. Please proceed with your
+data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-25,38,JOHN,prepared_remarks,"Thank you. The next question comes from Antoine Chkaiban with New Street Research. Please proceed with your
 
 question.
 
 ANTOINE
 
 Hi. Thank you so much for taking my question. So I'd like to ask about whether the developing relationship with",manual_drop
-data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-24,39,CHKAIBAN,prepared_remarks,"OpenAI could be a tailwind to the development of your software stack. Can you maybe tell us about how the
+data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-25,39,CHKAIBAN,prepared_remarks,"OpenAI could be a tailwind to the development of your software stack. Can you maybe tell us about how the
 
 collaboration works in practice, and whether the partnership contributed in making ROCm more robust?",manual_drop
-data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-24,40,LISA  SU,prepared_remarks,"Yeah, Antoine, thanks for the question. I think the answer is yes. I think all of our large customers contribute to,
+data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-25,40,LISA  SU,prepared_remarks,"Yeah, Antoine, thanks for the question. I think the answer is yes. I think all of our large customers contribute to,
 
 let's call it, a broadening and deepening of our software stack. Overall, I think the relationship with OpenAI is
 
@@ -3924,10 +3924,10 @@ some of the ROCm kernel development, and just the overall ecosystem.
 ANTOINE
 
 Thanks, Lisa. Maybe as a quick follow-up, could you tell us about the useful lives of GPUs? I know that most CSPs",manual_drop
-data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-24,41,CHKAIBAN,prepared_remarks,"depreciate them over five, six years. But in your conversations with them, I'm just wondering if you see or hear
+data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-25,41,CHKAIBAN,prepared_remarks,"depreciate them over five, six years. But in your conversations with them, I'm just wondering if you see or hear
 
 any early indication that in practice, they may be planning to sweat those GPUs for longer than that.",manual_drop
-data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-24,42,LISA  SU,prepared_remarks,"I think we have seen some early indications of that, Antoine. I think the key point being-- clearly, there's a desire
+data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-25,42,LISA  SU,prepared_remarks,"I think we have seen some early indications of that, Antoine. I think the key point being-- clearly, there's a desire
 
 to get on the latest and greatest GPUs when you're building new data center infrastructure. And certainly, when
 
@@ -3938,8 +3938,8 @@ But then we're also seeing the other trend, which is there's just a need for mor
 standpoint, some of the older generations-- MI300X is still doing quite well in terms of just where we see people
 
 deploying and using us, especially for inference. And from that standpoint, I think you see a little bit of both.",manual_drop
-data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-24,43,JOHN,prepared_remarks,And the next question comes from the line of Joe Moore with Morgan Stanley. Please proceed with your question.,manual_drop
-data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-24,44,JOE  MOORE,prepared_remarks,"Great. Thank you. You mentioned MI308. I guess, what's your posture there, to the extent that if there is some
+data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-25,43,JOHN,prepared_remarks,And the next question comes from the line of Joe Moore with Morgan Stanley. Please proceed with your question.,manual_drop
+data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-25,44,JOE  MOORE,prepared_remarks,"Great. Thank you. You mentioned MI308. I guess, what's your posture there, to the extent that if there is some
 
 relief that you're able to ship, do you have readiness to do that? Can you give us a sense for how much of a
 
@@ -3956,30 +3956,30 @@ administration supporting some licenses for MI308. We're still working with our 
 environment and what the overall opportunity is. And so, we'll be able to update that more in the next couple of
 
 months.",manual_drop
-data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-24,45,JOE  MOORE,prepared_remarks,"OK. But you do have product to support that market if it does open up or does it-- are you going to have to start
+data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-25,45,JOE  MOORE,prepared_remarks,"OK. But you do have product to support that market if it does open up or does it-- are you going to have to start
 
 to rebuild inventory for that?",manual_drop
-data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-24,46,LISA  SU,prepared_remarks,"We've had some work in process. I think we continue to have that work in process. But we'll have to see how the
+data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-25,46,LISA  SU,prepared_remarks,"We've had some work in process. I think we continue to have that work in process. But we'll have to see how the
 
 demand environment shapes up.",manual_drop
-data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-24,47,JOE  MOORE,prepared_remarks,"OK, thank you very much.",manual_drop
-data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-24,48,LISA  SU,prepared_remarks,Thanks.,manual_drop
-data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-24,49,MATT  RAMSAY,prepared_remarks,"Operator, I think we might have time for just one more caller, please. Thank you very much.",manual_drop
-data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-24,50,JOHN,prepared_remarks,"No problem. And the next-- and the final question comes from the line of Ross Seymore with Deutsche Bank.
+data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-25,47,JOE  MOORE,prepared_remarks,"OK, thank you very much.",manual_drop
+data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-25,48,LISA  SU,prepared_remarks,Thanks.,manual_drop
+data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-25,49,MATT  RAMSAY,prepared_remarks,"Operator, I think we might have time for just one more caller, please. Thank you very much.",manual_drop
+data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-25,50,JOHN,prepared_remarks,"No problem. And the next-- and the final question comes from the line of Ross Seymore with Deutsche Bank.
 
 Please proceed with your question.
 
 ROSS
 
 Thanks for squeezing me in. Lisa, this might take longer than the amount of time you have left before the top of",manual_drop
-data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-24,51,SEYMORE,prepared_remarks,"the hour, but there's been so many of these multigigawatt announcements from OpenAI. How does AMD truly
+data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-25,51,SEYMORE,prepared_remarks,"the hour, but there's been so many of these multigigawatt announcements from OpenAI. How does AMD truly
 
 differentiate in there? When you see that big customer signing deals with other GPU vendors and ASIC vendors,
 
 et cetera, how do you attack that market differently than those competitors to not only get the 6 gigawatt
 
 initially, but hopefully more after that?",manual_drop
-data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-24,52,LISA  SU,prepared_remarks,"Sure, Ross. Well, look, what I see is actually this environment where the world needs more AI compute. And from
+data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-25,52,LISA  SU,prepared_remarks,"Sure, Ross. Well, look, what I see is actually this environment where the world needs more AI compute. And from
 
 that standpoint, I think OpenAI has kind of led in the quest for more AI compute. But they're not alone. I think
 
@@ -4010,14 +4010,14 @@ forward.
 ROSS
 
 And I guess as my follow-up, it'll be a direct follow on to that. You did a unique structure by granting some",manual_drop
-data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-24,53,SEYMORE,prepared_remarks,"warrants with this deal. And I know they vest according to a price that would be very accretive and make
+data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-25,53,SEYMORE,prepared_remarks,"warrants with this deal. And I know they vest according to a price that would be very accretive and make
 
 everybody happy. Do you think that was a relatively unique agreement, or given that the world needs more
 
 processing power, that AMD is open to somewhat similar, conceptually similar creative ways to address that
 
 demand over time with other equity, vehicles, et cetera?",manual_drop
-data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-24,54,LISA  SU,prepared_remarks,"Sure, Ross. So I would say it was a unique agreement from the standpoint that, unique time in AI, what we
+data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-25,54,LISA  SU,prepared_remarks,"Sure, Ross. So I would say it was a unique agreement from the standpoint that, unique time in AI, what we
 
 wanted, what we prioritized was really deep partnership and multiyear, multi-generation significant scale. And I
 
@@ -4034,11 +4034,11 @@ as a unique opportunity where we're bringing the whole of AMD, both technically 
 capabilities, to the parties. So I would say OpenAI was pretty unique, but I would imagine that there are lots of
 
 other opportunities, for us to bring our capabilities into the ecosystem and participate in a significant way.",manual_drop
-data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-24,55,JOHN,prepared_remarks,"And ladies and gentlemen, that does conclude the question and answer session. And that also concludes today's
+data/raw/AMD_2025Q4_Transcript.pdf,AMD 2025Q4 Transcript,2025.0,Q4,2025-11-25,55,JOHN,prepared_remarks,"And ladies and gentlemen, that does conclude the question and answer session. And that also concludes today's
 
 teleconference. We thank you for your participation. You may disconnect your lines at this time.",manual_drop
-data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-24,0,PREFACE,preface,AMD Fiscal Third Quarter 2025 Financial Results,manual_drop
-data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-24,1,JOHN,prepared_remarks,"Greetings and welcome to the AMD third quarter 2025 conference call. At this time, all participants are in a listen
+data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-25,0,PREFACE,preface,AMD Fiscal Third Quarter 2025 Financial Results,manual_drop
+data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-25,1,JOHN,prepared_remarks,"Greetings and welcome to the AMD third quarter 2025 conference call. At this time, all participants are in a listen
 
 only mode. A question and answer session will follow the formal presentation. If anyone should require operator
 
@@ -4047,7 +4047,7 @@ assistance, please press star 0 on your telephone keypad. As a reminder, this co
 It is now my pleasure to introduce to you Matt Ramsay, VP, Financial Strategy and Investor Relations. Thank you,
 
 Matt. You may begin.",manual_drop
-data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-24,2,MATT  RAMSAY,prepared_remarks,"Thank you and welcome to AMD's third quarter 2025 financial results conference call. By now, you should have
+data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-25,2,MATT  RAMSAY,prepared_remarks,"Thank you and welcome to AMD's third quarter 2025 financial results conference call. By now, you should have
 
 had the opportunity to review a copy of our earnings press release and the accompanying slides. If you have not
 
@@ -4078,7 +4078,7 @@ deliver material-- to differ materially from our current expectations. Please re
 our press release for more information on these factors that could cause actual results to differ materially. And
 
 with that, I will hand the call over to Lisa.",manual_drop
-data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-24,3,LISA  SU,prepared_remarks,"Thank you, Matt, and good afternoon to all those listening today. We delivered an outstanding quarter with
+data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-25,3,LISA  SU,prepared_remarks,"Thank you, Matt, and good afternoon to all those listening today. We delivered an outstanding quarter with
 
 record revenue and profitability reflecting broad-based demand across our data center AI, server and PC
 
@@ -4359,7 +4359,7 @@ unprecedented growth opportunities for AMD. I look forward to sharing more on ou
 long range financial targets at our financial analyst meeting next week. Now, I'll turn the call over to Jean to
 
 provide additional color on our third quarter results. Jean?",manual_drop
-data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-24,4,JEAN  HU,prepared_remarks,"Thank you, Lisa. And good afternoon, everyone. I'll start with a review of our financial results, and then provide
+data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-25,4,JEAN  HU,prepared_remarks,"Thank you, Lisa. And good afternoon, everyone. I'll start with a review of our financial results, and then provide
 
 our outlook for the fourth quarter of fiscal 2025. We're pleased with our strong third quarter financial results. We
 
@@ -4476,8 +4476,8 @@ investments we are making positioned us well to capitalize on the expanding AI o
 markets, driving sustainable long-term revenue growth and earnings expansion for compelling shareholder value
 
 creation. With that, I'll turn it back to Matt for the Q&A session.",manual_drop
-data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-24,5,MATT  RAMSAY,prepared_remarks,"Thank you very much, Jean. John, we can go ahead and pull the audience for questions now. Thank you.",manual_drop
-data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-24,6,JOHN,prepared_remarks,"Thank you. We will now be conducting a question and answer session. If you would like to ask a question, please
+data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-25,5,MATT  RAMSAY,prepared_remarks,"Thank you very much, Jean. John, we can go ahead and pull the audience for questions now. Thank you.",manual_drop
+data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-25,6,JOHN,prepared_remarks,"Thank you. We will now be conducting a question and answer session. If you would like to ask a question, please
 
 press star 1 on your telephone keypad. A confirmation tone will indicate that your line is in the queue. You may
 
@@ -4490,7 +4490,7 @@ keys. We ask that you please limit yourself to one question and one follow-up. T
 poll for questions. And the first question comes from the line of Vivek Arya with Bank of America Securities.
 
 Please proceed with your question.",manual_drop
-data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-24,7,VIVEK  ARYA,prepared_remarks,"Thank you for the question. I had a near term and a medium term question. For the near term, please I was
+data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-25,7,VIVEK  ARYA,prepared_remarks,"Thank you for the question. I had a near term and a medium term question. For the near term, please I was
 
 hoping if you could give us some sense of the CPU GPU mix in Q3 and Q4. And just tactically, how are you
 
@@ -4499,7 +4499,7 @@ managing this transition from your MI355 towards MI400 in second half of next ye
 the first half of next year from these Q4 levels, or should we expect some pause or digestion before customers
 
 get on board the MI400 series?",manual_drop
-data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-24,8,LISA  SU,prepared_remarks,"Sure, Vivek. Thanks for the question. So a couple of comments. We had a very strong Q3 for the data center
+data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-25,8,LISA  SU,prepared_remarks,"Sure, Vivek. Thanks for the question. So a couple of comments. We had a very strong Q3 for the data center
 
 business. I think we saw a strong outperformance in both the server as well as the data center AI business. And
 
@@ -4522,7 +4522,7 @@ very good demand environment into 2026. So we would expect that MI355 continue t
 26. And then as we mentioned, MI450 series comes online in the second half of 2026, and we would expect a
 
 sharper ramp as we go into the second half of 2026 of our data center AI business.",manual_drop
-data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-24,9,VIVEK  ARYA,prepared_remarks,"All right. And for my follow-up, there is some industry debate at least about OpenAI's ability to simultaneously
+data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-25,9,VIVEK  ARYA,prepared_remarks,"All right. And for my follow-up, there is some industry debate at least about OpenAI's ability to simultaneously
 
 engage with all three merchant and the ASIC suppliers, just given the constraints around power and CapEx and
 
@@ -4553,7 +4553,7 @@ with OpenAI as well as the CSP partners to ensure that we're all prepared with H
 technology as we stated. So I think overall, we're working very closely together. I think we have good visibility
 
 into the MI450 ramp. And things are progressing very well.",manual_drop
-data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-24,10,JOHN,prepared_remarks,"And the next question comes from the line of Thomas O'Malley with Barclays. Please proceed with your question.
+data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-25,10,JOHN,prepared_remarks,"And the next question comes from the line of Thomas O'Malley with Barclays. Please proceed with your question.
 
 THOMAS
 
@@ -4568,7 +4568,7 @@ year, what your view is on discrete sales versus system sales? When do you see t
 happening? And just what initial responses have been from customers after getting a better look at it at the
 
 show?",manual_drop
-data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-24,11,LISA  SU,prepared_remarks,"Yeah, sure. Tom, thanks for the question. There's a lot of excitement around MI450 in Helios. I think the OCP
+data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-25,11,LISA  SU,prepared_remarks,"Yeah, sure. Tom, thanks for the question. There's a lot of excitement around MI450 in Helios. I think the OCP
 
 reception was phenomenal. We had numerous customers and frankly, bringing their engineering teams to
 
@@ -4639,14 +4639,14 @@ tightness out there. And so we also see things open up as we're working-- gettin
 supply, all of those things. So the net-net is, I think, we are well-positioned to grow significantly as we transition
 
 into the second half of '26 into '27 with the MI450 and Helios.",manual_drop
-data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-24,12,JOHN,prepared_remarks,"And the next question comes from the line of Joshua Buchalter with TD Cowen. Please proceed with your
+data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-25,12,JOHN,prepared_remarks,"And the next question comes from the line of Joshua Buchalter with TD Cowen. Please proceed with your
 
 question.
 
 JOSHUA
 
 Hey, guys. Thank you for taking my question. I actually wanted to start on the CPU side. So you and your largest",manual_drop
-data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-24,13,BUCHALTER,prepared_remarks,"competitor in that space have talked about near-term strengths supporting AI workloads on general purpose
+data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-25,13,BUCHALTER,prepared_remarks,"competitor in that space have talked about near-term strengths supporting AI workloads on general purpose
 
 servers from Agentic.
 
@@ -4657,7 +4657,7 @@ seeing any of those in your supply chain? And are we in a period where we should
 on the data center side as being a seasonal, or should we expect normal seasonality in the first half of next year?
 
 Thank you.",manual_drop
-data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-24,14,LISA  SU,prepared_remarks,"Sure, Josh. So a couple of comments on the CPU server side. I think we've been watching this trend for the last
+data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-25,14,LISA  SU,prepared_remarks,"Sure, Josh. So a couple of comments on the CPU server side. I think we've been watching this trend for the last
 
 couple of quarters. And we started seeing, let's call it, some positive signs in CPU demand actually a couple of
 
@@ -4684,21 +4684,21 @@ positive demand environment for CPUs as we see this demand. I do feel like it's 
 thing. I think it is a multi-quarter phenomenon, as we're seeing just much more demand as these AI workloads
 
 really turn into-- you have to do real work.",manual_drop
-data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-24,15,JEAN  HU,prepared_remarks,"So, Josh, on the supply side, we have supplies to support our growth. And especially in 2026, we're prepared for
+data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-25,15,JEAN  HU,prepared_remarks,"So, Josh, on the supply side, we have supplies to support our growth. And especially in 2026, we're prepared for
 
 the ramp.
 
 JOSHUA
 
 Got it. Thank you both. And for my follow-up, at least in your prepared remarks, you highlighted progress you",manual_drop
-data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-24,16,BUCHALTER,prepared_remarks,"guys have made on ROCm 7. I know this has been an area of focus. And can you maybe spend a minute or two
+data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-25,16,BUCHALTER,prepared_remarks,"guys have made on ROCm 7. I know this has been an area of focus. And can you maybe spend a minute or two
 
 talking about where you feel you're at competitively with ROCm? How wide is the breadth of support you're able
 
 to offer to the developer community? And what areas do you still have work to do to close any potential
 
 competitive gap? Thank you.",manual_drop
-data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-24,17,LISA  SU,prepared_remarks,"Yeah, Josh. Thanks for the question. Look, we've made great progress with ROCm. ROCm 7 is a significant step
+data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-25,17,LISA  SU,prepared_remarks,"Yeah, Josh. Thanks for the question. Look, we've made great progress with ROCm. ROCm 7 is a significant step
 
 forward in terms of performance and all the frameworks that we support. It's been a really, really important for
 
@@ -4717,13 +4717,13 @@ coming together with reinforcement learning. But overall, I think very strong pr
 way, we're going to continue to invest in this area, because it's so important to really make our customer
 
 development experience as smooth as we can.",manual_drop
-data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-24,18,JOHN,prepared_remarks,And the next question comes from the line of CJ Muse with Cantor Fitzgerald. Please proceed with your question.,manual_drop
-data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-24,19,CJ MUSE,prepared_remarks,"Yeah, good afternoon. Thank you for taking the question. I guess first question, as you think about the 355 to 400
+data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-25,18,JOHN,prepared_remarks,And the next question comes from the line of CJ Muse with Cantor Fitzgerald. Please proceed with your question.,manual_drop
+data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-25,19,CJ MUSE,prepared_remarks,"Yeah, good afternoon. Thank you for taking the question. I guess first question, as you think about the 355 to 400
 
 transition and moving to full rack scale, is there a framework that we should be thinking about for gross margins
 
 throughout calendar '26?",manual_drop
-data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-24,20,JEAN  HU,prepared_remarks,"Yes, CJ. Thanks for the question. I think, in general, as we said in the past, for our data center GPU business, the
+data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-25,20,JEAN  HU,prepared_remarks,"Yes, CJ. Thanks for the question. I think, in general, as we said in the past, for our data center GPU business, the
 
 gross margin continued to improve when we ramped a new generation of products. Typically at the beginning of
 
@@ -4732,14 +4732,14 @@ the ramp, you go through a transition period, then you will normalize the gross 
 but our priority in data center GPU business is to really expand the top line revenue growth and the gross margin
 
 dollars. And of course, at the same time, it will continue to drive gross margin percentage up too.",manual_drop
-data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-24,21,CJ MUSE,prepared_remarks,"Very helpful. And I guess maybe, Lisa, to probe your growth expectations through '26 and beyond. And you
+data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-25,21,CJ MUSE,prepared_remarks,"Very helpful. And I guess maybe, Lisa, to probe your growth expectations through '26 and beyond. And you
 
 talked about tens of billions of dollars in '27. Can you speak at a high level of how you're thinking about OpenAI
 
 and other large customers? And, how we should be thinking about the breadth of your customer kind of
 
 penetration throughout calendar '26-'27? Any help on that would be super. Thank you.",manual_drop
-data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-24,22,LISA  SU,prepared_remarks,"Sure, CJ. And we'll certainly address this topic in more detail at our analyst day next week. But let me give you
+data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-25,22,LISA  SU,prepared_remarks,"Sure, CJ. And we'll certainly address this topic in more detail at our analyst day next week. But let me give you
 
 some maybe higher level points. Look, I think we're really excited about our roadmap. I think we have seen great
 
@@ -4760,35 +4760,35 @@ very significant scale in the MI450 generation. And that's the breadth of the cu
 built. And it's also how we're dimensioning the supply chain to ensure that we can supply certainly our OpenAI
 
 partnership, as well as the numerous other partnerships that are well underway.",manual_drop
-data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-24,23,JOHN,prepared_remarks,"And the next question comes from the line of Stacy Rasgon with Bernstein Research. Please proceed with your
+data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-25,23,JOHN,prepared_remarks,"And the next question comes from the line of Stacy Rasgon with Bernstein Research. Please proceed with your
 
 question.
 
 STACY
 
 Hi, guys. Thanks for taking my questions. My first one. For data center in the quarter, what grew more year over",manual_drop
-data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-24,24,RASGON,prepared_remarks,"year on $1 on a percentage basis, the servers or the GPUs?",manual_drop
-data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-24,25,LISA  SU,prepared_remarks,"So I think-- yeah, Stacy, I think our commentary was data center grew nicely year over year in both of the areas,
+data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-25,24,RASGON,prepared_remarks,"year on $1 on a percentage basis, the servers or the GPUs?",manual_drop
+data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-25,25,LISA  SU,prepared_remarks,"So I think-- yeah, Stacy, I think our commentary was data center grew nicely year over year in both of the areas,
 
 both for servers as well as data center AI.
 
 STACY
 
 Yeah. But could you-- I mean, just directionally, did one-- which one grew more than the other? I'm not even",manual_drop
-data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-24,26,RASGON,prepared_remarks,asking for numbers just directionally.,manual_drop
-data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-24,27,JEAN  HU,prepared_remarks,"Directionally, they are similar, but server is a little bit better.
+data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-25,26,RASGON,prepared_remarks,asking for numbers just directionally.,manual_drop
+data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-25,27,JEAN  HU,prepared_remarks,"Directionally, they are similar, but server is a little bit better.
 
 STACY
 
 Server is a little bit better. OK. And then on the guidance, you said that servers-- I mean data center overall up",manual_drop
-data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-24,28,RASGON,prepared_remarks,"double digits. You said server is up long double digits. What does that mean? Is that more than 20% or how do I
+data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-25,28,RASGON,prepared_remarks,"double digits. You said server is up long double digits. What does that mean? Is that more than 20% or how do I
 
 think about what you mean by strong double digits? Because again, I'm trying to-- I mean, for the GPUs for the
 
 year, do you think you-- I mean, you we're saying roughly like $6.5 million or something last quarter for the year.
 
 Do you think it's still in that range? It kind of feels like you're still there.",manual_drop
-data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-24,29,JEAN  HU,prepared_remarks,"Stacy, here is what we guided. We guided sequentially, data center will be up double digits. And we said the
+data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-25,29,JEAN  HU,prepared_remarks,"Stacy, here is what we guided. We guided sequentially, data center will be up double digits. And we said the
 
 server will go up strongly. And at the same time, we also said that MI350 also going to ramp. So we did not-- I
 
@@ -4797,22 +4797,22 @@ don't think what you just mentioned was what we guided.
 STACY
 
 OK. So I mean, if you say servers are up strongly, does that mean they're up more than the Instinct? Because",manual_drop
-data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-24,30,RASGON,prepared_remarks,you didn't really make that commentary on Instinct.,manual_drop
-data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-24,31,LISA  SU,prepared_remarks,"No. Look, Stacy, let me say it. So data center sequentially double digit percentage. Both server and data center
+data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-25,30,RASGON,prepared_remarks,you didn't really make that commentary on Instinct.,manual_drop
+data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-25,31,LISA  SU,prepared_remarks,"No. Look, Stacy, let me say it. So data center sequentially double digit percentage. Both server and data center
 
 AI are going to be up as well. And from the standpoint of where they are, I think we're pleased with how both of
 
 them are performing. The strong double digit percentage comment perhaps was applying to the year over year
 
 commentary.",manual_drop
-data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-24,32,JOHN,prepared_remarks,"Thank you. And the next question comes from the line of Timothy Arcuri with UBS. Please proceed with your
+data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-25,32,JOHN,prepared_remarks,"Thank you. And the next question comes from the line of Timothy Arcuri with UBS. Please proceed with your
 
 question.
 
 TIMOTHY
 
 Thanks a lot. Lisa, I know it's only been a month since you announced this deal with OpenAI, but can you give us",manual_drop
-data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-24,33,ARCURI,prepared_remarks,"maybe some anecdotes of how this has influenced your position in the market with other customers? Are you
+data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-25,33,ARCURI,prepared_remarks,"maybe some anecdotes of how this has influenced your position in the market with other customers? Are you
 
 engaged with customers that you wouldn't have been engaged with if you hadn't done this deal?
 
@@ -4849,17 +4849,17 @@ have a broad set of customers. We've always been engaged with a number of custom
 dimensioning the supply chain in such a way that we would have ample supply to have multiple customers at
 
 similar scale as we go into the '27-'28 time frame. And that's certainly the goal.",manual_drop
-data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-24,34,JOHN,prepared_remarks,"Thank you. And the next question comes from the line of Aaron Rakers with Wells Fargo. Please proceed with
+data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-25,34,JOHN,prepared_remarks,"Thank you. And the next question comes from the line of Aaron Rakers with Wells Fargo. Please proceed with
 
 your question.
 
 AARON
 
 Yeah. Thanks for taking the questions. I'm curious on the server strength that you're seeing, if there's a way to",manual_drop
-data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-24,35,RAKERSI,prepared_remarks,"unpack how we think about unit growth versus ASP expansion as we move through the Turin product cycle. And
+data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-25,35,RAKERSI,prepared_remarks,"unpack how we think about unit growth versus ASP expansion as we move through the Turin product cycle. And
 
 how do you guys just think about that going forward?",manual_drop
-data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-24,36,LISA  SU,prepared_remarks,"Yeah. So Aaron, on the server CPU side, Turin certainly is more content. So we see ASPs grow as Turin ramps. But
+data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-25,36,LISA  SU,prepared_remarks,"Yeah. So Aaron, on the server CPU side, Turin certainly is more content. So we see ASPs grow as Turin ramps. But
 
 I also mentioned in the prepared remarks that we're actually seeing a good mix of Genoa still there. So Turin is
 
@@ -4886,7 +4886,7 @@ point in time.
 AARON
 
 Yeah, thanks. As a quick follow-up, I'm curious and not to steal, maybe you know the discussion from next week.",manual_drop
-data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-24,37,RAKERSI,prepared_remarks,"But, Lisa, you've been very consistent. $500 billion of total AI silicon TAM opportunity, and obviously, progressing
+data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-25,37,RAKERSI,prepared_remarks,"But, Lisa, you've been very consistent. $500 billion of total AI silicon TAM opportunity, and obviously, progressing
 
 above that. I'm curious as we think about these large megawatt kind of deployments, how you think about the
 
@@ -4903,17 +4903,17 @@ see, we see the AI compute TAM just going up. So we'll have some updated numbers
 whereas $500 billion sounded like a lot when we first talked about it, we think there is a larger opportunity for us
 
 over the next few years. And that's pretty exciting.",manual_drop
-data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-24,38,JOHN,prepared_remarks,"Thank you. The next question comes from Antoine Chkaiban with New Street Research. Please proceed with your
+data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-25,38,JOHN,prepared_remarks,"Thank you. The next question comes from Antoine Chkaiban with New Street Research. Please proceed with your
 
 question.
 
 ANTOINE
 
 Hi. Thank you so much for taking my question. So I'd like to ask about whether the developing relationship with",manual_drop
-data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-24,39,CHKAIBAN,prepared_remarks,"OpenAI could be a tailwind to the development of your software stack. Can you maybe tell us about how the
+data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-25,39,CHKAIBAN,prepared_remarks,"OpenAI could be a tailwind to the development of your software stack. Can you maybe tell us about how the
 
 collaboration works in practice, and whether the partnership contributed in making ROCm more robust?",manual_drop
-data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-24,40,LISA  SU,prepared_remarks,"Yeah, Antoine, thanks for the question. I think the answer is yes. I think all of our large customers contribute to,
+data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-25,40,LISA  SU,prepared_remarks,"Yeah, Antoine, thanks for the question. I think the answer is yes. I think all of our large customers contribute to,
 
 let's call it, a broadening and deepening of our software stack. Overall, I think the relationship with OpenAI is
 
@@ -4942,10 +4942,10 @@ some of the ROCm kernel development, and just the overall ecosystem.
 ANTOINE
 
 Thanks, Lisa. Maybe as a quick follow-up, could you tell us about the useful lives of GPUs? I know that most CSPs",manual_drop
-data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-24,41,CHKAIBAN,prepared_remarks,"depreciate them over five, six years. But in your conversations with them, I'm just wondering if you see or hear
+data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-25,41,CHKAIBAN,prepared_remarks,"depreciate them over five, six years. But in your conversations with them, I'm just wondering if you see or hear
 
 any early indication that in practice, they may be planning to sweat those GPUs for longer than that.",manual_drop
-data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-24,42,LISA  SU,prepared_remarks,"I think we have seen some early indications of that, Antoine. I think the key point being-- clearly, there's a desire
+data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-25,42,LISA  SU,prepared_remarks,"I think we have seen some early indications of that, Antoine. I think the key point being-- clearly, there's a desire
 
 to get on the latest and greatest GPUs when you're building new data center infrastructure. And certainly, when
 
@@ -4956,8 +4956,8 @@ But then we're also seeing the other trend, which is there's just a need for mor
 standpoint, some of the older generations-- MI300X is still doing quite well in terms of just where we see people
 
 deploying and using us, especially for inference. And from that standpoint, I think you see a little bit of both.",manual_drop
-data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-24,43,JOHN,prepared_remarks,And the next question comes from the line of Joe Moore with Morgan Stanley. Please proceed with your question.,manual_drop
-data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-24,44,JOE  MOORE,prepared_remarks,"Great. Thank you. You mentioned MI308. I guess, what's your posture there, to the extent that if there is some
+data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-25,43,JOHN,prepared_remarks,And the next question comes from the line of Joe Moore with Morgan Stanley. Please proceed with your question.,manual_drop
+data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-25,44,JOE  MOORE,prepared_remarks,"Great. Thank you. You mentioned MI308. I guess, what's your posture there, to the extent that if there is some
 
 relief that you're able to ship, do you have readiness to do that? Can you give us a sense for how much of a
 
@@ -4974,30 +4974,30 @@ administration supporting some licenses for MI308. We're still working with our 
 environment and what the overall opportunity is. And so, we'll be able to update that more in the next couple of
 
 months.",manual_drop
-data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-24,45,JOE  MOORE,prepared_remarks,"OK. But you do have product to support that market if it does open up or does it-- are you going to have to start
+data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-25,45,JOE  MOORE,prepared_remarks,"OK. But you do have product to support that market if it does open up or does it-- are you going to have to start
 
 to rebuild inventory for that?",manual_drop
-data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-24,46,LISA  SU,prepared_remarks,"We've had some work in process. I think we continue to have that work in process. But we'll have to see how the
+data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-25,46,LISA  SU,prepared_remarks,"We've had some work in process. I think we continue to have that work in process. But we'll have to see how the
 
 demand environment shapes up.",manual_drop
-data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-24,47,JOE  MOORE,prepared_remarks,"OK, thank you very much.",manual_drop
-data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-24,48,LISA  SU,prepared_remarks,Thanks.,manual_drop
-data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-24,49,MATT  RAMSAY,prepared_remarks,"Operator, I think we might have time for just one more caller, please. Thank you very much.",manual_drop
-data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-24,50,JOHN,prepared_remarks,"No problem. And the next-- and the final question comes from the line of Ross Seymore with Deutsche Bank.
+data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-25,47,JOE  MOORE,prepared_remarks,"OK, thank you very much.",manual_drop
+data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-25,48,LISA  SU,prepared_remarks,Thanks.,manual_drop
+data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-25,49,MATT  RAMSAY,prepared_remarks,"Operator, I think we might have time for just one more caller, please. Thank you very much.",manual_drop
+data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-25,50,JOHN,prepared_remarks,"No problem. And the next-- and the final question comes from the line of Ross Seymore with Deutsche Bank.
 
 Please proceed with your question.
 
 ROSS
 
 Thanks for squeezing me in. Lisa, this might take longer than the amount of time you have left before the top of",manual_drop
-data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-24,51,SEYMORE,prepared_remarks,"the hour, but there's been so many of these multigigawatt announcements from OpenAI. How does AMD truly
+data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-25,51,SEYMORE,prepared_remarks,"the hour, but there's been so many of these multigigawatt announcements from OpenAI. How does AMD truly
 
 differentiate in there? When you see that big customer signing deals with other GPU vendors and ASIC vendors,
 
 et cetera, how do you attack that market differently than those competitors to not only get the 6 gigawatt
 
 initially, but hopefully more after that?",manual_drop
-data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-24,52,LISA  SU,prepared_remarks,"Sure, Ross. Well, look, what I see is actually this environment where the world needs more AI compute. And from
+data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-25,52,LISA  SU,prepared_remarks,"Sure, Ross. Well, look, what I see is actually this environment where the world needs more AI compute. And from
 
 that standpoint, I think OpenAI has kind of led in the quest for more AI compute. But they're not alone. I think
 
@@ -5028,14 +5028,14 @@ forward.
 ROSS
 
 And I guess as my follow-up, it'll be a direct follow on to that. You did a unique structure by granting some",manual_drop
-data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-24,53,SEYMORE,prepared_remarks,"warrants with this deal. And I know they vest according to a price that would be very accretive and make
+data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-25,53,SEYMORE,prepared_remarks,"warrants with this deal. And I know they vest according to a price that would be very accretive and make
 
 everybody happy. Do you think that was a relatively unique agreement, or given that the world needs more
 
 processing power, that AMD is open to somewhat similar, conceptually similar creative ways to address that
 
 demand over time with other equity, vehicles, et cetera?",manual_drop
-data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-24,54,LISA  SU,prepared_remarks,"Sure, Ross. So I would say it was a unique agreement from the standpoint that, unique time in AI, what we
+data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-25,54,LISA  SU,prepared_remarks,"Sure, Ross. So I would say it was a unique agreement from the standpoint that, unique time in AI, what we
 
 wanted, what we prioritized was really deep partnership and multiyear, multi-generation significant scale. And I
 
@@ -5052,10 +5052,10 @@ as a unique opportunity where we're bringing the whole of AMD, both technically 
 capabilities, to the parties. So I would say OpenAI was pretty unique, but I would imagine that there are lots of
 
 other opportunities, for us to bring our capabilities into the ecosystem and participate in a significant way.",manual_drop
-data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-24,55,JOHN,prepared_remarks,"And ladies and gentlemen, that does conclude the question and answer session. And that also concludes today's
+data/raw/AMD_Transcript.pdf,AMD Transcript,,,2025-11-25,55,JOHN,prepared_remarks,"And ladies and gentlemen, that does conclude the question and answer session. And that also concludes today's
 
 teleconference. We thank you for your participation. You may disconnect your lines at this time.",manual_drop
-data/raw/NFLX_Content Accounting Overview.pdf,NFLX Content Accounting Overview,,,2025-11-24,0,FULL_TEXT,prepared_remarks,"Overview of
+data/raw/NFLX_Content Accounting Overview.pdf,NFLX Content Accounting Overview,,,2025-11-25,0,FULL_TEXT,prepared_remarks,"Overview of
 Content Accounting
 
 Investor Relations
@@ -5487,7 +5487,7 @@ involved in making our content available to members
 Thank you.
 
 28",manual_drop
-data/raw/WBD_2023 Sustainability Report.pdf,WBD 2023 Sustainability Report,,,2025-11-24,0,PREFACE,preface,"Contents
+data/raw/WBD_2023 Sustainability Report.pdf,WBD 2023 Sustainability Report,,,2025-11-25,0,PREFACE,preface,"Contents
 
 3 A Message From Our CEO
 
@@ -7109,7 +7109,7 @@ that protects themselves and others. Our employees
 are trained to know that situations that may pose a
 
 health, safety, or environmental hazard should be",manual_drop
-data/raw/WBD_2023 Sustainability Report.pdf,WBD 2023 Sustainability Report,,,2025-11-24,1,PRETTY LITTLE LIARS,prepared_remarks,"SUMMER SCHOOL
+data/raw/WBD_2023 Sustainability Report.pdf,WBD 2023 Sustainability Report,,,2025-11-25,1,PRETTY LITTLE LIARS,prepared_remarks,"SUMMER SCHOOL
 
  Protecting Human Rights
 
@@ -8127,7 +8127,7 @@ December 31 of the most recent year that is available.
 website
 
 , reflecting the company’s U.S. workforce as of",manual_drop
-data/raw/WBD_2023 Sustainability Report.pdf,WBD 2023 Sustainability Report,,,2025-11-24,2,JERROD CARMICHAEL,prepared_remarks,"ROTHANIEL
+data/raw/WBD_2023 Sustainability Report.pdf,WBD 2023 Sustainability Report,,,2025-11-25,2,JERROD CARMICHAEL,prepared_remarks,"ROTHANIEL
 
 26
 
@@ -8556,7 +8556,7 @@ impressions via WBD’s and Share Our Strength’s media platforms.
 Our social impact efforts are guided by our CSR pillars:
 
 Helping Vulnerable Communities | Creating Career Pathways | Protecting the Planet",manual_drop
-data/raw/WBD_2023 Sustainability Report.pdf,WBD 2023 Sustainability Report,,,2025-11-24,3,CSR PILLAR,prepared_remarks,"HELPING VULNERABLE COMMUNITIES
+data/raw/WBD_2023 Sustainability Report.pdf,WBD 2023 Sustainability Report,,,2025-11-25,3,CSR PILLAR,prepared_remarks,"HELPING VULNERABLE COMMUNITIES
 
 WBD is committed to building a brighter future for vulnerable communities with the greatest needs. Areas of focus and examples of
 
@@ -9764,7 +9764,7 @@ behaviors, and provide inspiration on topics such as the
 wrap, the production offset its emissions (calculated using
 
 climate and sustainability. Our environmental content",manual_drop
-data/raw/WBD_2023 Sustainability Report.pdf,WBD 2023 Sustainability Report,,,2025-11-24,4,TRUE DETECTIVE,prepared_remarks,"NIGHT COUNTRY
+data/raw/WBD_2023 Sustainability Report.pdf,WBD 2023 Sustainability Report,,,2025-11-25,4,TRUE DETECTIVE,prepared_remarks,"NIGHT COUNTRY
 
 ENVIRONMENTAL MEDIA ASSOCIATION (EMA)
 
@@ -13838,7 +13838,7 @@ t
 https://ir.wbd.com/investor-relations/
 
 April 2024",manual_drop
-data/raw/WBD_2025Q4_2023_Sustainability_Report.pdf,WBD 2025Q4 2023 Sustainability Report,2025.0,Q4,2025-11-24,0,PREFACE,preface,"Contents
+data/raw/WBD_2025Q4_2023_Sustainability_Report.pdf,WBD 2025Q4 2023 Sustainability Report,2025.0,Q4,2025-11-25,0,PREFACE,preface,"Contents
 
 3 A Message From Our CEO
 
@@ -15460,7 +15460,7 @@ that protects themselves and others. Our employees
 are trained to know that situations that may pose a
 
 health, safety, or environmental hazard should be",manual_drop
-data/raw/WBD_2025Q4_2023_Sustainability_Report.pdf,WBD 2025Q4 2023 Sustainability Report,2025.0,Q4,2025-11-24,1,PRETTY LITTLE LIARS,prepared_remarks,"SUMMER SCHOOL
+data/raw/WBD_2025Q4_2023_Sustainability_Report.pdf,WBD 2025Q4 2023 Sustainability Report,2025.0,Q4,2025-11-25,1,PRETTY LITTLE LIARS,prepared_remarks,"SUMMER SCHOOL
 
  Protecting Human Rights
 
@@ -16478,7 +16478,7 @@ December 31 of the most recent year that is available.
 website
 
 , reflecting the company’s U.S. workforce as of",manual_drop
-data/raw/WBD_2025Q4_2023_Sustainability_Report.pdf,WBD 2025Q4 2023 Sustainability Report,2025.0,Q4,2025-11-24,2,JERROD CARMICHAEL,prepared_remarks,"ROTHANIEL
+data/raw/WBD_2025Q4_2023_Sustainability_Report.pdf,WBD 2025Q4 2023 Sustainability Report,2025.0,Q4,2025-11-25,2,JERROD CARMICHAEL,prepared_remarks,"ROTHANIEL
 
 26
 
@@ -16907,7 +16907,7 @@ impressions via WBD’s and Share Our Strength’s media platforms.
 Our social impact efforts are guided by our CSR pillars:
 
 Helping Vulnerable Communities | Creating Career Pathways | Protecting the Planet",manual_drop
-data/raw/WBD_2025Q4_2023_Sustainability_Report.pdf,WBD 2025Q4 2023 Sustainability Report,2025.0,Q4,2025-11-24,3,CSR PILLAR,prepared_remarks,"HELPING VULNERABLE COMMUNITIES
+data/raw/WBD_2025Q4_2023_Sustainability_Report.pdf,WBD 2025Q4 2023 Sustainability Report,2025.0,Q4,2025-11-25,3,CSR PILLAR,prepared_remarks,"HELPING VULNERABLE COMMUNITIES
 
 WBD is committed to building a brighter future for vulnerable communities with the greatest needs. Areas of focus and examples of
 
@@ -18115,7 +18115,7 @@ behaviors, and provide inspiration on topics such as the
 wrap, the production offset its emissions (calculated using
 
 climate and sustainability. Our environmental content",manual_drop
-data/raw/WBD_2025Q4_2023_Sustainability_Report.pdf,WBD 2025Q4 2023 Sustainability Report,2025.0,Q4,2025-11-24,4,TRUE DETECTIVE,prepared_remarks,"NIGHT COUNTRY
+data/raw/WBD_2025Q4_2023_Sustainability_Report.pdf,WBD 2025Q4 2023 Sustainability Report,2025.0,Q4,2025-11-25,4,TRUE DETECTIVE,prepared_remarks,"NIGHT COUNTRY
 
 ENVIRONMENTAL MEDIA ASSOCIATION (EMA)
 

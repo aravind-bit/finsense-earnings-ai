@@ -1,0 +1,23 @@
+{
+  "doc_path": "data/raw/NFLX_2025Q4_Content_Accounting_Overview.pdf",
+  "company_hint": "NFLX 2025Q4 Content Accounting Overview",
+  "fiscal_year": 2025.0,
+  "fiscal_quarter": "Q4",
+  "speaker": "FULL_TEXT",
+  "section": "prepared_remarks",
+  "segment_index": 0,
+  "kpis": {
+    "revenue_growth_yoy_pct": 90.0,
+    "eps_growth_yoy_pct": null,
+    "guidance_comment": "guidance commentary detected",
+    "margin_comment": null
+  },
+  "meta": {
+    "ingest_date": "2025-11-25",
+    "has_cfo_prepared": false,
+    "doc_type": "non_earnings"
+  },
+  "ticker": "NFLX",
+  "ai_quarter_summary": "In Q4 2025, Netflix reported a cash spending on content of approximately $17 billion, compared to $15.3 billion in content amortization, resulting in a 1.1x ratio of cash spend to content amortization. The company continues to utilize ASC 920 and ASC 926 accounting standards for content costs, with over 90% of licensed or produced content expected to be amortized within four years. There were no explicit changes to guidance, but the company highlighted potential future content obligations of $1 billion to $4 billion over the next three years, which may not yet meet asset recognition criteria. Key risks include the timing differences between cash payments and expense recognition, as well as the potential for impairment of content assets if viewing patterns change.",
+  "ai_quarter_highlights": []
+}

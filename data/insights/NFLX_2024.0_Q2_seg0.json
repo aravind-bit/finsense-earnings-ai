@@ -1,0 +1,23 @@
+{
+  "doc_path": "data/raw/NFLX_2024Q2_SAMPLE_REMARKS.txt",
+  "company_hint": "NFLX 2024Q2 SAMPLE REMARKS",
+  "fiscal_year": 2024.0,
+  "fiscal_quarter": "Q2",
+  "speaker": "FULL_TEXT",
+  "section": "prepared_remarks",
+  "segment_index": 0,
+  "kpis": {
+    "revenue_growth_yoy_pct": 12.0,
+    "eps_growth_yoy_pct": null,
+    "guidance_comment": "guidance commentary detected",
+    "margin_comment": "margin commentary detected"
+  },
+  "meta": {
+    "ingest_date": "2025-11-25",
+    "has_cfo_prepared": false,
+    "doc_type": "non_earnings"
+  },
+  "ticker": "NFLX",
+  "ai_quarter_summary": "In Q2 2024, Netflix (NFLX) reported a 12% year-over-year revenue growth, attributed to steady subscriber increases and higher average revenue per user (ARPU). The operating margin improved by 150 basis points, benefiting from normalized content amortization. The company modestly increased its content spending while maintaining a focus on disciplined returns from new titles. NFLX raised its full-year revenue guidance to a low-teens growth rate and expects to achieve operating margins at the high end of its previous range. Key risks to monitor include the sustainability of subscriber growth and the potential impact of content investments on future profitability.",
+  "ai_quarter_highlights": []
+}
