@@ -4,6 +4,7 @@ from typing import Dict, Any, List, Optional
 
 import pandas as pd
 import streamlit as st
+import logging
 
 from src.finsense.chat_engine import ask_finsense
 
@@ -494,16 +495,37 @@ def main():
         with st.chat_message("user"):
             st.markdown(user_question)
     
-        try:
-            answer = ask_finsense(user_question, selected_pack)
-        except Exception as e:
-            answer = f"Error while calling FinSense: {e}"
-    
+    try:
+        answer = ask_finsense(user_question, selected_pack)
+    except Exception as e:
+        # Log the full error for yourself
+        logging.exception("Error while calling FinSense")
+
+        err_str = str(e).lower()
+
+        # Friendly messages instead of raw JSON
+        if "rate limit" in err_str or "rate_limit_exceeded" in err_str or "429" in err_str:
+            answer = (
+                "FinSense hit the OpenAI usage limit for this demo.  \n\n"
+                "The backend API is throttling requests right now, so I can’t answer this one. "
+                "If you’re running locally, you can use your own OpenAI key and avoid this limit."
+            )
+        elif "api key" in err_str or "authentication" in err_str:
+            answer = (
+                "FinSense couldn’t reach the OpenAI API.  \n\n"
+                "Check that an `OPENAI_API_KEY` is configured in the Streamlit secrets or "
+                "environment variables."
+            )
+        else:
+            answer = (
+                "Something went wrong while trying to answer this question.  \n\n"
+                "You can try again in a bit, or re-run the app locally if you’re experimenting."
+            )
+
         # Add assistant message
         st.session_state[session_key].append({"role": "assistant", "content": answer})
         with st.chat_message("assistant"):
             st.markdown(answer)
-
 
 
 if __name__ == "__main__":
