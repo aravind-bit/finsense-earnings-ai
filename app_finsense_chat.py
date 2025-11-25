@@ -461,7 +461,7 @@ def main():
 
     # ---------- Chat with FinSense ----------
 
-    st.subheader("💬 Ask FinSense about this quarter")
+    st.subheader("Ask FinSense about this quarter")
 
     st.markdown(
         "Use natural language questions like:\n"
