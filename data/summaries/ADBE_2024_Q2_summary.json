@@ -1,0 +1,17 @@
+{
+  "ticker": "ADBE",
+  "fiscal_year": "2024.0",
+  "fiscal_quarter": "Q2",
+  "summary": "Headline:  \nAdobe delivered a solid Q2 with total revenue up 9% year-over-year, driven by strong subscription growth and improved profitability. The company reaffirmed its full-year guidance with a slight upward revision to operating margin expectations.\n\nGrowth & revenue drivers:  \n- Total revenue increased 9% YoY.  \n- Digital Media Annual Recurring Revenue (ARR) grew in double digits.  \n- Subscription revenue remains the primary growth engine, led by Creative Cloud and Document Cloud segments.\n\nMargins / profitability:  \n- Gross margin improved by 80 basis points, benefiting from pricing optimization and enhanced cloud efficiency.  \n- Operating margin guidance was raised slightly compared to prior outlook.\n\nGuidance & outlook:  \n- Full-year guidance reaffirmed.  \n- Operating margin expected to improve slightly versus previous forecast.\n\nRisks / watchpoints:  \n- No specific risks or headwinds mentioned in the remarks.  \n- Monitor execution on subscription growth and margin expansion amid competitive and macroeconomic factors.",
+  "meta": {
+    "ticker": "ADBE",
+    "company_hint": "ADBE 2024Q2 SAMPLE REMARKS",
+    "fiscal_year": "2024.0",
+    "fiscal_quarter": "Q2",
+    "speaker": "CFO (preferred, with fallbacks)",
+    "segment_count": 1,
+    "source_docs": [
+      "data/raw/ADBE_2024Q2_SAMPLE_REMARKS.txt"
+    ]
+  }
+}

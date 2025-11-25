@@ -1,0 +1,17 @@
+{
+  "ticker": "AMD",
+  "fiscal_year": "2025.0",
+  "fiscal_quarter": "Q4",
+  "summary": "Headline:\nAMD delivered a strong Q4 2025 with record revenue of $9.2 billion, up 36% YoY, driven by broad-based demand across data center AI, server, and PC segments. Net income rose 31%, and free cash flow more than tripled, highlighting robust profitability and cash generation.\n\nGrowth & revenue drivers:\n- Data center segment revenue grew 22% YoY to a record $4.3 billion, led by ramp of Instinct MI350 GPUs and server share gains.\n- Fifth Gen EPYC server CPUs accounted for nearly half of EPYC revenue, with strong sales also from prior generation EPYC processors.\n- Cloud adoption surged: hyperscalers launched 160+ EPYC-powered instances (Google, Microsoft Azure, Alibaba), with total public EPYC cloud instances up ~50% YoY to 1,350+.\n- Enterprise adoption accelerated sharply, with over 175 fifth Gen EPYC platforms in market from major OEMs (HPE, Dell, Lenovo, Supermicro).\n- Large new wins secured across Fortune 500 technology, telecom, financial services, retail, streaming, social, and automotive verticals.\n- AI workloads are a key growth catalyst, driving hyperscalers and enterprises to plan substantial CPU capacity expansions.\n\nMargins / profitability:\n- Net income increased 31% YoY, reflecting strong revenue growth and operational leverage.\n- Free cash flow more than tripled, indicating improved cash conversion and capital efficiency.\n- Specific margin percentages were not disclosed in the excerpt, but record profitability was emphasized.\n\nGuidance & outlook:\n- No explicit forward guidance was provided in the CFO remarks excerpt.\n- The company highlighted a positive outlook driven by expanding compute franchise and rapidly scaling data center AI business.\n- Upcoming investor events (Financial Analyst Day, UBS Global Technology and AI conference, Barclays Global Technology Conference) may provide more detailed outlook.\n\nRisks / watchpoints:\n- The CFO noted standard forward-looking statement risks including market uncertainties and execution risks.\n- Competitive dynamics in server CPUs and GPUs remain critical.\n- Execution on scaling AI-related compute capacity and maintaining share gains in hyperscale and enterprise markets will be key to sustaining growth.\n- No specific risks or headwinds were detailed in the provided remarks.",
+  "meta": {
+    "ticker": "AMD",
+    "company_hint": "AMD 2025Q4 Transcript",
+    "fiscal_year": "2025.0",
+    "fiscal_quarter": "Q4",
+    "speaker": "CFO (preferred, with fallbacks)",
+    "segment_count": 55,
+    "source_docs": [
+      "data/raw/AMD_2025Q4_Transcript.pdf"
+    ]
+  }
+}

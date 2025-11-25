@@ -1,0 +1,17 @@
+{
+  "ticker": "NFLX",
+  "fiscal_year": "2025.0",
+  "fiscal_quarter": "Q4",
+  "summary": "Headline:\nNetflix\u2019s Q4 2025 content accounting overview highlights continued disciplined application of ASC 920 and ASC 926 standards, reflecting stable content capitalization and amortization practices aligned with historical viewing patterns and industry norms.\n\nGrowth & revenue drivers:\n- Content costs are split between licensed content (ASC 920) and self-produced originals (ASC 926).\n- Self-produced content ownership (e.g., Stranger Things, Squid Game) provides cost advantages, IP ownership, and monetization flexibility.\n- Licensed content includes both Netflix originals licensed from studios (e.g., Wednesday, Emily in Paris) and second-run titles (e.g., Shameless, The Blacklist).\n- Over 90% of content costs are amortized within four years, reflecting accelerated consumption patterns.\n\nMargins / profitability:\n- Content amortization is recorded as a non-cash expense within cost of revenues.\n- Amortization schedules are reviewed quarterly and based on estimated useful life or availability window, capped at 10 years.\n- First-run topical programming (sports, live events) is expensed immediately, impacting short-term margins.\n- Content assets and liabilities are reflected on the balance sheet as non-current assets and current/non-current liabilities respectively.\n\nGuidance & outlook:\n- No explicit financial guidance or outlook was provided in this content accounting overview.\n- The company continues to apply ASU 2019-2 updates with no material impact, indicating stable accounting policies.\n\nRisks / watchpoints:\n- Changes in viewing patterns could affect amortization schedules and expense recognition.\n- The balance between licensed and owned content impacts cost structure and potential revenue streams.\n- Immediate expensing of live/first-run content may pressure near-term margins if this segment grows.\n- No direct commentary on cash flow impact or content investment levels this quarter; monitor for changes in content liabilities and asset additions in future filings.",
+  "meta": {
+    "ticker": "NFLX",
+    "company_hint": "NFLX 2025Q4 Content Accounting Overview",
+    "fiscal_year": "2025.0",
+    "fiscal_quarter": "Q4",
+    "speaker": "CFO (preferred, with fallbacks)",
+    "segment_count": 1,
+    "source_docs": [
+      "data/raw/NFLX_2025Q4_Content_Accounting_Overview.pdf"
+    ]
+  }
+}
