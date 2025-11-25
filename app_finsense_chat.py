@@ -296,7 +296,7 @@ def main():
         #page_icon="",
         layout="wide",
     )
-    # 🔹 New: global CSS polish
+    # 🔹 New: global CSS polish Turn raw earnings PDFs into CFO signals, KPIs, and an AI-ready Q&A layer for portfolio and credit analytics.
     inject_custom_css()
 
 
@@ -310,8 +310,9 @@ def main():
             FinSense — Earnings Intelligence Assistant
           </h2>
           <p style="margin: 0.25rem 0 0; color: #9ca3af; font-size: 0.9rem;">
-            Turn raw earnings PDFs into CFO signals, KPIs, and an AI-ready Q&A layer
-            for portfolio and credit analytics.
+            FinSense is a small prototype that turns messy earnings PDFs into structured KPIs, AI summaries, 
+            and a simple Q&A interface for each quarter.
+            It’s basically an AI-ready Q&A layer that helps analysts quickly see what changed.
           </p>
         </div>
         """,
