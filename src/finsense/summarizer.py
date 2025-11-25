@@ -89,7 +89,7 @@ def _safe_chat_completion(prompt: str, max_retries: int = 3, base_delay: float =
     while True:
         try:
             resp = client.chat.completions.create(
-                model="gpt-4.1-mini",
+                model="gpt-4o-mini",
                 messages=[
                     {
                         "role": "system",
