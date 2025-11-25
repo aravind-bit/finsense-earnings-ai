@@ -1,226 +1,498 @@
 import json
 from pathlib import Path
+from typing import Dict, Any, List, Optional
 
 import pandas as pd
 import streamlit as st
 
 from src.finsense.chat_engine import ask_finsense
 
-# ----- Paths -----
-ROOT = Path(__file__).resolve().parent
-INSIGHTS_DIR = ROOT / "data" / "insights"
-SUMMARIES_DIR = ROOT / "data" / "summaries"
+def inject_custom_css() -> None:
+    """Lightweight visual polish: cards, badges, and soft hover animations."""
+    st.markdown(
+        """
+        <style>
+        /* Tighten up the main page width a bit */
+        .block-container {
+            padding-top: 1.5rem;
+            padding-bottom: 2rem;
+            max-width: 1200px;
+        }
+
+        /* Metric cards: give them a card-like feel */
+        .stMetric {
+            background: radial-gradient(circle at top left,
+                                        rgba(56, 189, 248, 0.10),
+                                        rgba(15, 23, 42, 0.95));
+            border-radius: 0.9rem !important;
+            padding: 0.75rem 1rem !important;
+            box-shadow: 0 12px 30px rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(148, 163, 184, 0.3);
+            transition: transform 120ms ease-out, box-shadow 120ms ease-out;
+        }
+
+        .stMetric:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 18px 40px rgba(15, 23, 42, 0.9);
+        }
+
+        /* Metric label text */
+        .stMetric label {
+            font-size: 0.72rem !important;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #9ca3af !important;
+        }
+
+        /* “Logo strip” badges */
+        .finsense-logo-strip {
+            margin-top: 0.4rem;
+            margin-bottom: 1.1rem;
+        }
+
+        .finsense-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.18rem 0.7rem;
+            margin-right: 0.35rem;
+            margin-bottom: 0.25rem;
+            border-radius: 999px;
+            border: 1px solid rgba(148, 163, 184, 0.4);
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.09em;
+            color: #e5e7eb;
+            background: linear-gradient(
+                135deg,
+                rgba(15, 23, 42, 0.95),
+                rgba(30, 64, 175, 0.85)
+            );
+            box-shadow: 0 10px 25px rgba(15, 23, 42, 0.9);
+            transition: transform 130ms ease-out,
+                        box-shadow 130ms ease-out,
+                        border-color 130ms ease-out;
+        }
+
+        .finsense-badge:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 16px 38px rgba(15, 23, 42, 1);
+            border-color: rgba(96, 165, 250, 0.9);
+        }
+
+        .finsense-badge-dot {
+            width: 0.45rem;
+            height: 0.45rem;
+            border-radius: 999px;
+            background: radial-gradient(circle,
+                        rgba(248, 250, 252, 1),
+                        rgba(96, 165, 250, 1));
+        }
+
+        /* Accordion headers: slightly stronger contrast */
+        [data-testid="stExpander"] > details > summary {
+            background: linear-gradient(
+                90deg,
+                rgba(15, 23, 42, 0.94),
+                rgba(15, 23, 42, 0.85)
+            );
+            border-radius: 0.75rem;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
 
 
-# ----- Data loaders -----
+def render_logo_strip() -> None:
+    """Show a simple 'coverage strip' for the tickers in this demo."""
+    st.markdown(
+        """
+        <div class="finsense-logo-strip">
+          <span class="finsense-badge">
+            <span class="finsense-badge-dot"></span>
+            ADBE · SaaS / Creativity
+          </span>
+          <span class="finsense-badge">
+            <span class="finsense-badge-dot"></span>
+            NFLX · Streaming Media
+          </span>
+          <span class="finsense-badge">
+            <span class="finsense-badge-dot"></span>
+            NVDA · AI / GPUs
+          </span>
+          <span class="finsense-badge">
+            <span class="finsense-badge-dot"></span>
+            AMD · Semiconductors
+          </span>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
 
-def load_insight_packs():
-    """Load all JSON insight packs from data/insights into a list of dicts."""
-    packs = []
+
+INSIGHTS_DIR = Path("data/insights")
+WATCHLIST_PATH = Path("configs/watchlist.csv")
+
+
+# ---------- Helpers ----------
+
+def load_watchlist() -> Dict[str, Dict[str, str]]:
+    """
+    Load configs/watchlist.csv into a ticker → {company_name, sector} mapping.
+    Tickers are stored uppercased.
+    """
+    mapping: Dict[str, Dict[str, str]] = {}
+
+    if not WATCHLIST_PATH.exists():
+        return mapping
+
+    try:
+        df = pd.read_csv(WATCHLIST_PATH)
+    except Exception:
+        return mapping
+
+    for _, row in df.iterrows():
+        ticker = str(row.get("ticker", "")).upper().strip()
+        if not ticker:
+            continue
+        mapping[ticker] = {
+            "company_name": str(row.get("company_name", "")).strip(),
+            "sector": str(row.get("sector", "")).strip(),
+        }
+
+    return mapping
+
+
+def derive_ticker_from_filename(file_name: str) -> Optional[str]:
+    """
+    Best-effort: take the first chunk before '_' and treat as ticker if it looks like one.
+    Example: 'AMD_2024Q2_Transcript.json' → 'AMD'
+    """
+    if "_" not in file_name:
+        return None
+    first = file_name.split("_", 1)[0].upper()
+    # Simple heuristic: 2–5 uppercase letters
+    if 2 <= len(first) <= 5 and first.isalpha():
+        return first
+    return None
+
+
+def build_display_label(
+    pack: Dict[str, Any],
+    ticker_info: Dict[str, Dict[str, str]],
+) -> str:
+    """
+    Build the dropdown label for an insight pack.
+    Avoids showing '??' and 'FULL_TEXT' etc.
+    """
+    file_name = pack.get("_file_name", "insight.json")
+    raw_ticker = pack.get("ticker") or derive_ticker_from_filename(file_name)
+
+    ticker = raw_ticker or "Unknown"
+    ticker = ticker.upper()
+
+    # Company name preference: watchlist, then company_hint, then file name
+    wl = ticker_info.get(ticker, {})
+    company_from_watchlist = wl.get("company_name") or ""
+    company_hint = str(pack.get("company_hint", "")).strip()
+
+    if company_from_watchlist:
+        company_display = company_from_watchlist
+    elif company_hint:
+        company_display = company_hint
+    else:
+        company_display = file_name.replace(".json", "")
+
+    year = pack.get("fiscal_year")
+    quarter = pack.get("fiscal_quarter")
+
+    if year and quarter:
+        period_display = f"{year} {quarter}"
+    else:
+        period_display = "Unknown period"
+
+    seg_idx = pack.get("segment_index")
+    seg_display = f"Seg {seg_idx}" if seg_idx is not None else ""
+
+    parts = [ticker, company_display, period_display, seg_display]
+    # Remove empty pieces and join cleanly
+    label = " | ".join(p for p in parts if p)
+    return label
+
+
+def clean_speaker_for_display(speaker: Optional[str]) -> str:
+    """
+    Turn internal labels like 'FULL_TEXT' into something user-friendly.
+    """
+    if not speaker or speaker.upper() in {"FULL_TEXT", "UNKNOWN"}:
+        return "Not labeled (full document)"
+    return speaker
+
+
+def format_pct(value: Any) -> str:
+    """
+    Nicely format percentage values, handling None/NaN.
+    """
+    if value is None:
+        return "N/A"
+    try:
+        # Handle numpy / pandas types too
+        v = float(value)
+    except Exception:
+        return "N/A"
+    return f"{v:.1f}%"
+
+
+# ---------- Data loading ----------
+
+def load_insight_packs() -> List[Dict[str, Any]]:
+    """Load all JSON insight packs from data/insights into a list of dicts, enriched with display fields."""
+    packs: List[Dict[str, Any]] = []
+
     if not INSIGHTS_DIR.exists():
         return packs
+
+    ticker_map = load_watchlist()
 
     for p in sorted(INSIGHTS_DIR.glob("*.json")):
         try:
             data = json.loads(p.read_text())
         except Exception as e:
-            print(f"[WARN] Could not read insight pack {p}: {e}")
+            print(f"[WARN] Could not read {p}: {e}")
             continue
 
-        # Convenience fields for UI
         data["_file_name"] = p.name
         data["_path"] = str(p)
 
-        # Try to derive a short ticker from company_hint if present
-        raw_company = str(data.get("company_hint") or "").strip()
-        ticker_guess = raw_company.split()[0].upper() if raw_company else "UNKNOWN"
-        data["_ticker"] = ticker_guess
+        # Derive ticker + sector
+        raw_ticker = data.get("ticker") or derive_ticker_from_filename(p.name)
+        ticker = raw_ticker.upper() if raw_ticker else None
+        data["_ticker"] = ticker
 
-        # Normalize year / quarter for display + matching
-        fy = str(data.get("fiscal_year", "")).split(".")[0]
-        fq = str(data.get("fiscal_quarter", "")).strip()
-        data["_fiscal_year_str"] = fy
-        data["_fiscal_quarter_str"] = fq
+        if ticker and ticker in ticker_map:
+            data["_company_name"] = ticker_map[ticker]["company_name"]
+            data["_sector"] = ticker_map[ticker]["sector"]
+        else:
+            data["_company_name"] = data.get("company_hint")
+            data["_sector"] = None
 
-        seg = data.get("meta", {}).get("segment_index")
-        seg_str = f"seg {seg}" if seg is not None else "seg ?"
+        # Clean speaker for display
+        data["_speaker_display"] = clean_speaker_for_display(data.get("speaker"))
 
-        data["_label"] = f"{ticker_guess} — {fq} {fy} ({seg_str})"
+        # Build label for the dropdown
+        data["_label"] = build_display_label(data, ticker_map)
+
         packs.append(data)
 
     return packs
 
 
-def load_summaries():
-    """
-    Load all quarterly summaries from data/summaries.
-
-    Returns a dict keyed by (ticker, year, quarter) -> summary dict.
-    """
-    summaries = {}
-    if not SUMMARIES_DIR.exists():
-        return summaries
-
-    for p in SUMMARIES_DIR.glob("*_summary.json"):
-        try:
-            data = json.loads(p.read_text())
-        except Exception as e:
-            print(f"[WARN] Could not read summary {p}: {e}")
-            continue
-
-        ticker = str(data.get("ticker") or "").upper()
-        year = str(data.get("fiscal_year") or "").split(".")[0]
-        quarter = str(data.get("fiscal_quarter") or "").strip()
-
-        if not (ticker and year and quarter):
-            continue
-
-        summaries[(ticker, year, quarter)] = data
-
-    return summaries
-
-
-# ----- Streamlit app -----
+# ---------- Streamlit App ----------
 
 def main():
-    st.set_page_config(page_title="FinSense — Earnings Call Analyst", layout="wide")
+    st.set_page_config(
+        page_title="FinSense — Earnings Intelligence Assistant",
+        page_icon="📊",
+        layout="wide",
+    )
+    # 🔹 New: global CSS polish
+    inject_custom_css()
 
     st.title("FinSense — Earnings Call Analyst")
     st.caption(
         "Prototype internal tool for PMs and credit analysts. "
-        "Pipeline: earnings PDFs → transcript ingestion → CFO KPI + sentiment extraction "
-        "→ quarterly summaries → Q&A focused on this quarter."
+        "Pipeline: earnings PDFs → transcript ingestion → CFO KPI + sentiment extraction → "
+        "Q&A focused on this quarter."
+    )
+
+    # 🔹 New: coverage / logo strip under the title
+    render_logo_strip()
+
+    # Top hero area
+    st.markdown(
+        """
+        <div style="padding: 0.6rem 1rem; border-radius: 0.75rem; background: #0f172a;">
+          <h2 style="margin: 0; color: #e5e7eb;">
+            FinSense — Earnings Intelligence Assistant
+          </h2>
+          <p style="margin: 0.25rem 0 0; color: #9ca3af; font-size: 0.9rem;">
+            Turn raw earnings PDFs into CFO signals, KPIs, and an AI-ready Q&A layer
+            for portfolio and credit analytics.
+          </p>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+    st.caption(
+        "Prototype internal tool: ingestion → KPI extraction → AI snapshot → conversational Q&A."
     )
 
     packs = load_insight_packs()
-    summaries = load_summaries()
-
     if not packs:
         st.error(
             "No insight packs found in `data/insights`.\n\n"
-            "Run the ingestion + KPI notebook to generate CFO insight JSON files."
+            "Run the ingestion + KPI notebook (`06_kpi_extraction.ipynb`) so that JSON insight files are created."
         )
         return
 
-    # Sidebar: select earnings set
-    st.sidebar.header("Select Earnings Set")
-    st.sidebar.caption("Pick a ticker + quarter. Each entry corresponds to a specific document/segment.")
-
+    # Sidebar selection
+    st.sidebar.header("Select earnings set")
     options = [p["_label"] for p in packs]
-    choice = st.sidebar.selectbox("Company / Period", options=options, index=0)
+    choice = st.sidebar.selectbox("Company / period / segment", options=options, index=0)
     selected_pack = packs[options.index(choice)]
 
-    # Derive keys for summary lookup
-    ticker = selected_pack.get("_ticker", "UNKNOWN")
-    year = selected_pack.get("_fiscal_year_str", "")
-    quarter = selected_pack.get("_fiscal_quarter_str", "")
-    summary_key = (ticker, year, quarter)
-    summary_data = summaries.get(summary_key)
+    # ---------- Context header / metrics ----------
 
-    # ----- Layout: top metrics -----
-    st.markdown("### Context")
-    top_cols = st.columns(4)
+    col_top_left, col_top_mid, col_top_right = st.columns([1.4, 1.2, 1.2])
 
-    with top_cols[0]:
-        st.metric("Ticker", ticker)
-    with top_cols[1]:
-        period_label = f"{quarter} {year}" if quarter and year else "—"
-        st.metric("Period", period_label)
-    with top_cols[2]:
+    with col_top_left:
+        st.markdown("#### Snapshot")
+
+        ticker_display = selected_pack.get("_ticker") or "Unknown"
+        company_display = selected_pack.get("_company_name") or selected_pack.get(
+            "company_hint", "Unknown company"
+        )
+        sector_display = selected_pack.get("_sector") or "Not tagged"
+
+        year = selected_pack.get("fiscal_year")
+        quarter = selected_pack.get("fiscal_quarter")
+        if year and quarter:
+            period_display = f"{year} {quarter}"
+        else:
+            period_display = "Unknown period"
+
+        st.markdown(f"**Company:** {company_display}")
+        st.markdown(f"**Ticker:** `{ticker_display}`")
+        st.markdown(f"**Sector:** {sector_display}")
+        st.markdown(f"**Period:** {period_display}")
+
+        doc_path = (
+            selected_pack.get("meta", {}).get("doc_path")
+            or selected_pack.get("doc_path")
+            or selected_pack.get("_file_name")
+        )
+        st.caption(f"Source: `{doc_path}`")
+
+    with col_top_mid:
+        st.markdown("#### KPIs (auto-extracted)")
         k = selected_pack.get("kpis", {}) or {}
-        rev = k.get("revenue_growth_yoy_pct")
-        st.metric("Revenue YoY %", f"{rev:.1f}%" if isinstance(rev, (int, float)) else "N/A")
-    with top_cols[3]:
-        eps = k.get("eps_growth_yoy_pct")
-        st.metric("EPS YoY %", f"{eps:.1f}%" if isinstance(eps, (int, float)) else "N/A")
 
-    meta = selected_pack.get("meta", {}) or {}
-    company_pretty = str(selected_pack.get("company_hint") or ticker)
-    sector_pretty = meta.get("sector", "Tech / Media").replace("_", " ").title() if isinstance(meta.get("sector"), str) else "Tech / Media"
-    speaker = selected_pack.get("speaker", "CFO")
-    segment_label = meta.get("section", meta.get("segment_type", "prepared_remarks"))
-
-    st.markdown(
-        f"**Company:** {company_pretty} &nbsp; • &nbsp; "
-        f"**Sector:** {sector_pretty} &nbsp; • &nbsp; "
-        f"**Speaker:** {speaker} &nbsp; • &nbsp; "
-        f"**Segment:** {segment_label}"
-    )
-
-    source_path = meta.get("doc_path", selected_pack.get("_file_name", ""))
-    if source_path:
-        st.caption(f"Source file: `{source_path}`")
-
-    st.markdown("---")
-
-    # ----- Quarter snapshot (AI summary) -----
-    with st.expander("📌 Quarter snapshot (AI summary)", expanded=True):
-        if summary_data:
-            st.success("AI snapshot available for this quarter.")
-            st.markdown(summary_data.get("summary", ""))
-        else:
-            st.info(
-                "No AI summary generated yet for this quarter.\n\n"
-                "From the repo root you can create one with:\n"
-                "```bash\n"
-                "python -m src.finsense.summarizer TICKER YEAR QUARTER\n"
-                "# or summarize all: python -m src.finsense.summarizer\n"
-                "```"
+        col_kpi1, col_kpi2 = st.columns(2)
+        with col_kpi1:
+            st.metric(
+                "Revenue YoY",
+                format_pct(k.get("revenue_growth_yoy_pct")),
+            )
+        with col_kpi2:
+            st.metric(
+                "EPS YoY",
+                format_pct(k.get("eps_growth_yoy_pct")),
             )
 
-    # ----- CFO text preview -----
-    with st.expander("Show CFO prepared remarks (preview)", expanded=False):
-        raw_text = meta.get("raw_text") or selected_pack.get("text")
-        if raw_text:
-            st.text_area("Preview", raw_text[:4000], height=220)
-        else:
-            st.info(
-                "No preview text stored in this insight pack yet. "
-                "You can extend the pipeline later to persist a short excerpt of the CFO's remarks here."
-            )
+        guidance_comment = k.get("guidance_comment") or "No explicit guidance language captured."
+        margin_comment = k.get("margin_comment") or "No explicit margin commentary captured."
 
-    st.markdown("---")
+        st.caption("**Guidance:** " + guidance_comment)
+        st.caption("**Margins:** " + margin_comment)
 
-    # ----- Q&A section -----
-    st.markdown("### Ask FinSense about this quarter")
-    with st.expander("Example questions", expanded=False):
+    with col_top_right:
+        st.markdown("#### Speaker / segment")
+
+        speaker_display = selected_pack.get("_speaker_display", "Not labeled")
+        section_display = selected_pack.get("section") or "Not specified"
+        seg_idx = selected_pack.get("segment_index")
+        seg_label = f"Segment index: {seg_idx}" if seg_idx is not None else "Segment index not tracked"
+
+        st.markdown(f"**Speaker:** {speaker_display}")
+        st.markdown(f"**Section:** {section_display}")
+        st.caption(seg_label)
+
         st.markdown(
-            """
-            - What drove revenue growth this quarter?
-            - How did margins behave vs last year?
-            - Did management raise or lower guidance?
-            - Any notable risks or spending themes mentioned?
-            """
+            "<span style='font-size: 0.85rem; color: #9ca3af;'>"
+            "These fields are derived from speaker tags in the source file. "
+            "Some IR PDFs don't expose clean speaker labels, so they appear as full-document segments."
+            "</span>",
+            unsafe_allow_html=True,
         )
 
-    # Chat history keyed per file, so switching entries keeps separate threads
+    st.markdown("---")
+
+    # ---------- CFO preview & AI summary (both collapsed by default) ----------
+
+    cfo_preview = selected_pack.get("cfo_preview_text")
+    with st.expander("CFO prepared remarks (preview)", expanded=False):
+        if cfo_preview:
+            st.write(cfo_preview)
+        else:
+            st.info(
+                """
+                No CFO preview is available for this earnings set in this demo version.
+                
+                In a full workflow, this panel would display a short excerpt of the CFO’s 
+                prepared remarks — giving analysts a quick snapshot before exploring the 
+                full transcript or financial statements.
+                """
+            )
+
+    ai_summary = selected_pack.get("ai_quarter_summary")
+    with st.expander("Quarter snapshot (AI summary)", expanded=False):
+        if ai_summary:
+            st.write(ai_summary)
+            st.caption(
+                "This AI snapshot is generated from the structured insight pack (KPIs + meta + preview)."
+            )
+        else:
+            st.info(
+                """
+                No AI quarter summary has been generated for this earnings set.
+                
+                In the complete FinSense workflow, this panel would contain 
+                a 3–5 bullet snapshot highlighting:
+                • Revenue and margin direction  
+                • Spend themes  
+                • Risk commentary  
+                • Guidance sentiment  
+        """
+            )
+
+    st.markdown("---")
+
+    # ---------- Chat with FinSense ----------
+
+    st.subheader("💬 Ask FinSense about this quarter")
+
+    st.markdown(
+        "Use natural language questions like:\n"
+        "- *“What actually changed this quarter?”*\n"
+        "- *“Any signs of margin pressure or guidance cuts?”*\n"
+        "- *“How does management talk about AI / content / capex?”*"
+    )
+
     session_key = f"chat_history_{selected_pack['_file_name']}"
     if session_key not in st.session_state:
         st.session_state[session_key] = []
 
-    # Render past messages
+    # Render past chat
     for msg in st.session_state[session_key]:
         with st.chat_message(msg["role"]):
             st.markdown(msg["content"])
 
-    # Chat input
-    user_question = st.chat_input(
-        "Ask about this quarter (growth, margins, guidance, risks)…"
-    )
+    user_question = st.chat_input("Ask about this earnings set...")
 
     if user_question:
-        # Add user message
+        # User message
         st.session_state[session_key].append({"role": "user", "content": user_question})
         with st.chat_message("user"):
             st.markdown(user_question)
 
-        # Call FinSense
+        # FinSense answer
         try:
             answer = ask_finsense(user_question, selected_pack)
         except Exception as e:
-            answer = f"Error while calling FinSense: {e}"
+            answer = f"Error while calling FinSense: `{e}`"
 
-        # Add assistant message
         st.session_state[session_key].append({"role": "assistant", "content": answer})
         with st.chat_message("assistant"):
             st.markdown(answer)
