@@ -39,7 +39,7 @@ def ask_finsense(question: str, insight: dict) -> str:
     )
 
     response = client.chat.completions.create(
-        model="gpt-4.1-mini",
+        model="gpt-4o-nano",
         messages=[
             {"role": "system", "content": SYSTEM_PROMPT},
             {"role": "user", "content": f"Insight data:\n{insight_text}"},
