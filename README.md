@@ -11,7 +11,18 @@ Instead of manually reading 10–50 page transcripts or IR PDFs, FinSense conver
 - AI-generated quarterly summaries  
 - A conversational Q&A interface on top of each quarter
 
-The goal: reduce the “first 80%” of earnings analysis from **hours to minutes**, so humans can focus on judgment, not document-wrangling.
+This is an **end-to-end project** meant to show:
+
+- How to go from **unstructured PDFs / IR text → structured KPIs + summaries**
+- How to design a **small analytics product** (not just a notebook)
+- How to use **OpenAI models inside a constrained, real-world-ish workflow** (rate limits, messy data, partial coverage)
+
+## Live demo
+
+- **App:** https://finsense-earnings-ai-pukp5rnrs2ehkahbetjabq.streamlit.app/
+- **Repo:** https://github.com/aravind-bit/finsense-earnings-ai
+
+> Note: This is an experimental prototype. Coverage is limited to a small set of sample documents (NVDA, ADBE, AMD, NFLX) and a few recent quarters, but the pipeline is built to be extensible.
 
 ---
 
@@ -308,3 +319,4 @@ Author: Aravind Anisetti
 💼 LinkedIn: linkedin.com/in/aravindsai-anisetti
 
 FinSense is a learning and demonstration project — feedback, ideas, and collaboration are welcome.
+
