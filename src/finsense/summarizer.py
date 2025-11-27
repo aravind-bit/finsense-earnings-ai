@@ -6,6 +6,7 @@ import time
 from pathlib import Path
 from typing import Any, Dict, Iterable, Tuple
 
+import numpy as np
 import pandas as pd
 from openai import OpenAI
 
@@ -16,8 +17,7 @@ DATA_DIR = ROOT / "data"
 PROCESSED_DIR = DATA_DIR / "processed"
 SUMMARIES_DIR = DATA_DIR / "summaries"
 
-# Use the lighter 4o-mini model
-MODEL_NAME = "gpt-4o-mini"
+MODEL_NAME = "gpt-4.1-mini"  # quarter-level summaries
 
 
 # -------- OpenAI client --------
@@ -113,35 +113,30 @@ def call_model_with_retries(prompt: str, max_retries: int = 3) -> str:
             )
             return (resp.choices[0].message.content or "").strip()
 
-        except Exception as e:  # pragma: no cover - simple defensive logic
-            msg = str(e)
-            if "rate limit" in msg.lower() or "429" in msg:
-                if attempt < max_retries:
-                    sleep_s = 10 * attempt
-                    print(
-                        f"  -> Rate / API limit hit (attempt {attempt}/{max_retries}). "
-                        f"Sleeping {sleep_s}s..."
-                    )
-                    time.sleep(sleep_s)
-                    continue
-            # Any other error or final failure
+        except Exception as e:  # pragma: no cover
+            msg = str(e).lower()
+            if ("rate limit" in msg or "429" in msg) and attempt < max_retries:
+                sleep_s = 10 * attempt
+                print(
+                    f"  -> Rate / API limit hit (attempt {attempt}/{max_retries}). "
+                    f"Sleeping {sleep_s}s..."
+                )
+                time.sleep(sleep_s)
+                continue
             raise
-
-    # Should never reach here
-    raise RuntimeError("Unexpected error in call_model_with_retries")
 
 
 def summarise_quarter(
     ticker: str, fiscal_year: int, fiscal_quarter: str, text_block: str
 ) -> str:
-    """
-    High-level wrapper: build prompt, call model, return summary.
-    """
+    """High-level wrapper."""
     prompt = build_quarter_prompt(ticker, fiscal_year, fiscal_quarter, text_block)
     return call_model_with_retries(prompt)
 
 
-def iter_groups(df: pd.DataFrame) -> Iterable[Tuple[str, int, str, pd.DataFrame]]:
+def iter_groups(
+    df: pd.DataFrame,
+) -> Iterable[Tuple[str, int, str, pd.DataFrame]]:
     """
     Yield (ticker, year, quarter, group_df) tuples, with types normalised.
     """
@@ -156,12 +151,8 @@ def iter_groups(df: pd.DataFrame) -> Iterable[Tuple[str, int, str, pd.DataFrame]
         yield ticker, year_int, quarter_str, g
 
 
-def safe(val):
-    """
-    Convert numpy/pandas types into plain Python types so json.dumps never explodes.
-    """
-    import numpy as np
-
+def _safe_json(val):
+    """Convert numpy/pandas scalars into plain Python types for JSON."""
     if isinstance(val, (np.integer,)):
         return int(val)
     if isinstance(val, (np.floating,)):
@@ -206,7 +197,6 @@ def main() -> None:
     # 4) Loop over (ticker, year, quarter)
     for ticker, year, quarter, g in iter_groups(df):
         if ticker == "UNKNOWN":
-            # Skip junk/unmapped docs
             continue
 
         texts = [
@@ -225,19 +215,16 @@ def main() -> None:
             print(f"  -> ERROR summarising {ticker} {year} {quarter}: {e}")
             continue
 
-        # Ensure everything in payload is JSON-serialisable (plain Python types)
         payload: Dict[str, Any] = {
-            "ticker": safe(ticker),
-            "fiscal_year": safe(year),
-            "fiscal_quarter": safe(quarter),
-            "summary": safe(summary_text),
+            "ticker": _safe_json(ticker),
+            "fiscal_year": _safe_json(year),
+            "fiscal_quarter": _safe_json(quarter),
+            "summary": _safe_json(summary_text),
         }
 
         out_path = SUMMARIES_DIR / f"{ticker}_{year}_{quarter}_summary.json"
         out_path.parent.mkdir(parents=True, exist_ok=True)
-        with out_path.open("w", encoding="utf-8") as f:
-            json.dump(payload, f, indent=2)
-
+        out_path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
         print(f"  -> wrote {out_path}")
 
 
